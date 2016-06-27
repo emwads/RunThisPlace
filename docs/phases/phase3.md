@@ -1,40 +1,44 @@
-# Phase 3: Comment CRUD
+# Phase 3: Run Route CRUD api, Flux Architecture, googlemaps API
 
 ## Rails
 ### Models
-* Comment
+* Route
 
 ### Controllers
-* Api::WorkoutsController (show)
+* Api::RoutesController (create, destroy, index, show, update)
 
 ### Views
-* api/Workouts/show.json.jbuilder
+* api/routes/index.json.jbuilder
+* api/routes/show.json.jbuilder
 
 
 ## Flux
 ### Views (React Components)
-* Workouts index
+* RoutesIndex
+  - RoutesIndexItem
+  - Route Detail
+* RouteForm
+  - CreateRouteDetails
+  - CreateRouteMap
 
 ### Stores
-* Comment?
+* Route
 
 ### Actions
 * triggered by ApiUtil
-  * ApiActions.receiveAllComments
-  * ApiActions.receiveSingleComment
-  * ApiActions.deleteComment
+  * ApiActions.receiveAllRoutes
+  * ApiActions.receiveSingleRoute
+  * ApiActions.deleteRoute
 * triggers ApiUtil
-  * CommentActions.fetchAllComments
-  * CommentActions.fetchSingleComment
-  * CommentActions.createComment
-  * CommentActions.editComment
-  * CommentActions.destroyComment
+  * RouteActions.fetchAllRoutes
+  * RouteActions.fetchSingleRoute
+  * RouteActions.createRoute
+  * RouteActions.destroyRoute
 
 ### ApiUtil
-* ApiUtil.fetchAllComments
-* ApiUtil.fetchSingleComment
-* ApiUtil.createComment
-* ApiUtil.editComment
-* ApiUtil.destroyComment
+* ApiUtil.fetchAllRoutes
+* ApiUtil.fetchSingleRoute
+* ApiUtil.createRoute
+* ApiUtil.destroyRoute
 
 ## Gems/Libraries

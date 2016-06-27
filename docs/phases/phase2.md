@@ -1,43 +1,38 @@
-# Phase 2: Flux Architecture, googlemaps API, and Route CRUD 
+# Phase 2: Workouts Model, components, and JSON API
 
 ## Rails
 ### Models
-* Route
+* Workouts
 
 ### Controllers
-* Api::RoutesController (create, destroy, index, show, update)
+
+* Api::WorkoutsController (create, destroy, index, show, update)
 
 ### Views
-* api/routes/index.json.jbuilder
-* api/routes/show.json.jbuilder
+* api/workouts/index.json.jbuilder
+* api/workouts/show.json.jbuilder
 
 
 ## Flux
 ### Views (React Components)
-* RoutesIndex
-  - RoutesIndexItem
-* RouteForm
+* WorkoutIndex
+* WorkoutDetail
+* WorkoutIndexItem
+* CreateWorkout
+* CreateWorkoutForm
+* CreateWorkoutDetail
 
 ### Stores
-* Route
+* WorkoutStore
 
 ### Actions
-* triggered by ApiUtil
-  * ApiActions.receiveAllRoutes
-  * ApiActions.receiveSingleRoute
-  * ApiActions.deleteRoute
-* triggers ApiUtil
-  * RouteActions.fetchAllRoutes
-  * RouteActions.fetchSingleRoute
-  * RouteActions.createRoute
-  * RouteActions.editRoute
-  * RouteActions.destroyRoute
+* Fetch/receive single/all workouts
+* create/update/destroy workouts
+
 
 ### ApiUtil
-* ApiUtil.fetchAllRoutes
-* ApiUtil.fetchSingleRoute
-* ApiUtil.createRoute
-* ApiUtil.editRoute
-* ApiUtil.destroyRoute
+* Fetch one/all Workouts
+* CreateWorkout
+* Destroy workout
 
 ## Gems/Libraries

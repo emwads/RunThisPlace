@@ -6,33 +6,35 @@
 
 - `GET /` - loads React web app
 
+## JSON API
+
 ### Users
 
-- `GET /users/new`
-- `POST /users`
-- `PATCH /users`
+- `GET api/users/new`
+- `POST api/users`
+- `PATCH api/users`
 
 ### Session
 
-- `GET /session/new`
-- `POST /session`
-- `DELETE /session`
-
-## JSON API
+- `GET api/session/new`
+- `POST api/session`
+- `DELETE api/session`
 
 ### Routes
 
-- `GET /api/routes`
-  - Notes index
-  - accepts `user_id` query param to list user's saved routes
-- `POST /api/routes`
-- `GET /api/routes/:id`
-- `PATCH /api/routes/:id`
-- `DELETE /api/routes/:id`
+- `GET /api/run_routes`
+  - Routes index
+  - accepts `user_id` query param to list all the run_routes a user has a workout in
+- `POST /api/run_routes`
+- `GET /api/run_routes/:id`
+- `PATCH /api/run_routes/:id` -- bonus feature
+- `DELETE /api/run_routes/:id`
 
 ### Workouts
 
 - `GET /api/workouts`
+  - shows current user's workouts
+  - possible query param to limit search results
 - `POST /api/workouts`
 - `GET /api/workuts/:id`
 - `PATCH /api/workouts/:id`
@@ -41,6 +43,6 @@
 
 ### Friends
 
-- `POST /api/friends/:user_id/`
-  - creates friending between current user, user_id
-- `DELETE /api/friends/:user_id`
+- `POST /api/friends/`
+  - creates friending between current user and a `UserDetail`'s user
+- `DELETE /api/friends/`

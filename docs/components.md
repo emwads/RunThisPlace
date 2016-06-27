@@ -3,6 +3,9 @@
 **Bolded** components are associated with routes.
 
 * **App**
+  * **Authentication**
+    * NewUserForm
+    * NewSessionForm
   * **Dashboard**
     * WorkoutIndex
       * WorkoutIndexItem
@@ -10,6 +13,7 @@
     * **CreateWorkout**
       * CreateWorkoutForm
         * CreateWorkoutDetail
+        * RouteSearch
         * CreateWorkoutRoute
     * RouteIndex
       * RouteIndexItem
@@ -26,13 +30,14 @@
 ## Routes
 
 * **component:** `App` **path:** `/`
-  * **component:** `Dashboard` **path:** `/`
+  * **component:** `Authentication` **path:** none
+  * **component:** `Dashboard` **path:** none
     * **component:** `WorkoutIndex` **path:** `workouts`
       * **component:** `WorkoutDetail` **path:** `workouts/:workout_id`
-    * **component:** `RouteIndex` **path:** `routes`
-      * **component:** `RouteDetail` **path:** `routes/:route_id`
+    * **component:** `RouteIndex` **path:** `run_routes`
+      * **component:** `RouteDetail` **path:** `run_routes/:route_id`
     * **component:** `CreateWorkout` **path:** `workouts/:workout_id`
-    * **component:** `CreateRoute` **path:** `routes/:routes_id`
+    * **component:** `CreateRoute` **path:** `run_routes/:route_id`
     * **component:** `UserDetail` **path:** `user`
 
 
