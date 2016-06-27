@@ -1,4 +1,4 @@
-# Phase 4: Allow Complex Styling in Routes/Workouts 
+# Phase 4: More Complex Styling
 
 ## Rails
 ### Models

@@ -6,17 +6,17 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Dashboard/WorkoutIndex/RouteIndex
+![dashboard]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## Create Route
+![create-route]
 
-## NotebookForm
-![notebook-form]
+## Create/Log Workout
+![log-workout]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[new-user]: ./wireframes/login_form.png
+[new-session]: ./wireframes/sign_up.png
+[dashboard]: ./wireframes/user_dashboard.png
+[create-route]: ./wireframes/create_route.png
+[log-workout]: ./wireframes/log_workout.png

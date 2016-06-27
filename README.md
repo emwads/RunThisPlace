@@ -18,11 +18,11 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
-- [ ] Comments on runs
+- [ ] Comments on workouts
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
-- [ ] Dashboard for tracking runs
+- [ ] Dashboard for tracking workouts
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
@@ -44,42 +44,43 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
 
 ### Phase 1: Backend setup and Front End User Authentication (1 day, W1 Tu 6pm)
 
-**Objective:** Functioning rails project with Authentication
+**Objective:** Functioning rails project with Authentication + workouts
 
 - [ ] create new project
 - [ ] create `User` model
 - [ ] authentication
 - [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [ ] blank dashboard page after signin
+- [ ] create `Workout` model
+- [ ] CRUD API for workouts (`WorkoutsController`)
+- [ ] jBuilder views for accessing workouts
+- [ ] seed database with `User` and `Workout` data
 
-### Phase 2: Routes Model, API, and basic APIUtil (2 days, W1 Th 6pm)
+### Phase 2: Routes Model, API, and basic APIUtil (3 days, W1 Fri 6pm)
 
-**Objective:** RunningRoutes can be created, read, edited and destroyed through the
-API.
+**Objective:** Routes can be created, read, edited and destroyed through the
+API. route viewing and creation occurs on an embedded google map.
 
-- [ ] create `RunningRoute` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`RunningRoutesController`)
+
+- [ ] create `Route` model
+- [ ] seed the database with a small amount of `Route` data
+- [ ] CRUD API for routes (`RoutesController`)
 - [ ] jBuilder views for accessing routes
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [ ] test out API interaction in the console
 
-### Phase 3: Flux Architecture and Router (3 days, W2 M 12pm)
+### Phase 3: Allow for workout comments (1 days, W2 Mon 6pm)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
-user interface.
-Map viewing and creation occurs on an embedded google map.
+**Objective:** Users can comment on workouts. Comments are nested in workouts
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
-- implement each RunningRoute component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-  - [ ] setup google maps API to render a map
+- [ ] create `Comment` model
+- [ ] seed the database with a small amount of `Comment` data
+- [ ] CRUD API for comment (`CommentController`)
+- [ ] jBuilder views for accessing comments
 
-### Phase 4: Start Styling (0.5 days, W2 M 12pm)
+
+### Phase 4: Start Styling (1 days, W2 Tu 6pm)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
@@ -87,35 +88,18 @@ Map viewing and creation occurs on an embedded google map.
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 
-### Phase 5: Notebooks (1 day, W2 Tu 12pm)
+### Phase5: Friending (1 day, W2 Wed 6pm)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+**Objective:** Users can friend each other
 
-- [ ] create `Notebook` model
+- [ ] update `user` model
+- [ ] update user view
 - build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
+  - [ ] friending create, destroy
 - Use CSS to style new views
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
 
-### Phase 6: Tags (1 days, W2 Th 12pm)
-
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
-
-- [ ] create `Tag` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
-- [ ] Style new elements
-
-
-### Phase 7: Styling Cleanup and Seeding (1 day, W2 F 6pm)
+### Phase 6: Styling Cleanup and Seeding (2 days, W2 F 6pm)
 
 **objective:** Make the site feel more cohesive and awesome.
 
@@ -123,15 +107,10 @@ which has its own `Index` view.
 - [ ] Refactor HTML classes & CSS rules
 - [ ] Add modals, transitions, and other styling flourishes.
 
-### Bonus Features (TBD)
-- [ ] Cheers for friends
-- [ ] Pagination / infinite scroll for dashboard
-- [ ] Search for runs by location
-- [ ] Goals
-- [ ] Alternate workout types
 
 [phase-one]: docs/phases/phase1.md
 [phase-two]: docs/phases/phase2.md
 [phase-three]: docs/phases/phase3.md
 [phase-four]: docs/phases/phase4.md
 [phase-five]: docs/phases/phase5.md
+[phase-six]: docs/phases/phase6.md

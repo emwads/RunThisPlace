@@ -1,38 +1,43 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
+# Phase 2: Flux Architecture, googlemaps API, and Route CRUD 
 
 ## Rails
 ### Models
+* Route
 
 ### Controllers
+* Api::RoutesController (create, destroy, index, show, update)
 
 ### Views
+* api/routes/index.json.jbuilder
+* api/routes/show.json.jbuilder
+
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* RoutesIndex
+  - RoutesIndexItem
+* RouteForm
 
 ### Stores
-* Note
+* Route
 
 ### Actions
-* ApiActions.receiveAllNotes -> triggered by ApiUtil
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
-* NoteActions.fetchAllNotes -> triggers ApiUtil
-* NoteActions.fetchSingleNote 
-* NoteActions.createNote
-* NoteActions.editNote 
-* NoteActions.destroyNote
+* triggered by ApiUtil
+  * ApiActions.receiveAllRoutes
+  * ApiActions.receiveSingleRoute
+  * ApiActions.deleteRoute
+* triggers ApiUtil
+  * RouteActions.fetchAllRoutes
+  * RouteActions.fetchSingleRoute
+  * RouteActions.createRoute
+  * RouteActions.editRoute
+  * RouteActions.destroyRoute
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllRoutes
+* ApiUtil.fetchSingleRoute
+* ApiUtil.createRoute
+* ApiUtil.editRoute
+* ApiUtil.destroyRoute
 
 ## Gems/Libraries
-* Flux Dispatcher (npm)
-* Twitter Bootstrap

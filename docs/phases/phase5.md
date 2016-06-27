@@ -1,40 +1,26 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 5: Friending
 
 ## Rails
 ### Models
-* Reminder
+* Users
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
+* Api::Friendings (create, destroy)
 
 ### Views
-* reminders/index.json.jbuilder
+* user --> profile page
+* api/friends
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
 
 ### Stores
-* Reminder
+* Friends
 
 ### Actions
-* ApiActions.receiveAllReminders -> triggered by ApiUtil
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
-* ReminderActions.fetchAllReminders -> triggers ApiUtil
-* ReminderActions.fetchSingleReminder
-* ReminderActions.createReminder
-* ReminderActions.updateReminder
-* ReminderActions.destroyReminder
+
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
+
 
 ## Gems/Libraries

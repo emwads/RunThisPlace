@@ -12,118 +12,143 @@ because once you start implementing your flux loops, that's precisely
 what you'll need to do.
 
 
-## Note Cycles
+## Routes Cycles
 
-### Notes API Request Actions
+### Routes API Request Actions
 
-* `fetchAllNotes`
-  0. invoked from `NotesIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notes` is called.
-  0. `receiveAllNotes` is set as the callback.
+* `fetchAllRoutes`
+  0. invoked from `Dashboard` or `RoutesIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/routes` is called.
+  0. `receiveAllRoutes` is set as the callback.
 
-* `createNote`
-  0. invoked from new note button `onClick`
-  0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the callback.
+* `createRoute`
+  0. invoked from new route button `onClick`
+  0. `POST /api/routes` is called.
+  0. `receiveSingleRoute` is set as the callback.
 
-* `fetchSingleNote`
-  0. invoked from `NoteDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notes/:id` is called.
-  0. `receiveSingleNote` is set as the callback.
+* `fetchSingleRoute`
+  0. invoked from `RouteDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/routes/:id` is called.
+  0. `receiveSingleRoute` is set as the callback.
 
-* `updateNote`
-  0. invoked from `NoteForm` `onSubmit`
-  0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the callback.
+* `updateRoute`
+  0. invoked from `CreateRouteForm` `onSubmit`
+  0. `POST /api/routes` is called.
+  0. `receiveSingleRoute` is set as the callback.
 
-* `destroyNote`
-  0. invoked from delete note button `onClick`
-  0. `DELETE /api/notes/:id` is called.
-  0. `removeNote` is set as the callback.
+* `destroyRoute`
+  0. invoked from delete route button `onClick`
+  0. `DELETE /api/routes/:id` is called.
+  0. `removeRoute` is set as the callback.
 
-### Notes API Response Actions
+### Routes API Response Actions
 
-* `receiveAllNotes`
+* `receiveAllRoutes`
   0. invoked from an API callback.
-  0. `Note` store updates `_notes` and emits change.
+  0. `Route` store updates `_routes` and emits change.
 
-* `receiveSingleNote`
+* `receiveSingleRoute`
   0. invoked from an API callback.
-  0. `Note` store updates `_notes[id]` and emits change.
+  0. `Route` store updates `_routes[id]` and emits change.
 
-* `removeNote`
+* `removeRoute`
   0. invoked from an API callback.
-  0. `Note` store removes `_notes[id]` and emits change.
+  0. `Route` store removes `_routes[id]` and emits change.
 
 ### Store Listeners
 
-* `NotesIndex` component listens to `Note` store.
-* `NoteDetail` component listens to `Note` store.
+* `RoutesIndex` component listens to `Route` store.
+* `RouteIndexItem` component listens to `Route` store.
+* `RouteDetail` component listens to `Route` store.
 
 
-## Notebook Cycles
+## Workout Cycles
 
-### Notebooks API Request Actions
+### Workouts API Request Actions
 
-* `fetchAllNotebooks`
-  0. invoked from `NotebooksIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks` is called.
-  0. `receiveAllNotebooks` is set as the callback.
+* `fetchAllWorkouts`
+  0. invoked from `Dashboard` or `WorkoutsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/workouts` is called.
+  0. `receiveAllWorkouts` is set as the callback.
 
-* `createNotebook`
-  0. invoked from new notebook button `onClick`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+* `createWorkout`
+  0. invoked from new workout button `onClick`
+  0. `POST /api/workouts` is called.
+  0. `receiveSingleWorkout` is set as the callback.
 
-* `fetchSingleNotebook`
-  0. invoked from `NotebookDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks/:id` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+* `fetchSingleWorkout`
+  0. invoked from `WorkoutDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/workouts/:id` is called.
+  0. `receiveSingleWorkout` is set as the callback.
 
-* `updateNotebook`
-  0. invoked from `NotebookForm` `onSubmit`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+* `updateWorkout`
+  0. invoked from `WorkoutForm` `onSubmit`
+  0. `POST /api/workouts` is called.
+  0. `receiveSingleWorkout` is set as the callback.
 
-* `destroyNotebook`
-  0. invoked from delete notebook button `onClick`
-  0. `DELETE /api/notebooks/:id` is called.
-  0. `removeNotebook` is set as the callback.
+* `destroyWorkout`
+  0. invoked from delete workout button `onClick`
+  0. `DELETE /api/workouts/:id` is called.
+  0. `removeWorkout` is set as the callback.
 
-### Notebooks API Response Actions
+### Workouts API Response Actions
 
-* `receiveAllNotebooks`
+* `receiveAllWorkouts`
   0. invoked from an API callback.
-  0. `Notebook` store updates `_notebooks` and emits change.
+  0. `Workout` store updates `_workouts` and emits change.
 
-* `receiveSingleNotebook`
+* `receiveSingleWorkout`
   0. invoked from an API callback.
-  0. `Notebook` store updates `_notebooks[id]` and emits change.
+  0. `Workout` store updates `_workouts[id]` and emits change.
 
-* `removeNotebook`
+* `removeWorkout`
   0. invoked from an API callback.
-  0. `Notebook` store removes `_notebooks[id]` and emits change.
+  0. `Workout` store removes `_workouts[id]` and emits change.
 
 ### Store Listeners
 
-* `NotebooksIndex` component listens to `Notebook` store.
+* `WorkoutsIndex` component listens to `Workout` store.
+* `WorkoutsIndexItem` component listens to `Workout` store.
+* `WorkoutDetail` component listens to `Workout` store.
 
 
-## SearchSuggestion Cycles
+## Friend Cycles
 
-* `fetchSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when there is text
-  0. `GET /api/notes` is called with `text` param.
-  0. `receiveSearchSuggestions` is set as the callback.
+### Friends API Request Actions
 
-* `receiveSearchSuggestions`
+* `fetchAllFriends`
+  0. invoked from `UserDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/friends` is called.
+  0. `receiveAllFriends` is set as the callback.
+
+* `receiveSingleFriend`
   0. invoked from an API callback.
-  0. `SearchSuggestion` store updates `_suggestions` and emits change.
+  0. `Friend` store updates `_friend[id]` and emits change.
 
-* `removeSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when empty
-  0. `SearchSuggestion` store resets `_suggestions` and emits change.
+* `destroyFriend`
+  0. invoked from unfriend route button `onClick`
+  0. `DELETE /api/friends/:id` is called.
+  0. `removeFriend` is set as the callback.
+
+
+### Friends API Response Actions
+
+* `receiveAllFriends`
+  0. invoked from an API callback.
+  0. `Friend` store updates `_friends` and emits change.
+
+* `receiveSingleFriend`
+  0. invoked from an API callback.
+  0. `Friend` store updates `_friends[id]` and emits change.
+
+* `removeFriend`
+  0. invoked from an API callback.
+  0. `Friend` store removes `_friends[id]` and emits change.
 
 ### Store Listeners
 
-* `SearchBarSuggestions` component listens to `SearchSuggestion` store.
+* `FriendDetail` component listens to `Friend` store.
+
+
+
+## RouteSearchSuggestion Cycles?
