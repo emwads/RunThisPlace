@@ -15,10 +15,10 @@ column name   | data type | details
 --------------|-----------|-----------------------
 id            | integer   | not null, primary key
 user_id       | integer   | not null, foreign key, indexed
-work_type     | string    | not null, in [bike, run, hike, walk, gym, other]
+workout_type  | string    | not null, in [bike, run, hike, walk, gym, other]
 run_route_id  | integer   | foreign key
 title         | string    | not null
-description   | string    |
+description   | text      |
 calories      | integer   |
 distance      | float     |
 date          | date      | not null

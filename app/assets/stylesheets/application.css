@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+body{
+  font-family: 'Open Sans', sans-serif;  font-size: 100%;
+}
+
+nav {
+  background-color: #002d72;
+  height: 70px;
+  color: white;
+  vertical-align: middle;
+}
+
+nav li {
+  display: inline-block;
+  float: left;
+  padding: 10px;
+}
+
+h1{
+  font-weight: 700;
+  font-size: 30px;
+}
+
+nav h1 {
+  display: inline-block;
+  float: left;
+  padding: 15px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+.nav-dropdown {
+  float: right;
+}
+
+.main-container {
+
+  display: inline-block;
+  height: 500px;
+  width: 100%;
+  background: url("http://res.cloudinary.com/dznf6puuv/image/upload/v1467220201/runners_fuz38f.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
