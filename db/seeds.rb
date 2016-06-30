@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create({username: "guest", password: "password", name: "Anne Amber"})
+User.create({username: "guest", password: "password"})
 
 Workout.create(user_id: 1, workout_type: "run", title: "Leisurely jog", date: Time.now.to_date)
 Workout.create(user_id: 1, workout_type: "gym", title: "Weights at the gym", date: Date.new(2016,06,25))
