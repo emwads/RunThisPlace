@@ -15,7 +15,7 @@ const App = React.createClass({
 
     	return (
     		<div>
-    			<span>welocome, {SessionStore.currentUser().username}!</span>
+    			<span>welcome, {SessionStore.currentUser().username}!</span>
           <br />
     			<input type="submit" value="logout" onClick={ this._handleLogout } />
     		</div>
@@ -38,6 +38,8 @@ const App = React.createClass({
             <div className="nav">
               <h1 className="logo"><a href="#">runthisplace</a></h1>
               <ul className="nav-links">
+                <li> <Link to="/dashboard">Dashboard</Link>
+</li>
                 <li><a href="#">Workouts</a></li>
                 <li><a href="#">Routes</a></li>
                 <li className="nav-dropdown">{ this.greeting() }</li>

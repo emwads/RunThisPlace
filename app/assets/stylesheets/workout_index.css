@@ -1,0 +1,6 @@
+.workout-container {
+  display: inline-block;
+  border: 1px solid grey;
+  width: 700px;
+  margin-top:50px;
+}
