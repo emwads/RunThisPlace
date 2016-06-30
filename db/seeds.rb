@@ -7,15 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create({username: "guest", password: "password"})
+User.create({username: "guest", password: "password", name: "Anne Amber"})
 
-Workout.create({
-  user_id: 1,
-  workout_type: "run",
-  run_route_id: nil,
-  title: "Run on thursday",
-  description: nil,
-  calories: nil,
-  distance: nil,
-  date: Mon, 01 Jan -4712,
-})
+Workout.create(user_id: 1, workout_type: "run", title: "Leisurely jog", date: Time.now.to_date)
+Workout.create(user_id: 1, workout_type: "gym", title: "Weights at the gym", date: Date.new(2016,06,25))
+Workout.create(user_id: 1, workout_type: "run", title: "Tempo run", date: Date.new(2016,06,27))
+Workout.create(user_id: 1, workout_type: "gym", title: "Gym workout", date: Date.new(2016,06,28))

@@ -24,7 +24,6 @@ const App = React.createClass({
       return (
         <div>
           <Link to="/login" activeClassName="current">Login</Link>
-          <Link to="/signup" activeClassName="current">Sign up!</Link>
         </div>
       );
     }

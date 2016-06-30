@@ -72,14 +72,10 @@ const LoginForm = React.createClass({
   },
 
   fillInGuest(e){
-    e.preventDefault();
-    // let userEl = document.getElementById("username");
-    // userEl.value = "guest";
-    // let passwordEl = document.getElementById("password");
-    // passwordEl.value = "password";
     this.setState({username: "guest"});
-
     this.setState({password: "password"});
+    // e.preventDefault();
+
   },
 
 	render() {

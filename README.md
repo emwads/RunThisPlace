@@ -7,8 +7,8 @@
 
 RunThisPlace is a web application inspired by Map My run that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] Hosting on Heroku
+- [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README ([sample production README](docs/production_readme.md) )
 - [ ] Creation of running routes via map
   - [ ] Rendering of map with a routes path
@@ -55,17 +55,17 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
 
 **Objective:** Functioning rails project with Authentication + workouts
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] styled user signup/signin pages
-- [ ] blank dashboard page after signin
+- [x] create new project
+- [x] create `User` model
+- [x] authentication
+- [x] styled user signup/signin pages
+- [x] blank dashboard page after signin
 
 
 ### Phase 2: Workout model, API, stores and Dashboard components (1 day, W1 Wed 6pm)
 **Objective:** Workouts can be created, read, updated and destroyed via the api
 
-- [ ] create `Workout` model
+- [x] create `Workout` model
 - [ ] CRUD API for workouts (`WorkoutsController`)
 - [ ] build out Flux loop, and components for Workouts
 - [ ] jBuilder views for accessing workouts

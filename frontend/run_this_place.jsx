@@ -15,7 +15,9 @@ const SessionActions = require('./actions/session_actions');
 const App = require('./components/app');
 const LoginForm = require('./components/login_form');
 const Dashboard = require('./components/dashboard');
-const SessionStore = ('./stores/session_store');
+const SessionStore = require('./stores/session_store');
+const Welcome = require('./components/welcome');
+const WorkoutDetail = require('./components/workout_detail');
 
 // const cloudinary = require('cloudinary');
 //
@@ -28,12 +30,12 @@ const SessionStore = ('./stores/session_store');
 const appRouter = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-
+      <IndexRoute component={ Welcome } />
       <Route path="/login" component={ LoginForm } />
       <Route path="/signup" component={ LoginForm } />
-      // <Route path="/dashboard" component={Dashboard} />
 
       <Route path="/dashboard" component={Dashboard} onEnter={ _ensureLoggedIn }/>
+      <Route path="/workouts/:workout_id" component={WorkoutDetail} onEnter={ _ensureLoggedIn }/>
     </Route>
   </Router>
 );
@@ -46,7 +48,7 @@ document.addEventListener("DOMContentLoaded",  () => {
 });
 
 function _ensureLoggedIn(nextState, replace) {
-    if (!SessionStore.isUserLoggedIn()) {
-      hashHistory.replace('/login');
-    }
+  if (!SessionStore.isUserLoggedIn()) {
+    replace('/login');
+  }
 }
