@@ -7,7 +7,20 @@ class User < ActiveRecord::Base
 
   has_many :workouts
 
+  has_many :ran_routes,
+    through: :workouts,
+    source: :run_route
+
+  has_many :authored_routes,
+    class_name: 'RunRoute',
+    foreign_key: :author_id,
+    primary_key: :id
+
   before_validation :ensure_session_token
+
+  def routes
+    return (self.ran_routes + self.authored_routes).uniq
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

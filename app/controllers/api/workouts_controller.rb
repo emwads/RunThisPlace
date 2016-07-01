@@ -18,7 +18,7 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def index
-    @workouts = current_user.workouts
+    @workouts = current_user.workouts.order(:date)
   end
 
   def destroy

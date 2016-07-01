@@ -1,5 +1,5 @@
 const React = require('react');
-const WorkoutIndex = require('./workout_index');
+const WorkoutIndex = require('./workouts/workout_index');
 const WorkoutStore = require('../stores/workout_store');
 const WorkoutActions = require('../actions/workout_actions');
 const Dashboard = React.createClass({

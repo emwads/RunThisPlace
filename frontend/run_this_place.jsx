@@ -18,18 +18,10 @@ const LoginForm = require('./components/login_form');
 const Dashboard = require('./components/dashboard');
 const SessionStore = require('./stores/session_store');
 const Welcome = require('./components/welcome');
-const WorkoutDetail = require('./components/workout_detail');
-const WorkoutForm = require('./components/workout_form');
-const WorkoutEditForm = require('./components/workout_edit_form');
+const WorkoutDetail = require('./components/workouts/workout_detail');
+const WorkoutForm = require('./components/workouts/workout_form');
+const WorkoutEditForm = require('./components/workouts/workout_edit_form');
 
-
-// const cloudinary = require('cloudinary');
-//
-// cloudinary.config({
-//   cloud_name: 'dznf6puuv',
-//   api_key: '523524567283788',
-//   api_secret: 'mNRIHnW4N7x3LYtFqaVm0FVYDes'
-// });
 
 const appRouter = (
   <Router history={hashHistory}>

@@ -1,11 +1,31 @@
 const React = require('react');
 const Link = require('react-router').Link;
-const WorkoutActions = require('../actions/workout_actions');
+const WorkoutStore = require('../../stores/workout_store');
+const WorkoutActions = require('../../actions/workout_actions');
 const hashHistory = require('react-router').hashHistory;
-const SessionStore = require('../stores/session_store');
+const SessionStore = require('../../stores/session_store');
 
 
-const WorkoutForm = React.createClass({
+const WorkoutEditForm = React.createClass({
+
+  _workoutsChanged() {
+    let workout =  WorkoutStore.find(parseInt(this.props.params.workoutId));
+    this.setState({
+      title: workout.title,
+      workout_type: workout.workout_type,
+      description: workout.description || "",
+      calories: workout.calories || "",
+      distance: workout.distance || "",
+      date: workout.date,
+      run_route_id: workout.run_route_id || ""
+    });
+  },
+
+  componentDidMount() {
+    this.workoutListener = WorkoutStore.addListener(this._workoutsChanged);
+    WorkoutActions.fetchSingleWorkout(parseInt(this.props.params.workoutId));
+  },
+
   getInitialState() {
     return {
       description: "",
@@ -16,6 +36,10 @@ const WorkoutForm = React.createClass({
       date: "",
       run_route_id: ""
     };
+  },
+
+  componentWillUnmount() {
+    this.workoutListener.remove();
   },
 
   handleSubmit(event) {
@@ -84,7 +108,7 @@ const WorkoutForm = React.createClass({
     return(
       <div className="create-workout-container">
       <form onSubmit={this.handleSubmit}>
-           <h3>Log a workout</h3>
+           <h3>Edit workout</h3>
 
 
         <label for="title">
@@ -152,4 +176,4 @@ const WorkoutForm = React.createClass({
 
 });
 
-module.exports = WorkoutForm;
+module.exports = WorkoutEditForm;

@@ -30,11 +30,12 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
 - [ ] Dashboard for tracking workouts
-  - [ ] Dashboard shows user's most recent workouts in a workout listing
+  - [x] Dashboard shows user's most recent workouts in a workout listing
   - [ ] Dashboard possibly shows lifetime mileage data
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
+  - [ ] Static maps for displaying maps(?)
 
 ## Design Docs
 * [View Wireframes][views]

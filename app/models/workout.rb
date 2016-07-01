@@ -4,4 +4,6 @@ class Workout < ActiveRecord::Base
 
   belongs_to :user
 
+  belongs_to :run_route
+
 end

@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629015424) do
+ActiveRecord::Schema.define(version: 20160701161421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "run_routes", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.text     "description"
+    t.integer  "author_id",   null: false
+    t.text     "map_info",    null: false
+    t.float    "distance"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "run_routes", ["author_id"], name: "index_run_routes_on_author_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

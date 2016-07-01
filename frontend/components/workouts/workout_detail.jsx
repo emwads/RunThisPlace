@@ -1,6 +1,6 @@
 const React = require('react');
-const WorkoutStore = require('../stores/workout_store');
-const WorkoutActions = require('../actions/workout_actions');
+const WorkoutStore = require('../../stores/workout_store');
+const WorkoutActions = require('../../actions/workout_actions');
 const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
 

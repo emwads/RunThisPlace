@@ -7,7 +7,7 @@ id          | integer   | not null, primary key
 title       | string    | not null
 description | text      |
 author_id   | integer   | not null, foreign key (references users), indexed
-map_info    | json      | not null, geoJSON serialized data(?)
+map_info    | text      | not null JSON string
 
 
 ## workouts
