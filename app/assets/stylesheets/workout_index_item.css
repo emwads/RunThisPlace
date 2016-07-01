@@ -10,3 +10,8 @@
   border-top: 1px solid grey;
 
 }
+
+h2 {
+  font-weight: 700;
+  font-size: 24px;
+}

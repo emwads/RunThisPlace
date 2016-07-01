@@ -9,7 +9,6 @@ const WorkoutIndexItem = React.createClass({
       <div className="workout-list">
 
         <h3><Link to={`/workouts/${this.props.workout.id}`} >{this.props.workout.title}</Link></h3>
-        <span>description: {this.props.workout.description}</span><br />
         <span>date: {this.props.workout.date}</span><br />
         <span>distance: {this.props.workout.distance}</span><br />
         <span>exercise type: {this.props.workout.workout_type}</span><br />

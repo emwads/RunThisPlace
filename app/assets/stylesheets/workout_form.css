@@ -1,0 +1,7 @@
+.create-workout-container label{
+  padding: 10px;
+}
+
+.create-workout-container input {
+  display: inline-block;
+}

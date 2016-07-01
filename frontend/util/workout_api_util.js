@@ -7,7 +7,7 @@ const WorkoutApiUtil = {
       success: cb
     });
   },
-  fetchSingleWorkouts (id, cb) {
+  fetchSingleWorkout (id, cb) {
     $.ajax({
       url: `api/workouts/${id}`,
       success: cb
@@ -29,12 +29,12 @@ const WorkoutApiUtil = {
       success: cb
     });
   },
-  deletePost (id, cb) {
+  deleteWorkout (id, cb) {
     $.ajax({
-      url: `api/posts/${id}`,
+      url: `api/workouts/${id}`,
       type: "DELETE",
-      success (post) {
-        cb(post);
+      success (workout) {
+        cb(workout);
       }
     });
   }

@@ -1,6 +1,12 @@
 class Api::WorkoutsController < ApplicationController
 
   def create
+    @workout = Workout.new(workout_params)
+    if @workout.save
+      render :show
+    else
+      render json: @workout.errors.full_messages, status: 422
+    end
   end
 
   def edit
@@ -26,7 +32,7 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def workout_params
-    params.require(:workouts).permit(:user_id, :workout_type, :run_route_id,
+    params.require(:workout).permit(:user_id, :workout_type, :run_route_id,
                                      :title, :description, :calories, :distance,
                                      :date)
   end

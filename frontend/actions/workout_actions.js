@@ -10,19 +10,20 @@ const WorkoutActions = {
 
   },
 
-  fetchSingleWorkout() {
-    WorkoutApiUtil.fetchSingleWorkouts(WorkoutActions.receiveAllWorkouts);
+  fetchSingleWorkout(id) {
+    WorkoutApiUtil.fetchSingleWorkout(id, WorkoutActions.receiveSingleWorkout);
   },
 
   createWorkout(workout){
-    WorkoutApiUtil.createWorkout(WorkoutActions.receiveSingleWorkout);
+    WorkoutApiUtil.createWorkout({workout: workout}, WorkoutActions.receiveSingleWorkout);
+
   },
 
-  updateWorkout (data) {
-    WorkoutApiUtil.updateWorkout(data, this.receiveSingleWorkout);
+  updateWorkout (workout) {
+    WorkoutApiUtil.updateWorkout(workout, this.receiveSingleWorkout);
   },
 
-  deletePost (id) {
+  deleteWorkout (id) {
     WorkoutApiUtil.deleteWorkout(id, this.removeWorkout);
   },
 

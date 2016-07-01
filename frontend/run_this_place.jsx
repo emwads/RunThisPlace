@@ -7,9 +7,10 @@ const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
-
-
+window.WorkoutStore = require('./stores/workout_store');
 window.SessionAptUtil = require('./util/session_api_util');
+window.WorkoutActions = require('./actions/workout_actions');
+
 
 const SessionActions = require('./actions/session_actions');
 const App = require('./components/app');
@@ -18,6 +19,9 @@ const Dashboard = require('./components/dashboard');
 const SessionStore = require('./stores/session_store');
 const Welcome = require('./components/welcome');
 const WorkoutDetail = require('./components/workout_detail');
+const WorkoutForm = require('./components/workout_form');
+const WorkoutEditForm = require('./components/workout_edit_form');
+
 
 // const cloudinary = require('cloudinary');
 //
@@ -35,8 +39,11 @@ const appRouter = (
       <Route path="/signup" component={ LoginForm } />
 
       <Route path="/dashboard" component={Dashboard} onEnter={ _ensureLoggedIn }/>
-      <Route path="/workouts/:workout_id" component={WorkoutDetail} onEnter={ _ensureLoggedIn }/>
-    </Route>
+      <Route path="/workouts/new" component={WorkoutForm} onEnter={ _ensureLoggedIn }/>
+      <Route path="/workouts/:workoutId" component={WorkoutDetail} onEnter={ _ensureLoggedIn }/>
+      <Route path="/workouts/:workoutId/edit" component={WorkoutEditForm} onEnter={ _ensureLoggedIn }/>
+
+  </Route>
   </Router>
 );
 
