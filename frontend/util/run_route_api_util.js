@@ -1,37 +1,37 @@
-const WorkoutStore = require('../stores/workout_store');
+const RunRouteStore = require('../stores/workout_store');
 
-const WorkoutApiUtil = {
-  fetchAllWorkouts(cb){
+const RunRouteApiUtil = {
+  fetchAllRunRoutes(cb){
     $.ajax({
-      url: 'api/workouts',
+      url: 'api/run_routes',
       success: cb
     });
   },
-  fetchSingleWorkout (id, cb) {
+  fetchSingleRunRoute (id, cb) {
     $.ajax({
-      url: `api/workouts/${id}`,
+      url: `api/run_routes/${id}`,
       success: cb
     });
   },
-  createWorkout (data, cb) {
+  createRunRoute (data, cb) {
     $.ajax({
-      url: 'api/workouts',
+      url: 'api/run_routes',
       type: 'POST',
       data: data,
       success: cb
     });
   },
-  updateWorkout (data, cb) {
+  updateRunRoute (data, cb) {
     $.ajax({
-      url: 'api/workouts',
+      url: 'api/run_routes',
       type: 'PATCH',
       data: data,
       success: cb
     });
   },
-  deleteWorkout (id, cb) {
+  deleteRunRoute (id, cb) {
     $.ajax({
-      url: `api/workouts/${id}`,
+      url: `api/run_routes/${id}`,
       type: "DELETE",
       success (workout) {
         cb(workout);
@@ -41,4 +41,4 @@ const WorkoutApiUtil = {
 
 };
 
-module.exports = WorkoutApiUtil;
+module.exports = RunRouteApiUtil;

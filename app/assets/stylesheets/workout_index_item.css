@@ -1,14 +1,18 @@
-.workout-list h3 a{
+.dash-list h3 {
   color: blue;
   font-size: 16px;
+  display: block;
+}
+
+.dash-list {
 
 }
 
-
-.workout-list {
-  margin: 10px 0;
+.dash-list {
+  margin: 10px 5px  ;
   border-top: 1px solid grey;
-
+  line-height: 1.25;
+  font-size: 14px;
 }
 
 h2 {

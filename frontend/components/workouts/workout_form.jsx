@@ -21,7 +21,6 @@ const WorkoutForm = React.createClass({
   handleSubmit(event) {
     event.preventDefault();
     const workout = Object.assign({}, this.state);
-    workout["user_id"]=SessionStore.currentUser().id;
     WorkoutActions.createWorkout(workout);
     hashHistory.push("/dashboard");
 
@@ -52,7 +51,7 @@ const WorkoutForm = React.createClass({
   workoutFormType() {
     const workoutOptions = ["run", "walk", "hike", "gym", "other"];
     return(
-      <label for="workout_type">Workout Type
+      <label for="workout_type">Workout Type <br />
         <select id="workout_type" onChange={this.workoutTypeUpdate} value="run">
           <option value="run">
             run
@@ -139,7 +138,7 @@ const WorkoutForm = React.createClass({
             placeholder="Pick your route" />
         </label>
                 <br />
-        <input type="submit" className="submit" value="Save Workout" /> <br />
+        <input type="submit" className="submit" value="Save Workout" /> 
 
         <button onClick={this.handleCancel}>Cancel</button>
 

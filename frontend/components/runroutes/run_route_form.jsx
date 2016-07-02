@@ -1,8 +1,8 @@
 const React = require('react');
 const Link = require('react-router').Link;
-const RouteActions = require('../actions/workout_actions');
+const RouteActions = require('../../actions/run_route_actions');
 const hashHistory = require('react-router').hashHistory;
-const SessionStore = require('../stores/session_store');
+const SessionStore = require('../../stores/session_store');
 
 
 const RouteForm = React.createClass({
@@ -15,9 +15,8 @@ const RouteForm = React.createClass({
 
   handleSubmit(event) {
     event.preventDefault();
-    const workout = Object.assign({}, this.state);
-    workout["user_id"]=SessionStore.currentUser().id;
-    RouteActions.createRoute(workout);
+    const runRoute = Object.assign({}, this.state);
+    RouteActions.createRoute(runRoute);
     hashHistory.push("/dashboard");
 
   },
@@ -35,9 +34,9 @@ const RouteForm = React.createClass({
   render () {
 
     return(
-      <div className="create-workout-container">
+      <div className="create-runroute-container">
       <form onSubmit={this.handleSubmit}>
-           <h3>Log a workout</h3>
+           <h3>Create a Route</h3>
 
 
         <label for="title">
@@ -48,7 +47,7 @@ const RouteForm = React.createClass({
         </label>
 
         <br />
-        <label for="description">Describe your workout: <br />
+        <label for="description">Description: <br />
           <textarea id="description"
             value={this.state.description}
             onChange={this.update("description")}

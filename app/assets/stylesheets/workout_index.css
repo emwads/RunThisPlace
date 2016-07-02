@@ -1,6 +1,8 @@
-.workout-container {
+.dash-el-container {
+  padding: 10px;
   display: inline-block;
-  border: 1px solid grey;
-  width: 700px;
-  margin-top:50px;
+  border: 1px dashed grey;
+  width: 40%;
+  margin:20px;
+  float: left;
 }

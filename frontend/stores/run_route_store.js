@@ -1,55 +1,55 @@
 const Store = require('flux/utils').Store;
-const WorkoutConstants = require('../constants/workout_constants.js');
+const RunRouteConstants = require('../constants/run_route_constants.js');
 const AppDispatcher = require('../dispatcher/dispatcher.js');
 
-const WorkoutStore = new Store(AppDispatcher);
+const RunRouteStore = new Store(AppDispatcher);
 
-let _workouts = {};
+let _runroutes = {};
 
-const resetWorkouts = function (workouts) {
-  _workouts = {};
+const resetRunRoutes = function (runroutes) {
+  _runroutes = {};
 
-  workouts.forEach(function (workout) {
-    _workouts[workout.id] = workout;
+  runroutes.forEach(function (runroute) {
+    _runroutes[runroute.id] = runroute;
   });
 };
 
-const setWorkout = function (workout) {
-  _workouts[workout.id] = workout;
+const setRunRoute = function (runroute) {
+  _runroutes[runroute.id] = runroute;
 };
 
-const removeWorkout = function (workout) {
-  delete _workouts[workout.id];
+const removeRunRoute = function (runroute) {
+  delete _runroutes[runroute.id];
 };
 
-WorkoutStore.all = function () {
-  return Object.keys(_workouts).map(function (workoutId) {
-    return _workouts[workoutId];
+RunRouteStore.all = function () {
+  return Object.keys(_runroutes).map(function (runrouteId) {
+    return _runroutes[runrouteId];
   });
 };
 
-WorkoutStore.find = function (id) {
-  return _workouts[id];
+RunRouteStore.find = function (id) {
+  return _runroutes[id];
 };
 
 
-WorkoutStore.__onDispatch = function (payload) {
+RunRouteStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
-    case WorkoutConstants.WORKOUTS_RECEIVED:
-      resetWorkouts(payload.workouts);
+    case RunRouteConstants.RUNROUTES_RECEIVED:
+      resetRunRoutes(payload.runroutes);
       this.__emitChange();
       break;
 
-    case WorkoutConstants.WORKOUT_RECEIVED:
-      setWorkout(payload.workout);
+    case RunRouteConstants.RUNROUTE_RECEIVED:
+      setRunRoute(payload.runroute);
       this.__emitChange();
       break;
 
-    case WorkoutConstants.WORKOUT_REMOVED:
-      removeWorkout(payload.workout);
+    case RunRouteConstants.RUNROUTE_REMOVED:
+      removeRunRoute(payload.runroute);
       this.__emitChange();
       break;
   }
 };
 
-module.exports = WorkoutStore;
+module.exports = RunRouteStore;

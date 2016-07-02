@@ -6,7 +6,7 @@ const WorkoutIndexItem = React.createClass({
   render () {
 
     return(
-      <div className="workout-list">
+      <div className="dash-list">
 
         <h3><Link to={`/workouts/${this.props.workout.id}`} >{this.props.workout.title}</Link></h3>
         <span>date: {this.props.workout.date}</span><br />

@@ -7,7 +7,7 @@ const WorkoutIndex = React.createClass({
   render () {
 
     return(
-      <div className="workout-container">
+      <div className="dash-el-container">
         <h2>Workouts</h2>
         <Link to="/workouts/new">Log Workout</Link>
 

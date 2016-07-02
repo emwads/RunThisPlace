@@ -2,36 +2,38 @@ class Api::RunRoutesController < ApplicationController
 
 
     def create
-      @run_route = RunRoute.new(run_route_params)
-      if @run_route.save
+      @runroute = RunRoute.new(run_route_params)
+      @runroute.author_id = current_user.id
+
+      if @runroute.save
         render :show
       else
-        render json: @run_route.errors.full_messages, status: 422
+        render json: @runroute.errors.full_messages, status: 422
       end
     end
 
 
     def show
-      @run_route = RunRoute.find(params[:id])
+      @runroute = RunRoute.find(params[:id])
       render :show
     end
 
     def index
-      @run_routes = current_user.routes.order(:title)
+      @runroutes = current_user.routes
     end
 
     def destroy
-      @run_route = RunRoute.find(params[:id])
+      @runroute = RunRoute.find(params[:id])
 
-      if @run_route.destroy
+      if @runroute.destroy
         render :show
       else
-        render json: @run_route.errors.full_messages, status: 422
+        render json: @runroute.errors.full_messages, status: 422
       end
     end
 
     def run_route_params
-      params.require(:run_route).permit(:author_id, :title, :description,
+      params.require(:run_route).permit(:title, :description,
                                         :distance)
     end
 end

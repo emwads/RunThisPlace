@@ -18,9 +18,15 @@ const LoginForm = require('./components/login_form');
 const Dashboard = require('./components/dashboard');
 const SessionStore = require('./stores/session_store');
 const Welcome = require('./components/welcome');
+
 const WorkoutDetail = require('./components/workouts/workout_detail');
 const WorkoutForm = require('./components/workouts/workout_form');
 const WorkoutEditForm = require('./components/workouts/workout_edit_form');
+
+const RunRouteDetail = require('./components/runroutes/run_route_detail');
+const RunRouteForm = require('./components/runroutes/run_route_form');
+const RunRouteFullIndex = require('./components/runroutes/run_route_full_index');
+
 
 
 const appRouter = (
@@ -31,9 +37,15 @@ const appRouter = (
       <Route path="/signup" component={ LoginForm } />
 
       <Route path="/dashboard" component={Dashboard} onEnter={ _ensureLoggedIn }/>
+
       <Route path="/workouts/new" component={WorkoutForm} onEnter={ _ensureLoggedIn }/>
       <Route path="/workouts/:workoutId" component={WorkoutDetail} onEnter={ _ensureLoggedIn }/>
       <Route path="/workouts/:workoutId/edit" component={WorkoutEditForm} onEnter={ _ensureLoggedIn }/>
+
+      <Route path="/runroutes" component={RunRouteFullIndex} />
+      <Route path="/runroutes/new" component={RunRouteForm} onEnter={ _ensureLoggedIn }/>
+      <Route path="/runroutes/:runRouteId" component={RunRouteDetail} />
+
 
   </Route>
   </Router>

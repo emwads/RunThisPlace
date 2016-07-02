@@ -5,3 +5,7 @@
 .create-workout-container input {
   display: inline-block;
 }
+
+select#workout_type {
+  width: 200px;
+}
