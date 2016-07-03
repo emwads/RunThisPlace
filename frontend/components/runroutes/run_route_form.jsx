@@ -27,15 +27,14 @@ const RouteForm = React.createClass({
     event.preventDefault();
     hashHistory.push("/dashboard");
   },
-  //
-  // update(property) {
-  //   return (e) => this.setState({[property]: e.target.value});
-  // },
+
+  update(property) {
+    return (e) => this.setState({[property]: e.target.value});
+  },
 
 
 
   handleUpdate(points) {
-    // this.setState({mapPoints: points});
     console.log(this.state.mapPoints);
     this.forceUpdate();
   },
