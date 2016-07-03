@@ -35,11 +35,15 @@ const RouteForm = React.createClass({
 
 
   handleUpdate(points) {
-    console.log(this.state.mapPoints);
     this.forceUpdate();
   },
 
+  handleClear() {
+    event.preventDefault();
+    this.setState({mapPoints: []});
+    this.forceUpdate();
 
+  },
 
   render () {
 
@@ -71,16 +75,22 @@ const RouteForm = React.createClass({
 
           <button onClick={this.handleCancel}>Cancel</button>
 
+          <button onClick={this.handleClear}>Clear Map Pointss</button>
+
+
         </form>
 
       </div>
+
+
+
       <div>
-
         <RouteFormMap event={this.handleUpdate} mapPoints={this.state.mapPoints}/>
-
-
-
       </div>
+
+      <h3>route info</h3>
+      <div id="routeInfo"></div>
+
       <FormRender mapPoints={this.state.mapPoints}  />
 
     </div>

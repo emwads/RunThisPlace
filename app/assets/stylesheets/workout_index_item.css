@@ -19,3 +19,26 @@ h2 {
   font-weight: 700;
   font-size: 24px;
 }
+
+
+.dash-el-container {
+  padding: 10px;
+  display: inline-block;
+  border: 1px dashed grey;
+  width: 40%;
+  margin:20px;
+  float: left;
+}
+
+
+.create-workout-container label{
+  padding: 10px;
+}
+
+.create-workout-container input {
+  display: inline-block;
+}
+
+select#workout_type {
+  width: 200px;
+}

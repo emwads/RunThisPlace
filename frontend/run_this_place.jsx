@@ -22,6 +22,7 @@ const Welcome = require('./components/welcome');
 const WorkoutDetail = require('./components/workouts/workout_detail');
 const WorkoutForm = require('./components/workouts/workout_form');
 const WorkoutEditForm = require('./components/workouts/workout_edit_form');
+const WorkoutFullIndex = require('./components/workouts/workout_full_index');
 
 const RunRouteDetail = require('./components/runroutes/run_route_detail');
 const RunRouteForm = require('./components/runroutes/run_route_form');
@@ -38,6 +39,8 @@ const appRouter = (
 
       <Route path="/dashboard" component={Dashboard} onEnter={ _ensureLoggedIn }/>
 
+
+      <Route path="/workouts" component={WorkoutFullIndex} onEnter={ _ensureLoggedIn }/>
       <Route path="/workouts/new" component={WorkoutForm} onEnter={ _ensureLoggedIn }/>
       <Route path="/workouts/:workoutId" component={WorkoutDetail} onEnter={ _ensureLoggedIn }/>
       <Route path="/workouts/:workoutId/edit" component={WorkoutEditForm} onEnter={ _ensureLoggedIn }/>
