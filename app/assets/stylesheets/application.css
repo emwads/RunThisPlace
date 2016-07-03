@@ -56,7 +56,7 @@ h3 {
   display: inline-block;
   height: 500px;
   width: 100%;
-  background: url("http://res.cloudinary.com/dznf6puuv/image/upload/v1467220201/runners_fuz38f.jpg") no-repeat center center fixed;
+  background: url("https://res.cloudinary.com/dznf6puuv/image/upload/v1467220201/runners_fuz38f.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -92,6 +92,13 @@ input, textarea, select, button {
    box-sizing: border-box;
 }
 
+
+textarea {
+  line-height: 1.15;
+  width: 500px;
+  height: 100px;
+}
+
 select, input {
    height: 40px;
 }
@@ -115,4 +122,10 @@ input.logout-button {
 
 .dash-header {
   margin: 10px;
+}
+
+.map {
+  width: 45%;
+  height: 500px;
+
 }

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160701161421) do
     t.integer  "author_id",   null: false
     t.text     "map_info",    null: false
     t.float    "distance"
+    t.string   "first_point"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

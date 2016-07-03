@@ -45,9 +45,10 @@ const WorkoutDetail = React.createClass({
     if (this.state.workout !== undefined) {
       return (
         <div>
-          <Link to={`workouts/${this.props.params.workoutId}/edit`}>
-            Edit Workout
-          </Link>
+          <button onClick={ () => {
+              hashHistory.push(`workouts/${this.props.params.workoutId}/edit`);
+            } }>edit workout</button>
+
         </div>
       );
     }

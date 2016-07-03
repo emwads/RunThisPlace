@@ -76,7 +76,7 @@ const WorkoutEditForm = React.createClass({
   workoutFormType() {
     const workoutOptions = ["run", "walk", "hike", "gym", "other"];
     return(
-      <label for="workout_type">Workout Type
+      <label for="workout_type">Workout Type<br />
         <select id="workout_type" onChange={this.workoutTypeUpdate} value="run">
           <option value="run">
             run

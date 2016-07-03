@@ -77,9 +77,6 @@ const RunRouteDetail = React.createClass({
         {this.detailRunRoute()}
         <br />
         <br />
-        {this.editRunRouteButton()}
-        <br />
-        <br />
         {this.deleteRunRouteButton()}
       </div>
     );

@@ -7,7 +7,7 @@ const RunRouteFullIndex = React.createClass({
 
     return(
       <div className="dash-el-container">
-        <h2>Your Routes</h2>
+        <h2>My Routes</h2>
         <article>will be here some day</article>
       </div>
     );

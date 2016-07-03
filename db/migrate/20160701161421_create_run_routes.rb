@@ -7,6 +7,7 @@ class CreateRunRoutes < ActiveRecord::Migration
       t.integer :author_id, null: false
       t.text :map_info, null: false
       t.float :distance
+      t.string :first_point
 
       t.timestamps null: false
     end

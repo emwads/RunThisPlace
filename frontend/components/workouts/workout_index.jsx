@@ -8,7 +8,7 @@ const WorkoutIndex = React.createClass({
 
     return(
       <div className="dash-el-container">
-        <h2>Workouts</h2>
+        <h2>My Workouts</h2>
         <Link to="/workouts/new">Log Workout</Link>
 
         {this.props.workouts.map(function (workout) {
