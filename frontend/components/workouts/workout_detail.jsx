@@ -47,16 +47,16 @@ const WorkoutDetail = React.createClass({
   detailWorkout(){
     if (this.state.workout !== undefined) {
       return (
-        <div>
-          <figure>
-            <img src={this.icons(this.state.workout.workout_type)} alt={this.state.workout.workout_type} />
-          </figure>
+        <div className="detail-description">
           <h2>{this.state.workout.title}</h2>
           <span>description: {this.state.workout.description}</span><br />
           <span>date: {this.state.workout.date}</span><br />
           <span>distance: {this.state.workout.distance}</span><br />
           <span>exercise type: {this.state.workout.workout_type}</span><br />
           <span>calories: {this.state.workout.calories}</span><br />
+          <figure>
+            <img src={this.icons(this.state.workout.workout_type)} alt={this.state.workout.workout_type} />
+          </figure>
         </div>
       );
     }
@@ -65,8 +65,8 @@ const WorkoutDetail = React.createClass({
   editWorkoutButton(){
     if (this.state.workout !== undefined) {
       return (
-        <div>
-          <button onClick={ () => {
+        <div className="detail-button">
+          <button  onClick={ () => {
               hashHistory.push(`workouts/${this.props.params.workoutId}/edit`);
             } }>edit workout</button>
 
@@ -75,11 +75,24 @@ const WorkoutDetail = React.createClass({
     }
   },
 
+  toDashboardButton(){
+    return (
+      <div className="detail-button">
+        <button onClick={ () => {
+            hashHistory.push(`dashboard`);
+          } }>Back Home</button>
+
+      </div>
+    );
+
+  },
+
+
   deleteWorkoutButton(){
     if (this.state.workout !== undefined) {
       return (
-        <div>
-          <button onClick={this.deleteWorkout}>Delete workout</button>
+        <div className="detail-button" >
+          <button  onClick={this.deleteWorkout}>Delete workout</button>
         </div>
       );
     }
@@ -97,13 +110,11 @@ const WorkoutDetail = React.createClass({
 
     return(
       <div>
+
         {this.detailWorkout()}
-        <br />
-        <br />
         {this.editWorkoutButton()}
-        <br />
-        <br />
         {this.deleteWorkoutButton()}
+        {this.toDashboardButton()}
       </div>
     );
 

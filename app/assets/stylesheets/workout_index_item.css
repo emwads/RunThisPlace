@@ -1,7 +1,7 @@
 
 
 .dash-list {
-  margin: 10px 5px  ;
+  padding: 5px 5px  ;
   border-top: 1px solid grey;
   line-height: 1.25;
   font-size: 14px;
@@ -29,6 +29,9 @@ h2 {
   font-size: 24px;
 }
 
+.dash-el-header {
+  margin: 0 0 10px 0;
+}
 
 .dash-el-container {
   padding: 10px;

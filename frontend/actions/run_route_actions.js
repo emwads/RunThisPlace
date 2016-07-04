@@ -5,6 +5,7 @@ const RunRouteConstants = require('../constants/run_route_constants');
 const RunRouteApiUtil = require('../util/run_route_api_util');
 
 const RunRouteActions = {
+
   fetchAllRunRoutes() {
     RunRouteApiUtil.fetchAllRunRoutes(RunRouteActions.receiveAllRunRoutes);
 
@@ -15,7 +16,8 @@ const RunRouteActions = {
   },
 
   createRunRoute(runroute){
-    RunRouteApiUtil.createRunRoute({runroute: runroute}, RunRouteActions.receiveSingleRunRoute);
+    console.log({run_route: runroute});
+    RunRouteApiUtil.createRunRoute({run_route: runroute}, RunRouteActions.receiveSingleRunRoute);
 
   },
 

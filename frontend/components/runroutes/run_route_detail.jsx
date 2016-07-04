@@ -3,6 +3,7 @@ const RunRouteStore = require('../../stores/run_route_store');
 const RunRouteActions = require('../../actions/run_route_actions');
 const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
+const RouteDetailMap = require('./run_route_detail_map');
 
 const RunRouteDetail = React.createClass({
   getStateFromStore () {
@@ -29,11 +30,13 @@ const RunRouteDetail = React.createClass({
   detailRunRoute(){
     if (this.state.runroute !== undefined) {
       return (
-        <div>
+        <div className="detail-description">
           <h2>{this.state.runroute.title}</h2>
           <span>description: {this.state.runroute.description}</span><br />
           <span>distance: {this.state.runroute.distance}</span><br />
-          <span>map info: {this.state.runroute.map_info}</span><br />
+            {this.deleteRunRouteButton()}
+            {this.toDashboardButton()}
+
 
         </div>
       );
@@ -55,7 +58,7 @@ const RunRouteDetail = React.createClass({
   deleteRunRouteButton(){
     if (this.state.runroute !== undefined) {
       return (
-        <div>
+        <div className="detail-button">
           <button onClick={this.deleteRunRoute}>Delete Route</button>
         </div>
       );
@@ -68,16 +71,35 @@ const RunRouteDetail = React.createClass({
 
   },
 
-  render () {
+  toDashboardButton(){
+    return (
+      <div className="detail-button">
+        <button onClick={ () => {
+            hashHistory.push(`dashboard`);
+          } }>Back Home</button>
 
+      </div>
+    );
+
+  },
+
+  renderMap() {
+    if (this.state.runroute) {
+      return (<RouteDetailMap mapPoints={JSON.parse(this.state.runroute.map_info)}
+              displayDirections={true} />);
+    }
+  },
+
+
+  render () {
 
 
     return(
       <div>
         {this.detailRunRoute()}
+        {this.renderMap()}
+
         <br />
-        <br />
-        {this.deleteRunRouteButton()}
       </div>
     );
 

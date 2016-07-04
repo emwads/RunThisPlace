@@ -132,6 +132,51 @@ input.logout-button {
 
 .map {
   width: 500px;
-  height: 500px;
+  height: 400px;
+  display: inline-block;
+  float: left;
+  margin: 20px;
 
+}
+
+
+
+.direction-panel {
+    float: left;
+    display: inline-block;
+    width: 40%;
+    margin: 20px;
+}
+
+.map-thumb {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  float: right;
+  margin: 10px;
+
+}
+
+
+.route-description {
+  display: inline-block;
+  float: left;
+  width: 200px;
+}
+
+
+.detail-description {
+  display: block;
+  margin: 20px;
+  line-height: 1.5;
+}
+
+
+.detail-button {
+  display: inline-block;
+  margin: 0 0 0 10px;
+}
+
+figure {
+  margin: 10px;
 }

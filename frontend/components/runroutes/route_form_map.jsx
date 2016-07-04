@@ -13,13 +13,10 @@ const RouteFormMap = React.createClass({
 
   displayRoute(coordsArray) {
 
-    const origin = coordsArray[0];
-    const destination = coordsArray[coordsArray.length - 1];
-    let waypoints = coordsArray.slice(1, -1).map( (coord) => {
-         return {location: coord};
-        });
-
-    // console.log(`coordsArray ${coordsArray}`);
+    const origin = coordsArray[0].location;
+    const destination = coordsArray[coordsArray.length - 1].location;
+    let waypoints = coordsArray.slice(1, -1);
+    // console.log(coordsArray);
     // console.log(`origin ${origin}`);
     // console.log(`destination ${destination}`);
     // console.log(`waypoints ${waypoints}`);
@@ -33,7 +30,12 @@ const RouteFormMap = React.createClass({
       travelMode: google.maps.TravelMode.WALKING,
     }, function(response, status) {
       // self.props.runroute = response;
-      console.log(response);
+      // console.log(response);
+
+      // let wpoints = response.routes[0].legs[0].via_waypoint;
+      // console.log(wpoints);
+
+
       if (status === google.maps.DirectionsStatus.OK) {
         self.directionsDisplay.setOptions({ preserveViewport: true });
         self.directionsDisplay.setDirections(response);
@@ -54,7 +56,7 @@ const RouteFormMap = React.createClass({
     total *= 0.000621371;
     total = Math.round(total * 100) / 100;
     this.props.onUpdate('distance', total);
-    document.getElementById('total').innerHTML = total + ' mi';
+    return total;
   },
 
 
@@ -62,23 +64,20 @@ const RouteFormMap = React.createClass({
   addListeners () {
     const self = this;
     this.mapsListener = google.maps.event.addListener(this.map, 'click', event => {
-      const coords = { lat: event.latLng.lat(), lng: event.latLng.lng() };
-      this._handleClick(coords);
+      const wayPoint = {location: { lat: event.latLng.lat(), lng: event.latLng.lng() }, stopover: false};
+      this._handleClick(wayPoint);
     });
 
 
-    // this.directionsListener = this.directionsDisplay.addListener('dragend', function() {
-    //   self.computeTotalDistance(self.directionsDisplay.getDirections());
-    // });
-    //
-    // this.directionsListener = this.directionsDisplay.addListener('directions_changed', function() {
-    //   self.computeTotalDistance(self.directionsDisplay.getDirections());
-    // });
+    this.directionsListener = this.directionsDisplay.addListener('directions_changed', function() {
+      self.computeTotalDistance(self.directionsDisplay.getDirections());
+      // console.log(self.directionsDisplay.getDirections());
+    });
   },
 
-  _handleClick(coords) {
-    this.props.mapPoints.push(coords);
-    this.props.startUpdate();
+  _handleClick(wayPoint) {
+    this.props.mapPoints.push(wayPoint);
+    this.props.onUpdate('mapPoints', this.props.mapPoints);
   },
 
   createMarker(coords) {
@@ -87,10 +86,6 @@ const RouteFormMap = React.createClass({
       map: this.map,
       draggable: true,
       title: "point"
-    });
-
-    google.maps.event.addListener(marker, 'dragend', function() {
-      self.directionsDisplay.getDirections();
     });
 
     this.markers.push(marker);
@@ -103,16 +98,16 @@ const RouteFormMap = React.createClass({
   },
 
   createAllMarkers () {
-    this.props.mapPoints.forEach( (singleCoord) =>{
-      this.createMarker(singleCoord);
+    this.props.mapPoints.forEach( (singleMapPoint) =>{
+      this.createMarker(singleMapPoint.location);
     });
   },
 
   createStartEndMarkers () {
     const points = this.props.mapPoints;
 
-    this.createMarker(points[points.length-1]);
-    this.createMarker(points[0]);
+    this.createMarker(points[points.length-1].location);
+    this.createMarker(points[0].location);
 
   },
 
@@ -144,26 +139,25 @@ const RouteFormMap = React.createClass({
 
     this.createAllMarkers();
     this.addListeners();
+
+
+
   },
 
+  shouldComponentUpdate (nextProps, nextState) {
+    return nextProps.distance === this.props.distance;
+
+  },
 
     componentDidUpdate(){
       this.removeAllMarkers();
-
-      // if (this.props.mapPoints.length <= 1) {
-      //   this.directionsDisplay.setMap(null);
-      //   this.createAllMarkers();
-      // } else if (this.props.mapPoints.length >= 2) {
-      //   this.createStartEndMarkers();
-      //   this.displayRoute(this.props.mapPoints);
-      // }
-
 
       if (this.props.mapPoints.length <= 1) {
         this.directionsDisplay.setMap(null);
         this.createAllMarkers();
       } else if (this.props.mapPoints.length >= 2) {
         this.displayRoute(this.props.mapPoints);
+
       }
 
 
@@ -177,11 +171,14 @@ const RouteFormMap = React.createClass({
     },
 
 
+
+
   render () {
 
     return(
+
       <div className="map" ref="map">Map</div>
-    );
+);
 
   }
 

@@ -17,11 +17,15 @@ const RouteForm = React.createClass({
   },
 
   handleSubmit(event) {
-    debugger;
     event.preventDefault();
-    const runRoute = Object.assign({}, this.state);
-    // RouteActions.createRoute(runRoute);
-    // hashHistory.push("/dashboard");
+    let runRoute = {};
+    runRoute['title'] = this.state.title;
+    // debugger;
+    runRoute['description'] = this.state.description;
+    runRoute['map_info'] = JSON.stringify(this.state.mapPoints);
+    runRoute['distance'] =this.state.distance;
+    RouteActions.createRunRoute(runRoute);
+    hashHistory.push("/dashboard");
 
   },
 
@@ -35,10 +39,6 @@ const RouteForm = React.createClass({
   },
 
 
-
-  handleUpdate(points) {
-    this.forceUpdate();
-  },
 
   handleClear() {
     event.preventDefault();
@@ -55,7 +55,6 @@ const RouteForm = React.createClass({
   },
 
   render () {
-
     return(
       <div>
         <div className="create-runroute-container">
@@ -94,14 +93,14 @@ const RouteForm = React.createClass({
 
 
       <div>
-        <RouteFormMap startUpdate={this.handleUpdate}
-                      onUpdate={this.childInitUpdate}
-                      route={this.state.runRoute}
+        <RouteFormMap onUpdate={this.childInitUpdate}
+                      distance={this.state.distance}
                       mapPoints={this.state.mapPoints}/>
       </div>
-      
+
       <h3>distance</h3>
-      <div id='total'></div>
+      {this.state.distance}
+
 
       <h3>route info</h3>
       <div id="routeInfo"></div>
