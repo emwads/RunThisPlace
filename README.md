@@ -74,7 +74,7 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
 - [ ] create Workout related components (index, list items, details, create form)
 - [ ] create and style `Dashboard` component
 
-### Phase 3: RunRoutes Model, API, and basic APIUtil (3 days, W2 Tu 6pm)
+### Phase 3: RunRoutes Model, API, and basic APIUtil (4 days, W2 Tu 6pm)
 
 **Objective:** RunRoutes can be created, read and destroyed through the
 API. route viewing and creation occurs on an embedded google map.

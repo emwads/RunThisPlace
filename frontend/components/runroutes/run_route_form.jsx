@@ -4,22 +4,24 @@ const RouteActions = require('../../actions/run_route_actions');
 const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../../stores/session_store');
 const RouteFormMap = require('./route_form_map');
-const FormRender = require('./form_render');
 
 const RouteForm = React.createClass({
   getInitialState() {
     return {
       description: "",
       title: "",
-      mapPoints: []
+      mapPoints: [],
+      runRoute: {},
+      distance: 0
     };
   },
 
   handleSubmit(event) {
+    debugger;
     event.preventDefault();
     const runRoute = Object.assign({}, this.state);
-    RouteActions.createRoute(runRoute);
-    hashHistory.push("/dashboard");
+    // RouteActions.createRoute(runRoute);
+    // hashHistory.push("/dashboard");
 
   },
 
@@ -73,25 +75,30 @@ const RouteForm = React.createClass({
         <br />
           <input type="submit" className="submit" value="Save Route" /> <br />
 
-          <button onClick={this.handleCancel}>Cancel</button>
-
-          <button onClick={this.handleClear}>Clear Map Pointss</button>
 
 
         </form>
+        <button onClick={this.handleCancel}>Cancel</button>
+
+        <button onClick={this.handleClear}>Clear Map Points</button>
 
       </div>
 
 
 
       <div>
-        <RouteFormMap event={this.handleUpdate} mapPoints={this.state.mapPoints}/>
+        <RouteFormMap event={this.handleUpdate}
+                      route={this.state.runRoute}
+                      distance={this.state.distance}
+                      mapPoints={this.state.mapPoints}/>
       </div>
 
       <h3>route info</h3>
       <div id="routeInfo"></div>
 
-      <FormRender mapPoints={this.state.mapPoints}  />
+      <h3>distance</h3>
+      <div id='total'></div>
+
 
     </div>
 
