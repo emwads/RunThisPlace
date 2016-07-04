@@ -32,7 +32,7 @@ const RouteFormMap = React.createClass({
       waypoints: waypoints,
       travelMode: google.maps.TravelMode.WALKING,
     }, function(response, status) {
-      self.props.runroute = response;
+      // self.props.runroute = response;
       console.log(response);
       if (status === google.maps.DirectionsStatus.OK) {
         self.directionsDisplay.setOptions({ preserveViewport: true });
@@ -53,13 +53,13 @@ const RouteFormMap = React.createClass({
     }
     total *= 0.000621371;
     total = Math.round(total * 100) / 100;
-    this.props.distance = total;
+    this.props.onUpdate('distance', total);
     document.getElementById('total').innerHTML = total + ' mi';
   },
 
 
 
-  addListener () {
+  addListeners () {
     const self = this;
     this.mapsListener = google.maps.event.addListener(this.map, 'click', event => {
       const coords = { lat: event.latLng.lat(), lng: event.latLng.lng() };
@@ -67,14 +67,18 @@ const RouteFormMap = React.createClass({
     });
 
 
-    this.directionsListener = this.directionsDisplay.addListener('directions_changed', function() {
-      self.computeTotalDistance(self.directionsDisplay.getDirections());
-    });
+    // this.directionsListener = this.directionsDisplay.addListener('dragend', function() {
+    //   self.computeTotalDistance(self.directionsDisplay.getDirections());
+    // });
+    //
+    // this.directionsListener = this.directionsDisplay.addListener('directions_changed', function() {
+    //   self.computeTotalDistance(self.directionsDisplay.getDirections());
+    // });
   },
 
   _handleClick(coords) {
     this.props.mapPoints.push(coords);
-    this.props.event();
+    this.props.startUpdate();
   },
 
   createMarker(coords) {
@@ -139,7 +143,7 @@ const RouteFormMap = React.createClass({
     });
 
     this.createAllMarkers();
-    this.addListener();
+    this.addListeners();
   },
 
 

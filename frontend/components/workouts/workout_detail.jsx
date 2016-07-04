@@ -4,6 +4,9 @@ const WorkoutActions = require('../../actions/workout_actions');
 const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
 
+
+
+
 const WorkoutDetail = React.createClass({
   getStateFromStore () {
     return {workout: WorkoutStore.find(parseInt(this.props.params.workoutId))};
@@ -26,15 +29,33 @@ const WorkoutDetail = React.createClass({
     this.workoutListener.remove();
   },
 
+  icons (type) {
+    switch (type) {
+      case "walk":
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621146/walk-icon_h4lvnc.png';
+      case "hike":
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621454/noun_45242_cc_hkhvpf.png';
+      case "run":
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621146/run-icon_p1gdsf.png';
+      case "gym":
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621146/gym-icon_laruyg.png';
+      case "other":
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621146/other-icon_cj9ota.png';
+    }
+  },
+
   detailWorkout(){
     if (this.state.workout !== undefined) {
       return (
         <div>
+          <figure>
+            <img src={this.icons(this.state.workout.workout_type)} alt={this.state.workout.workout_type} />
+          </figure>
           <h2>{this.state.workout.title}</h2>
           <span>description: {this.state.workout.description}</span><br />
           <span>date: {this.state.workout.date}</span><br />
           <span>distance: {this.state.workout.distance}</span><br />
-          <span>exercise type: {this.state.workout.workoutType}</span><br />
+          <span>exercise type: {this.state.workout.workout_type}</span><br />
           <span>calories: {this.state.workout.calories}</span><br />
         </div>
       );

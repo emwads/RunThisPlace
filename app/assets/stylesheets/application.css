@@ -17,6 +17,12 @@ body{
   font-family: 'Open Sans', sans-serif;  font-size: 100%;
 }
 
+.cf:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 nav {
   background-color: #002d72;
   height: 70px;

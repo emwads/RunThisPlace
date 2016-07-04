@@ -47,8 +47,8 @@ const App = React.createClass({
               <h1 className="logo">{ this.logoLink() }</h1>
               <ul className="nav-links">
                 <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><Link to="/workouts">Workouts</Link></li>
-                <li><Link to="/runroutes">Routes</Link></li>
+                <li><Link to="/dashboard">Workouts</Link></li>
+                <li><Link to="/dashboard">Routes</Link></li>
               </ul>
               <div className="nav-dropdown">{ this.greeting() }</div>
             </div>

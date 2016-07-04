@@ -47,6 +47,13 @@ const RouteForm = React.createClass({
 
   },
 
+  childInitUpdate(key, val) {
+    this.setState({
+        [key]: val
+    });
+
+  },
+
   render () {
 
     return(
@@ -87,17 +94,18 @@ const RouteForm = React.createClass({
 
 
       <div>
-        <RouteFormMap event={this.handleUpdate}
+        <RouteFormMap startUpdate={this.handleUpdate}
+                      onUpdate={this.childInitUpdate}
                       route={this.state.runRoute}
-                      distance={this.state.distance}
                       mapPoints={this.state.mapPoints}/>
       </div>
+      
+      <h3>distance</h3>
+      <div id='total'></div>
 
       <h3>route info</h3>
       <div id="routeInfo"></div>
 
-      <h3>distance</h3>
-      <div id='total'></div>
 
 
     </div>

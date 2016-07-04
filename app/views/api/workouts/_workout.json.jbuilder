@@ -1,5 +1,5 @@
 json.extract!(workout,
-  :id, :user_id, :workout_type, :title, :description, :date)
+  :id, :user_id, :workout_type, :title, :description, :date, :distance, :calories)
 
 if show_user
   json.userId workout.user.id

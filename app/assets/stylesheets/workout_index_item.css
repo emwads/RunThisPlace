@@ -1,18 +1,27 @@
-.dash-list h3 {
-  color: blue;
-  font-size: 16px;
-  display: block;
-}
 
-.dash-list {
-
-}
 
 .dash-list {
   margin: 10px 5px  ;
   border-top: 1px solid grey;
   line-height: 1.25;
   font-size: 14px;
+}
+
+.dash-list h3 {
+  color: blue;
+  font-size: 20px;
+  margin: 5px;
+
+}
+
+.dash-list div {
+  line-height: 1.5;
+}
+
+.dash-list figure {
+  display: inline-block;
+  float: left;
+  padding: 10px 25px 0px 10px;
 }
 
 h2 {
@@ -25,6 +34,7 @@ h2 {
   padding: 10px;
   display: inline-block;
   border: 1px dashed grey;
+  min-width: 300px;
   width: 40%;
   margin:20px;
   float: left;
