@@ -67,12 +67,12 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
 **Objective:** Workouts can be created, read, updated and destroyed via the api
 
 - [x] create `Workout` model
-- [ ] CRUD API for workouts (`WorkoutsController`)
-- [ ] build out Flux loop, and components for Workouts
-- [ ] jBuilder views for accessing workouts
-- [ ] seed database with `User` and `Workout` data
-- [ ] create Workout related components (index, list items, details, create form)
-- [ ] create and style `Dashboard` component
+- [x] CRUD API for workouts (`WorkoutsController`)
+- [x] build out Flux loop, and components for Workouts
+- [x] jBuilder views for accessing workouts
+- [x] seed database with `User` and `Workout` data
+- [x] create Workout related components (index, list items, details, create form)
+- [x] create and style `Dashboard` component
 
 ### Phase 3: RunRoutes Model, API, and basic APIUtil (3 days, W2 Mon 6pm)
 
@@ -80,16 +80,26 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
 API. route viewing and creation occurs on an embedded google map.
 
 
-- [ ] create `RunRoutes` model
-- [ ] seed the database with a small amount of `RunRoutes` data
-- [ ] CRUD API for routes (`RunRoutesController`)
-- [ ] jBuilder views for accessing RunRoutes
-- [ ] user interface as googlemaps components for creating and showing RunRoutes
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console
+- [x] create `RunRoutes` model
+- [x] seed the database with a very small amount of `RunRoutes` data
+- [x] CRD API for routes (`RunRoutesController`)
+- [x] jBuilder views for accessing RunRoutes
+- [x] user interface as googlemaps components for creating and showing RunRoutes
+- [x] setup Webpack & Flux scaffold
+- [x] setup `APIUtil` to interact with the API
+- [x] test out API interaction in the console
 
-### Phase 4: Allow for workout comments (1 days, W2 Tu 6pm)
+### Phase 4: Friending (1 day, W2 Tu 6pm)
+
+**Objective:** Users can friend each other
+
+- [ ] update `user` model
+- [ ] update user view
+- build out API, Flux loop, and components for:
+- [ ] friending create, destroy
+- Use CSS to style new views
+
+### Phase 5: Allow for workout comments (1 days, W2 Wed 6pm)
 
 **Objective:** Users can comment on workouts. Comments are nested in workouts
 
@@ -100,23 +110,23 @@ API. route viewing and creation occurs on an embedded google map.
 - [ ] react components for creating/destroying comments
 
 
-### Phase5: Friending (1 day, W2 Wed 6pm)
 
-**Objective:** Users can friend each other
+### Phase 6: styling + dashboard
 
-- [ ] update `user` model
-- [ ] update user view
-- build out API, Flux loop, and components for:
-  - [ ] friending create, destroy
-- Use CSS to style new views
+**Objective:** style and create dashboard
+- [ ] good styling
+- [ ] lifetime miles?
 
-### Phase 6: Finish Runroutes (1 day, W2 Thu 6pm)
+### Phase 7: Finish Runroutes (1 day, W2 Thu 6pm)
 
 **Objective:** Add editing to run routes
 
 - [ ] add editing
 - [ ] fix query limit issues
 - [ ] fix routes to save dragged points
+- [ ] add elevation to route maps?
+- [ ] add more seed data
+
 
 [phase-one]: docs/phases/phase1.md
 [phase-two]: docs/phases/phase2.md

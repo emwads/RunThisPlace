@@ -83,6 +83,7 @@ const LoginForm = React.createClass({
     let navLink;
     let submitButton;
     let guestButton="";
+    let emailField="";
     if (this.formType() === "login") {
       navLink = <div className="alt-login-link">Already have an account? <Link to="/signup">signup</Link></div>;
       submitButton = <input type="submit" className="submit" value="Log In" />;
@@ -90,6 +91,13 @@ const LoginForm = React.createClass({
     } else {
       navLink = <div className="alt-login-link">Want to create an account? <Link to="/login">login</Link></div>;
       submitButton = <input type="submit" className="submit" value="Sign Up" />;
+      emailField = (<label for="email">
+          <input id="email" type="email"
+            value={this.state.email}
+            onChange={this.update("email")}
+            placeholder="email" />
+          { this.fieldErrors("email") }
+        </label>);
 
     }
 

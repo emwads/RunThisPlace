@@ -51,7 +51,7 @@ h3 {
   font-size: 24px;
 }
 
-.nav-dropdown {
+.nav-user-container {
   float: right;
   padding: 12px 10px;
 }
@@ -156,8 +156,8 @@ input.logout-button {
 }
 
 .map-thumb {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   display: inline-block;
   float: right;
   margin: 10px;
@@ -185,6 +185,19 @@ input.logout-button {
   margin: 0 0 0 10px;
 }
 
-figure {
-  margin: 10px;
+.user-thumb {
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 0px 0;
+  border-radius: 20px;
+}
+
+.nav-user{
+  display:flex;
+}
+
+
+
+.solid-back {
+  background-color: lightgrey;
 }

@@ -1,0 +1,12 @@
+.user-profile-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+}
+
+.user-detail-container {
+  text-align: center;
+  margin: auto;
+  min-width: 300px;
+  width: 50%
+}

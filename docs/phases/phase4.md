@@ -1,36 +1,38 @@
-# Phase 4: Comment CRUD api, flux parts
+# Phase 5: Friending
 
 ## Rails
 ### Models
-* Comment
+* Users
 
 ### Controllers
-* Api::WorkoutsController (show)
+* Api::Friendings (create, destroy)
 
 ### Views
-* api/Workouts/show.json.jbuilder
-
+* user --> profile page
+* api/friends
 
 ## Flux
 ### Views (React Components)
-* Workouts detail
-* Comment Detail
+* UserInfo
+* FriendInfo
 
 ### Stores
-* Comment
+* Friends
 
 ### Actions
 * triggered by ApiUtil
-  * ApiActions.receiveAllComments -takes workout id
-  * ApiActions.deleteComment
+  * ApiActions.receiveAllFriends -takes workout id
+  * ApiActions.deleteFriend
 * triggers ApiUtil
-  * CommentActions.fetchAllComments
-  * CommentActions.createComment
-  * CommentActions.destroyComment
+  * FriendActions.fetchAllFriends
+  * FriendActions.createFriend
+  * FriendActions.destroyFriend
 
 ### ApiUtil
-* ApiUtil.fetchAllComments
-* ApiUtil.createComment
-* ApiUtil.destroyComment
+* ApiUtil.fetchAllFriends
+* ApiUtil.createFriend
+* ApiUtil.destroyFriend
+
+
 
 ## Gems/Libraries

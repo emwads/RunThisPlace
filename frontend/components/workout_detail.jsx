@@ -3,7 +3,7 @@ const WorkoutStore = require('../../stores/workout_store');
 const WorkoutActions = require('../../actions/workout_actions');
 const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
-const RunRouteMap = require('../runroutes/run_route_detail_map');
+
 
 
 
@@ -62,19 +62,6 @@ const WorkoutDetail = React.createClass({
     }
   },
 
-  showRouteMap() {
-    const self = this;
-    if (this.state.workout !== undefined  && this.state.workout.map_info !== undefined) {
-      return (<div className='cf'>
-        <h3>{this.state.workout.routeTitle}</h3>
-        <div>
-          <RunRouteMap displayDirections={false}  mapPoints={JSON.parse(this.state.workout.map_info)}/>
-
-        </div>
-      </div>);
-          }
-  },
-
   editWorkoutButton(){
     if (this.state.workout !== undefined) {
       return (
@@ -125,12 +112,9 @@ const WorkoutDetail = React.createClass({
       <div>
 
         {this.detailWorkout()}
-        {this.showRouteMap()}
         {this.editWorkoutButton()}
         {this.deleteWorkoutButton()}
         {this.toDashboardButton()}
-
-
       </div>
     );
 

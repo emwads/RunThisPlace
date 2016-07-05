@@ -36,9 +36,10 @@ h2 {
 .dash-el-container {
   padding: 10px;
   display: inline-block;
-  border: 1px dashed grey;
-  min-width: 300px;
-  width: 40%;
+  border: 1px dashed lightgrey;
+  /*min-width: 300px;
+  width: 50%%;*/
+  width: 500px;
   margin:20px;
   float: left;
 }
@@ -60,4 +61,31 @@ select#workout_type {
   margin: auto;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.map-thumb-display {
+  display: inline-block;
+  position: relative;
+}
+
+.map-overlay-tile {
+  position: absolute;
+  background: white;
+  box-shadow: 3px 3px 10px #888888;
+  bottom: 15px;
+  left: 16px;
+  width: 115px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.dash-route-list {
+  display: inline-block;
+  float: left;
+}
+
+.dash-route-container {
+  border: solid 1px lightgrey;
+  width:300px;
+  float:left;
 }

@@ -14,10 +14,17 @@ const App = React.createClass({
     if (SessionStore.isUserLoggedIn()) {
 
     	return (
-    		<div>
-    			<span>welcome, {SessionStore.currentUser().username}!</span>
-          <br />
-    			<input type="submit" className="logout-button" value="logout" onClick={ this._handleLogout } />
+    		<div className="nav-user">
+          <div>
+            <figure>
+              <img  className="user-thumb" src={SessionStore.currentUser().picture_url} />
+            </figure>
+          </div>
+          <div>
+      			<span>welcome, {SessionStore.currentUser().username}!</span>
+            <br />
+      			<input type="submit" className="logout-button" value="logout" onClick={ this._handleLogout } />
+          </div>
     		</div>
     	);
     } else if ( !["/login", "/signup"].includes(this.props.location.pathname) ) {
@@ -49,8 +56,9 @@ const App = React.createClass({
                 <li><Link to="/dashboard">Dashboard</Link></li>
                 <li><Link to="/dashboard">Workouts</Link></li>
                 <li><Link to="/dashboard">Routes</Link></li>
+                <li><Link to="/dashboard">Connect</Link></li>
               </ul>
-              <div className="nav-dropdown">{ this.greeting() }</div>
+              <div className="nav-user-container">{ this.greeting() }</div>
             </div>
           </nav>
         </header>

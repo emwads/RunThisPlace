@@ -1,1 +1,1 @@
-json.partial!('api/workouts/workout', workout: @workout, show_user: true)
+json.partial!('api/workouts/workout', workout: @workout, show_user: true, show_route: true)

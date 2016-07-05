@@ -19,14 +19,12 @@ const RouteForm = React.createClass({
   handleSubmit(event) {
     event.preventDefault();
     let runRoute = {};
-    runRoute['title'] = this.state.title;
-    // debugger;
-    runRoute['description'] = this.state.description;
+    runRoute['title'] = this.refs.title.value;
+    runRoute['description'] =  this.refs.description.value;
     runRoute['map_info'] = JSON.stringify(this.state.mapPoints);
     runRoute['distance'] =this.state.distance;
     RouteActions.createRunRoute(runRoute);
     hashHistory.push("/dashboard");
-
   },
 
   handleCancel(event) {
@@ -54,6 +52,7 @@ const RouteForm = React.createClass({
 
   },
 
+
   render () {
     return(
       <div className='form-container'>
@@ -63,17 +62,15 @@ const RouteForm = React.createClass({
 
 
           <label for="title">
-            <input id="title" type="text"
-              value={this.state.title}
-              onChange={this.update("title")}
+            <input id="title" name="title" type="text"
+              ref='title' required
               placeholder="title" />
           </label>
 
           <br />
           <label for="description">Description: <br />
-            <textarea id="description"
-              value={this.state.description}
-              onChange={this.update("description")}
+            <textarea id="description" name="description"
+              ref='description' required
               placeholder="description"></textarea>
           </label>
 
@@ -100,12 +97,6 @@ const RouteForm = React.createClass({
 
       <h3>distance</h3>
       {this.state.distance}
-
-
-      <h3>route info</h3>
-      <div id="routeInfo"></div>
-
-
 
     </div>
 

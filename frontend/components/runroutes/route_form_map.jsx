@@ -134,7 +134,6 @@ const RouteFormMap = React.createClass({
 
     this.directionsDisplay = new google.maps.DirectionsRenderer({
       draggable: true,
-      panel: document.getElementById('routeInfo')
     });
 
     this.createAllMarkers();

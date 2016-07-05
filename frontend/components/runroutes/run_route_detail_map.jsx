@@ -5,7 +5,7 @@ const ReactDOM = require('react-dom');
 
 const mapOptions = {
   center: {lat: 37.7758, lng: -122.435},
-  zoom: 13,
+  zoom: 15,
   draggable: false,
   disableDoubleClickZoom: true,
   scrollwheel: false,
@@ -35,7 +35,6 @@ const RouteDetailMap = React.createClass({
       if (status === google.maps.DirectionsStatus.OK) {
         self.directionsDisplay.setDirections(response);
         self.directionsDisplay.setMap(self.map);
-
       } else {
         console.log('Could not display directions due to: ' + status);
       }

@@ -15,16 +15,13 @@ const RunRouteIndexItem = React.createClass({
   render () {
 
     return(
-      <div className="dash-list cf">
-        <div className="route-description">
+          <div className="map-thumb-display">
+            <Link to={`/runroutes/${this.props.runroute.id}`} >
+            {this.renderMap()}
+            <div className="map-overlay-tile">{this.props.runroute.title}</div>
+            </Link>
+          </div>
 
-          <h3><Link to={`/runroutes/${this.props.runroute.id}`} >{this.props.runroute.title}</Link></h3>
-          <span>{this.props.runroute.description}</span><br />
-        </div>
-
-          {this.renderMap()}
-
-      </div>
     );
 
   }

@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
   end
 
   def ensure_profile_pic
-    self.picture_url = 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_200/v1467673998/profile-icon_qcbhrl.png'
+    self.picture_url ||= 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_200/v1467673998/profile-icon_qcbhrl.png'
   end
 
 

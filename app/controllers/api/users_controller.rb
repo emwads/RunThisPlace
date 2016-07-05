@@ -12,6 +12,26 @@ class Api::UsersController < ApplicationController
   end
 
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+
+  def index
+    @users = User.all
+  end
+
+  def update
+    if @user.save
+      login(@user)
+      render "api/users/show"
+    else
+
+      render json: @user.errors, status: 422
+    end
+  end
+
+
   def user_params
     params.require(:user).permit(:username, :password, :name, :birthdate,
                                  :picture_url, :weight, :height,)

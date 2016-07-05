@@ -7,7 +7,7 @@ const RunRouteIndex = React.createClass({
   render () {
 
     return(
-      <div className="dash-el-container">
+      <div className=" dash-el-container dash-route-container cf">
         <div className="dash-el-header">
           <h2>Your Routes</h2><br />
           <Link to="/runroutes/new">+ Create New Route</Link>

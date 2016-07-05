@@ -44,7 +44,7 @@ Workout.create(user_id: 1, workout_type: "run", title: "Practice Timed run", dat
 Workout.create(user_id: 1, workout_type: "run", title: "Long run", date: Date.new(2016,06,22), run_route_id:1)
 
 
-RunRoute.create(title: "Ferry Builing to Pier 39",
+RunRoute.create(title: "Ferry Building to Pier 39",
                 description: "Nice 5k pedestrian path",
                 author_id: 1,
                 map_info: "[{\"location\":{\"lat\":37.79528237319238,\"lng\":-122.3935317993164},\"stopover\":false},{\"location\":{\"lat\":37.80898152447637,\"lng\":-122.41254329812364},\"stopover\":false},{\"location\":{\"lat\":37.79473977809016,\"lng\":-122.39378929121813},\"stopover\":false}]",
