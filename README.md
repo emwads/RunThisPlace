@@ -95,9 +95,8 @@ API. route viewing and creation occurs on an embedded google map.
 
 - [ ] update `user` model
 - [ ] update user view
-- build out API, Flux loop, and components for:
-- [ ] friending create, destroy
-- Use CSS to style new views
+- [ ] build out API, Flux loop, and components friending create, destroy
+- [ ] Use CSS to style new views
 
 ### Phase 5: Allow for workout comments (1 days, W2 Wed 6pm)
 
@@ -115,6 +114,7 @@ API. route viewing and creation occurs on an embedded google map.
 
 **Objective:** style and create dashboard
 - [ ] good styling
+- [ ] sliced/trimmed down list of routes/workouts/friends
 - [ ] lifetime miles?
 
 ### Phase 7: Finish Runroutes (1 day, W2 Thu 6pm)
@@ -126,6 +126,8 @@ API. route viewing and creation occurs on an embedded google map.
 - [ ] fix routes to save dragged points
 - [ ] add elevation to route maps?
 - [ ] add more seed data
+- [ ] get selector for routes in workout form
+
 
 
 [phase-one]: docs/phases/phase1.md

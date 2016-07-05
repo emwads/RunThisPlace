@@ -56,3 +56,16 @@ RunRoute.create(title: "Golden Gate Park",
                 author_id: 2,
                 map_info: "[{\"location\":{\"lat\":37.77189073454407,\"lng\":-122.45447158813477},\"stopover\":false},{\"location\":{\"lat\":37.772354343171685,\"lng\":-122.46777534476678},\"stopover\":false},{\"location\":{\"lat\":37.77086173978431,\"lng\":-122.49000549316406},\"stopover\":false},{\"location\":{\"lat\":37.766655149434776,\"lng\":-122.50635623931885},\"stopover\":false},{\"location\":{\"lat\":37.766349823375414,\"lng\":-122.48369693756104},\"stopover\":false},{\"location\":{\"lat\":37.770556430834176,\"lng\":-122.45524406433105},\"stopover\":false}]",
                 distance: 6.51)
+
+RunRoute.create(title: "Ferry Building to Pier 39",
+                description: "Nice 5k pedestrian path",
+                author_id: 1,
+                map_info:
+                 "[{\"location\":{\"lat\":37.79528237319238,\"lng\":-122.3935317993164},\"stopover\":false},{\"location\":{\"lat\":37.80898152447637,\"lng\":-122.41254329812364},\"stopover\":false},{\"location\":{\"lat\":37.79473977809016,\"lng\":-122.39378929121813},\"stopover\":false}]",
+                distance: 2.97)
+
+RunRoute.create(title: "Lake Merrit",
+                description: "Oakland, CA",
+                author_id: 3,
+                map_info: "[{\"location\":{\"lat\":37.81046205554298,\"lng\":-122.26216793060303},\"stopover\":false},{\"location\":{\"lat\":37.80815648152641,\"lng\":-122.26143836975098},\"stopover\":false},{\"location\":{\"lat\":37.80663069443297,\"lng\":-122.26049423217773},\"stopover\":false},{\"location\":{\"lat\":37.805274412773024,\"lng\":-122.256760597229},\"stopover\":false},{\"location\":{\"lat\":37.807410545108375,\"lng\":-122.25221157073975},\"stopover\":false},{\"location\":{\"lat\":37.801951417436676,\"lng\":-122.2547435760498},\"stopover\":false},{\"location\":{\"lat\":37.798662182986924,\"lng\":-122.25907802581787},\"stopover\":false},{\"location\":{\"lat\":37.80347730120659,\"lng\":-122.26075172424316},\"stopover\":false},{\"location\":{\"lat\":37.80791913893801,\"lng\":-122.26306915283203},\"stopover\":false},{\"location\":{\"lat\":37.81027557796748,\"lng\":-122.2622537612915},\"stopover\":false}]",
+                distance: 3.18)

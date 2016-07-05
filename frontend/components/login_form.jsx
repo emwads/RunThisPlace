@@ -4,6 +4,7 @@ const Link = require('react-router').Link;
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
+const ErrorActions = require('../actions/error_actions');
 const hashHistory = require('react-router').hashHistory;
 
 
@@ -16,7 +17,8 @@ const LoginForm = React.createClass({
   getInitialState() {
     return {
       username: "",
-      password: ""
+      password: "",
+      email: ""
     };
   },
 
@@ -37,11 +39,15 @@ const LoginForm = React.createClass({
   },
 
 	handleSubmit(e) {
+    ErrorActions.clearErrors();
 		e.preventDefault();
+
 
 		const formData = {
 			username: this.state.username,
-			password: this.state.password
+			password: this.state.password,
+      email: this.state.email,
+      name: this.state.name
 		};
 
     if (this.props.location.pathname === "/login") {
@@ -84,6 +90,7 @@ const LoginForm = React.createClass({
     let submitButton;
     let guestButton="";
     let emailField="";
+    let nameField="";
     if (this.formType() === "login") {
       navLink = <div className="alt-login-link">Already have an account? <Link to="/signup">signup</Link></div>;
       submitButton = <input type="submit" className="submit" value="Log In" />;
@@ -95,8 +102,15 @@ const LoginForm = React.createClass({
           <input id="email" type="email"
             value={this.state.email}
             onChange={this.update("email")}
-            placeholder="email" />
+            placeholder="email"  required/>
           { this.fieldErrors("email") }
+        </label>);
+      nameField = (<label for="name">
+          <input id="name" type="name"
+            value={this.state.name}
+            onChange={this.update("name")}
+            placeholder="name"  required/>
+          { this.fieldErrors("name") }
         </label>);
 
     }
@@ -112,6 +126,7 @@ const LoginForm = React.createClass({
   					<input id="username" type="text"
               value={this.state.username}
               onChange={this.update("username")}
+              required
               placeholder="username" />
             { this.fieldErrors("username") }
           </label>
@@ -120,11 +135,16 @@ const LoginForm = React.createClass({
             <input id="password" type="password"
               value={this.state.password}
               onChange={this.update("password")}
+              required
               placeholder="password" />
             { this.fieldErrors("password") }
   				</label>
 
+          {nameField}
+          {emailField}
+
           { this.fieldErrors("base") }
+
 
   				{submitButton}
 
