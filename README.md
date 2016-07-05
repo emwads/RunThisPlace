@@ -13,7 +13,7 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
 - [ ] Creation of running routes via map
   - [ ] Rendering of map with a routes path
   - [ ] Allow users to click on map to create a run route
-  - [ ] Saves run routes into the database via geoJSON(?)
+  - [ ] Saves run routes into the database
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
@@ -74,7 +74,7 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
 - [ ] create Workout related components (index, list items, details, create form)
 - [ ] create and style `Dashboard` component
 
-### Phase 3: RunRoutes Model, API, and basic APIUtil (4 days, W2 Tu 6pm)
+### Phase 3: RunRoutes Model, API, and basic APIUtil (3 days, W2 Mon 6pm)
 
 **Objective:** RunRoutes can be created, read and destroyed through the
 API. route viewing and creation occurs on an embedded google map.
@@ -89,7 +89,7 @@ API. route viewing and creation occurs on an embedded google map.
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console
 
-### Phase 4: Allow for workout comments (1 days, W2 Wed 6pm)
+### Phase 4: Allow for workout comments (1 days, W2 Tu 6pm)
 
 **Objective:** Users can comment on workouts. Comments are nested in workouts
 
@@ -100,7 +100,7 @@ API. route viewing and creation occurs on an embedded google map.
 - [ ] react components for creating/destroying comments
 
 
-### Phase5: Friending (1 day, W2 Thu 6pm)
+### Phase5: Friending (1 day, W2 Wed 6pm)
 
 **Objective:** Users can friend each other
 
@@ -110,6 +110,13 @@ API. route viewing and creation occurs on an embedded google map.
   - [ ] friending create, destroy
 - Use CSS to style new views
 
+### Phase 6: Finish Runroutes (1 day, W2 Thu 6pm)
+
+**Objective:** Add editing to run routes
+
+- [ ] add editing
+- [ ] fix query limit issues
+- [ ] fix routes to save dragged points
 
 [phase-one]: docs/phases/phase1.md
 [phase-two]: docs/phases/phase2.md

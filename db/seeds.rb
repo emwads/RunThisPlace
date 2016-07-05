@@ -7,10 +7,27 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create({username: "guest", password: "password"})
-User.create({username: "andy", password: "password"})
-User.create({username: "bobby", password: "password"})
-User.create({username: "carly", password: "password"})
+User.create({username: "guest", password: "password", name: "Guest",
+            birthdate: Date.new(1985, 6, 20), weight: 194.5, height: 71,
+            email: 'guest@guest.io',
+            picture_url: 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_128/v1467706153/8_kdq2xw.jpg'})
+User.create({username: "andy1995", password: "password", name: "Andy",
+            birthdate: Date.new(1995, 11, 9), weight: 143, height: 68,
+            email: 'andy238934@gmail.com.',
+            picture_url: 'https://res.cloudinary.com/dznf6puuv/image/upload/v1467706152/31_cyrddk.jpg'})
+User.create({username: "bobilicious", password: "password", name: "Bobby",
+            birthdate: Date.new(1972, 1, 18), weight: 163, height: 73,
+            email: 'happiness@bing.com',
+            picture_url: 'http://res.cloudinary.com/dznf6puuv/image/upload/v1467706152/58_f75y3r.jpg'})
+User.create({username: "carlyP", password: "password", name: "Carly",
+            birthdate: Date.new(1965,6, 20), weight: 112, height: 61,
+            email: 'irunfast@hotmail.com',
+            picture_url: 'https://res.cloudinary.com/dznf6puuv/image/upload/v1467706152/16_apqphg.jpg'})
+User.create({username: "xXDANIXx", password: "password", name: "Dani",
+            birthdate: Date.new(1983, 9, 22), weight: 105, height: 64,
+            email: 'xXdAnIXx@aol.com',
+            picture_url: 'https://res.cloudinary.com/dznf6puuv/image/upload/v1467706152/63_nwqfvc.jpg'})
+
 
 
 Workout.create(user_id: 1, workout_type: "run",
@@ -28,7 +45,7 @@ Workout.create(user_id: 1, workout_type: "run", title: "Long run", date: Date.ne
 
 
 RunRoute.create(title: "Ferry Builing to Pier 39",
-                description: "Nice 5k pedestrian 5k path",
+                description: "Nice 5k pedestrian path",
                 author_id: 1,
                 map_info: "[{\"location\":{\"lat\":37.79528237319238,\"lng\":-122.3935317993164},\"stopover\":false},{\"location\":{\"lat\":37.80898152447637,\"lng\":-122.41254329812364},\"stopover\":false},{\"location\":{\"lat\":37.79473977809016,\"lng\":-122.39378929121813},\"stopover\":false}]",
                 distance: 2.97)

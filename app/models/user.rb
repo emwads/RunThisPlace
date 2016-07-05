@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
+  validates :email, :picture_url, presence: true
 
   attr_reader :password
 
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     primary_key: :id
 
-  before_validation :ensure_session_token
+  before_validation :ensure_session_token, :ensure_profile_pic
 
   def routes
     return (self.ran_routes + self.authored_routes).uniq
@@ -60,6 +61,10 @@ class User < ActiveRecord::Base
 
   def ensure_session_token
     self.session_token ||= generate_session_token
+  end
+
+  def ensure_profile_pic
+    self.picture_url = 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_200/v1467673998/profile-icon_qcbhrl.png'
   end
 
 

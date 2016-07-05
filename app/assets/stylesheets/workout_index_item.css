@@ -44,7 +44,7 @@ h2 {
 }
 
 
-.create-workout-container label{
+.create-runroute-container label{
   padding: 10px;
 }
 
@@ -54,4 +54,10 @@ h2 {
 
 select#workout_type {
   width: 200px;
+}
+
+.form-container {
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
 }

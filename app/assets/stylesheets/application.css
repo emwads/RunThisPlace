@@ -54,7 +54,14 @@ h3 {
 .nav-dropdown {
   float: right;
   padding: 12px 10px;
+}
 
+footer {
+  display: block;
+}
+
+nav.footer-nav {
+  width: 100%;
 }
 
 .main-container {
@@ -154,6 +161,7 @@ input.logout-button {
   display: inline-block;
   float: right;
   margin: 10px;
+  border: 1px solid lightgrey;
 
 }
 

@@ -37,7 +37,7 @@ const RouteDetailMap = React.createClass({
         self.directionsDisplay.setMap(self.map);
 
       } else {
-        alert('Could not display directions due to: ' + status);
+        console.log('Could not display directions due to: ' + status);
       }
     });
   },

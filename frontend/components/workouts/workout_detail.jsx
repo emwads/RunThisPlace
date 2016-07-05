@@ -32,15 +32,15 @@ const WorkoutDetail = React.createClass({
   icons (type) {
     switch (type) {
       case "walk":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621146/walk-icon_h4lvnc.png';
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702925/walk-icon_t8aqbt.png';
       case "hike":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621454/noun_45242_cc_hkhvpf.png';
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702926/hike-icon_jfremu.png';
       case "run":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621146/run-icon_p1gdsf.png';
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702925/run-icon_mbjr0r.png';
       case "gym":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621146/gym-icon_laruyg.png';
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702925/gym-icon_xl5oy6.png';
       case "other":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467621146/other-icon_cj9ota.png';
+        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702925/other-icon_ndjrlb.png';
     }
   },
 

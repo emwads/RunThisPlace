@@ -54,12 +54,25 @@ const App = React.createClass({
             </div>
           </nav>
         </header>
-        <div className='main'>
+        <div className='main cf'>
 
 
           {this.props.children}
 
         </div>
+        <footer>
+          <nav>
+            <div className="footer-nav">
+
+              <ul className="nav-links">
+                <li><Link to="#">Support</Link> | </li>
+                <li><Link to="#">Privacy</Link> | </li>
+                <li><Link to="#">Terms of Use</Link> </li>
+              </ul>
+
+            </div>
+          </nav>
+        </footer>
       </div>
     );
   }
