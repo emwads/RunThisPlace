@@ -34,6 +34,6 @@ class Api::RunRoutesController < ApplicationController
 
     def run_route_params
       params.require(:run_route).permit(:title, :description, :map_info,
-                                        :distance)
+                                        :distance, :route_path)
     end
 end

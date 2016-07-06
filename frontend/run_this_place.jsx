@@ -28,7 +28,7 @@ const RunRouteDetail = require('./components/runroutes/run_route_detail');
 const RunRouteForm = require('./components/runroutes/run_route_form');
 const RunRouteFullIndex = require('./components/runroutes/run_route_full_index');
 
-const UserProfile = require('./components/user_profile');
+const UserDetail = require('./components/users/user_detail');
 
 
 const appRouter = (
@@ -50,7 +50,7 @@ const appRouter = (
       <Route path="/runroutes/new" component={RunRouteForm} onEnter={ _ensureLoggedIn }/>
       <Route path="/runroutes/:runRouteId" component={RunRouteDetail} />
 
-      <Route path="/profile" component={UserProfile} onEnter={ _ensureLoggedIn }/>
+      <Route path="/profile" component={UserDetail} onEnter={ _ensureLoggedIn }/>
 
 
   </Route>

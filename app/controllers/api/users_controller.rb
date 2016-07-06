@@ -6,7 +6,6 @@ class Api::UsersController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-
       render json: @user.errors, status: 422
     end
   end
@@ -22,9 +21,9 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    if @user.save
-      login(@user)
-      render "api/users/show"
+    @user = current_user
+    if @user.update(user_params)
+      render :show
     else
 
       render json: @user.errors, status: 422

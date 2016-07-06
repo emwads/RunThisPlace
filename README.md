@@ -89,9 +89,9 @@ API. route viewing and creation occurs on an embedded google map.
 - [x] setup `APIUtil` to interact with the API
 - [x] test out API interaction in the console
 
-### Phase 4: Friending (1 day, W2 Tu 6pm)
+### Phase 4: Folllowing (1 day, W2 Tu 6pm)
 
-**Objective:** Users can friend each other
+**Objective:** Users can follow each other
 
 - [ ] update `user` model
 - [ ] update user view
@@ -115,18 +115,19 @@ API. route viewing and creation occurs on an embedded google map.
 **Objective:** style and create dashboard
 - [ ] good styling
 - [ ] sliced/trimmed down list of routes/workouts/friends
-- [ ] lifetime miles?
+- [ ] production read me
 
 ### Phase 7: Finish Runroutes (1 day, W2 Thu 6pm)
 
 **Objective:** Add editing to run routes
 
-- [ ] add editing
 - [ ] fix query limit issues
 - [ ] fix routes to save dragged points
 - [ ] add elevation to route maps?
 - [ ] add more seed data
 - [ ] get selector for routes in workout form
+- [ ] add editing
+- [ ] lifetime miles?
 
 
 

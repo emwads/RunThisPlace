@@ -17,11 +17,11 @@ const App = React.createClass({
     		<div className="nav-user">
           <div>
             <figure>
-              <img  className="user-thumb" src={SessionStore.currentUser().picture_url} />
+              <Link to="/profile"><img  className="user-thumb" src={SessionStore.currentUser().picture_url} /></Link>
             </figure>
           </div>
           <div>
-      			<span>welcome, {SessionStore.currentUser().name}!</span>
+      			<span>{SessionStore.currentUser().name}</span>
             <br />
       			<input type="submit" className="logout-button" value="logout" onClick={ this._handleLogout } />
           </div>

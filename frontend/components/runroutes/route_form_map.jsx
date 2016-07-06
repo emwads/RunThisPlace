@@ -29,12 +29,8 @@ const RouteFormMap = React.createClass({
       waypoints: waypoints,
       travelMode: google.maps.TravelMode.WALKING,
     }, function(response, status) {
-      // self.props.runroute = response;
-      // console.log(response);
-
-      // let wpoints = response.routes[0].legs[0].via_waypoint;
-      // console.log(wpoints);
-
+      console.log(response);
+      // self.props.onUpdate('routePath', response.routes[0].overview_polyline);
 
       if (status === google.maps.DirectionsStatus.OK) {
         self.directionsDisplay.setOptions({ preserveViewport: true });
@@ -144,7 +140,9 @@ const RouteFormMap = React.createClass({
   },
 
   shouldComponentUpdate (nextProps, nextState) {
-    return nextProps.distance === this.props.distance;
+    return (nextProps.distance === this.props.distance);
+    // return (nextProps.distance === this.props.distance) &&
+    // (nextProps.routePath !== this.props.routePath) ;
 
   },
 

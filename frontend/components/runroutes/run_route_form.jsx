@@ -22,7 +22,8 @@ const RouteForm = React.createClass({
     runRoute['title'] = this.refs.title.value;
     runRoute['description'] =  this.refs.description.value;
     runRoute['map_info'] = JSON.stringify(this.state.mapPoints);
-    runRoute['distance'] =this.state.distance;
+    runRoute['distance'] = this.state.distance;
+    // runRoute['route_path'] = this.state.routePath;
     RouteActions.createRunRoute(runRoute);
     hashHistory.push("/dashboard");
   },
@@ -70,7 +71,7 @@ const RouteForm = React.createClass({
           <br />
           <label for="description">Description: <br />
             <textarea id="description" name="description"
-              ref='description' required
+              ref='description'
               placeholder="description"></textarea>
           </label>
 
