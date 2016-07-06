@@ -27,6 +27,15 @@ const UserActions = {
     UserApiUtil.deleteUser(id, this.removeUser);
   },
 
+  createFollow(follow){
+    UserApiUtil.createFollow(follow, UserActions.receiveAllUsers);
+  },
+
+  deleteFollow(followeeId){
+    UserApiUtil.deleteFollow(followeeId, UserActions.receiveAllUsers);
+  },
+
+
 
   receiveAllUsers(users) {
     AppDispatcher.dispatch({

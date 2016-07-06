@@ -14,7 +14,7 @@ const RunRouteIndex = React.createClass({
 
         </div>
 
-        {this.props.runroutes.map(function (runroute) {
+        {this.props.runroutes.slice(0,4).map(function (runroute) {
             return (<RunRouteIndexItem key={runroute.id} runroute={runroute} />);
           })}
       </div>

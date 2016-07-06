@@ -28,6 +28,9 @@ User.create({username: "xXDANIXx", password: "password", name: "Dani",
             email: 'xXdAnIXx@aol.com',
             picture_url: 'https://res.cloudinary.com/dznf6puuv/image/upload/v1467706152/63_nwqfvc.jpg'})
 
+Follow.create(follower_id: 1, followee_id: 2)
+Follow.create(follower_id: 1, followee_id: 4)
+Follow.create(follower_id: 4, followee_id: 1)
 
 
 Workout.create(user_id: 1, workout_type: "run",

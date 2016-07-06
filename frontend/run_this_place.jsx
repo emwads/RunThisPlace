@@ -29,7 +29,7 @@ const RunRouteForm = require('./components/runroutes/run_route_form');
 const RunRouteFullIndex = require('./components/runroutes/run_route_full_index');
 
 const UserDetail = require('./components/users/user_detail');
-
+const UserIndex = require('./components/users/user_index');
 
 const appRouter = (
   <Router history={hashHistory}>
@@ -51,6 +51,7 @@ const appRouter = (
       <Route path="/runroutes/:runRouteId" component={RunRouteDetail} />
 
       <Route path="/profile" component={UserDetail} onEnter={ _ensureLoggedIn }/>
+      <Route path="/connect" component={UserIndex} onEnter={ _ensureLoggedIn }/>
 
 
   </Route>

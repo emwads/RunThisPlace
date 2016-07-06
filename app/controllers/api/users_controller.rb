@@ -12,12 +12,15 @@ class Api::UsersController < ApplicationController
 
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    @follows = @user.following
+    render "api/users/show"
   end
 
 
   def index
     @users = User.all
+    @follows = current_user.following
   end
 
   def update

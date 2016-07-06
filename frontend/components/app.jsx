@@ -53,9 +53,9 @@ const App = React.createClass({
             <div className="nav">
               <h1 className="logo">{ this.logoLink() }</h1>
               <ul className="nav-links">
-                <li><Link to="/dashboard">Workouts</Link></li>
-                <li><Link to="/dashboard">Routes</Link></li>
-                <li><Link to="/dashboard">Connect</Link></li>
+                <li><Link to="/workouts">Workouts</Link></li>
+                <li><Link to="/runroutes">Routes</Link></li>
+                <li><Link to="/connect">Connect</Link></li>
               </ul>
               <div className="nav-user-container">{ this.greeting() }</div>
             </div>

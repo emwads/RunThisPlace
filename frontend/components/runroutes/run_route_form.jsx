@@ -90,6 +90,7 @@ const RouteForm = React.createClass({
 
 
 
+      <span>click on the map to move points</span>
       <div>
         <RouteFormMap onUpdate={this.childInitUpdate}
                       distance={this.state.distance}

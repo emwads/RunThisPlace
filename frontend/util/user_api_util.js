@@ -21,7 +21,24 @@ const UserApiUtil = {
 
   fetchSingleUser (id, cb) {
     $.ajax({
-      url: `api/users/${id}`,
+      url: `api/user`,
+      success: cb
+    });
+  },
+
+  createFollow (data, cb) {
+    $.ajax({
+      url: 'api/follows',
+      type: 'POST',
+      data: data,
+      success: cb
+    });
+  },
+
+  deleteFollow (followeeId, cb) {
+    $.ajax({
+      url: `api/follows/${followeeId}`,
+      type: "DELETE",
       success: cb
     });
   }

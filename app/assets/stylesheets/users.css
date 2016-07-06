@@ -10,3 +10,23 @@
   min-width: 300px;
   width: 50%
 }
+
+
+.connect-user-listing {
+  display: inline-block;
+  background-color: white;
+  float: left;
+  border: 1px solid lightgrey;
+  margin: 5px;
+  padding: 5px;
+}
+
+.unfollowed {
+  background-color: darkgrey;
+  color: white;
+}
+
+.followed {
+  background-color: green;
+  color: black;
+}

@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  before_validation :ensure_session_token, :ensure_profile_pic
+
   has_many :workouts
 
   has_many :ran_routes,
@@ -17,7 +19,31 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     primary_key: :id
 
-  before_validation :ensure_session_token, :ensure_profile_pic
+
+  # users this user is following
+  has_many :following,
+    through: :follows,
+    source: :followee
+
+  has_many :follows,
+    class_name: 'Follow',
+    foreign_key: :follower_id,
+    primary_key: :id
+
+
+  # users that are following this user
+  has_many :followed_by,
+    through: :followed,
+    source: :follower
+
+  has_many :followed,
+    class_name: 'Follow',
+    foreign_key: :followee_id,
+    primary_key: :id
+
+  def following?(followee)
+    self.following.include?(followee)
+  end
 
   def routes
     return (self.ran_routes + self.authored_routes).uniq
