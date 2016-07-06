@@ -63,7 +63,6 @@ const App = React.createClass({
         </header>
         <div className='main cf'>
 
-
           {this.props.children}
 
         </div>

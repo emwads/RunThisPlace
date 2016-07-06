@@ -12,7 +12,7 @@ const WorkoutEditForm = React.createClass({
     let workout =  WorkoutStore.find(parseInt(this.props.params.workoutId));
     this.setState({
       title: workout.title,
-      workout_type: workout.workout_type,
+      workout_type: workout.workout_type || "run",
       description: workout.description || "",
       calories: workout.calories || "",
       distance: workout.distance || "",
@@ -77,7 +77,7 @@ const WorkoutEditForm = React.createClass({
     const workoutOptions = ["run", "walk", "hike", "gym", "other"];
     return(
       <label for="workout_type">Workout Type<br />
-        <select id="workout_type" onChange={this.workoutTypeUpdate} value="run">
+        <select id="workout_type" onChange={this.workoutTypeUpdate} value={this.state.workout_type}>
           <option value="run">
             run
           </option>

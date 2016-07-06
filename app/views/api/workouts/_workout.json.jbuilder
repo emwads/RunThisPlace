@@ -6,7 +6,7 @@ if show_user
   json.username workout.user.username
 end
 
-if show_route
+if show_route && workout.run_route
   json.routeId workout.run_route_id
   json.routeTitle workout.run_route.title
   json.map_info workout.run_route.map_info

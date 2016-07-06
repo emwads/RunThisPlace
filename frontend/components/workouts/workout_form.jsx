@@ -20,7 +20,15 @@ const WorkoutForm = React.createClass({
 
   handleSubmit(event) {
     event.preventDefault();
-    const workout = Object.assign({}, this.state);
+    const workout = {
+      workout_type: this.state.workout_type,
+      run_route_id: this.state.run_route_id,
+      title: this.state.title,
+      description: this.state.description,
+      calories: this.state.calories,
+      distance: this.state.distance,
+      date: this.state.date
+    };
     WorkoutActions.createWorkout(workout);
     hashHistory.push("/dashboard");
 
@@ -81,6 +89,8 @@ const WorkoutForm = React.createClass({
   render () {
 
     return(
+      <div className="form-container">
+
       <div className="create-workout-container">
       <form onSubmit={this.handleSubmit}>
            <h3>Log a workout</h3>
@@ -90,6 +100,7 @@ const WorkoutForm = React.createClass({
           <input id="title" type="text"
             value={this.state.title}
             onChange={this.update("title")}
+            required
             placeholder="title" />
         </label>
 
@@ -126,6 +137,7 @@ const WorkoutForm = React.createClass({
           <input id="date" type="date"
             value={this.state.date}
             onChange={this.update("date")}
+            required
             placeholder="date" />
         </label>
 
@@ -138,12 +150,13 @@ const WorkoutForm = React.createClass({
             placeholder="Pick your route" />
         </label>
                 <br />
-        <input type="submit" className="submit" value="Save Workout" /> 
+        <input type="submit" className="submit" value="Save Workout" />
 
         <button onClick={this.handleCancel}>Cancel</button>
 
       </form>
     </div>
+  </div>
 
     );
 

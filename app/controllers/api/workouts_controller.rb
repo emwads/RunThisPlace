@@ -11,7 +11,7 @@ class Api::WorkoutsController < ApplicationController
     end
   end
 
-  def edit
+  def update
   end
 
   def show
