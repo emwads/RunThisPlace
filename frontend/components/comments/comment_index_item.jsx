@@ -7,7 +7,9 @@ const CommentIndexItem = React.createClass({
   render () {
     return(
       <div className="single-comment">
-        {this.props.comment.body}
+        <img className="user-thumb" src={this.props.comment.picture_url} />
+
+          {this.props.comment.body}
       </div>
     );
 

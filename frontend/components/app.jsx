@@ -41,9 +41,17 @@ const App = React.createClass({
 
   logoLink() {
     if (SessionStore.isUserLoggedIn()) {
-      return (<Link to="/dashboard">run this place</Link>);
+      return (<Link to="/dashboard">
+        <figure className="logo">
+          <img src="https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,h_40/v1467917588/logo_j8beyk.png" />
+        </figure>
+        </Link>);
     } else {
-      return (<Link to="/">run this place</Link>);
+      return (<Link to="/">
+          <figure className="logo">
+            <img src="https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,h_40/v1467917588/logo_j8beyk.png" />
+          </figure>
+        </Link>);
     }
   },
 
@@ -54,7 +62,7 @@ const App = React.createClass({
 
           <nav>
             <div className="nav">
-              <h1 className="logo">{ this.logoLink() }</h1>
+              {this.logoLink()}
               <ul className="nav-links">
                 <li><Link to="/workouts">Workouts</Link></li>
                 <li><Link to="/runroutes">Routes</Link></li>

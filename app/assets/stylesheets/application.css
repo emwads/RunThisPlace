@@ -18,6 +18,10 @@ body{
   font-size: 100%;
 }
 
+h4 {
+  font-weight: 700;
+}
+
 .cf:after {
   content: "";
   display: block;
@@ -27,10 +31,10 @@ body{
 nav {
   background-color: white;
   height: 70px;
-  color: #404040;
+  color: #686868;
   vertical-align: middle;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 18px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
   position:relative;
 }
 
@@ -45,6 +49,10 @@ nav li {
 
 nav li:hover {
   color: black;
+}
+
+.login-box a:hover {
+  text-decoration: underline;
 }
 
 h1{
@@ -69,6 +77,30 @@ h3 {
   cursor: pointer;
   color: #404040;
   vertical-align: middle;
+}
+
+.bottom-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0 40px 0px;
+  text-align: center;
+  color: #404040;
+  height:
+
+}
+
+.bottom-info>div {
+  width: 250px;
+}
+
+.bottom-info p {
+  font-size: 14px;
+}
+
+.logo {
+  display: inline-block;
+  float:left;
+  padding: 12px 10px 0 10px;
 }
 
 .nav-dropdown-content li {
@@ -106,7 +138,7 @@ h3 {
 
 .nav-user-container {
   float: right;
-  padding: 14px 10px;
+  padding: 13px 10px;
   display: inline-block;
   list-style: none;
   position: relative;
@@ -150,9 +182,9 @@ nav.footer-nav {
 .main-container {
 
   display: inline-block;
-  height: 500px;
+  height: 600px;
   width: 100%;
-  background: url("https://res.cloudinary.com/dznf6puuv/image/upload/v1467220201/runners_fuz38f.jpg") no-repeat center center fixed;
+  background: url("https://res.cloudinary.com/dznf6puuv/image/upload/v1467220201/runners_fuz38f.jpg") no-repeat center center scroll;
   background-size: cover;
 }
 
@@ -188,10 +220,17 @@ input, textarea, select, button {
    box-sizing: border-box;
 }
 
+
 .guest {
   background-color: #0083d5;
   border: none;
   color: white;
+}
+
+.guest:hover {
+  background-color: #006eb3;
+  cursor: pointer;
+
 }
 
 
@@ -207,7 +246,13 @@ select, input {
 
 input.submit {
   border: 0px;
-  background-color: orange;
+  background-color: #ffaf1a;
+}
+
+input.submit:hover {
+  border: 0px;
+  background-color: #e69500;
+  cursor: pointer;
 }
 
 input.cancel {

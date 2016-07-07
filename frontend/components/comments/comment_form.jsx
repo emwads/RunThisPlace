@@ -22,6 +22,7 @@ const CommentForm = React.createClass({
 
     WorkoutActions.createComment(comment);
 
+    this.setState({body: ""});
   },
 
   update(property) {

@@ -26,7 +26,7 @@ const UserEditForm = React.createClass({
   render () {
 
     return(
-      <div className="">
+      <div className="form-container">
       <form onSubmit={this.handleSubmit}>
            <h3>Edit Profile</h3>
 
