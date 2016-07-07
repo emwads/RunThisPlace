@@ -1,15 +1,14 @@
 class Api::CommentsController < ApplicationController
 
   def create
-    follow = Follow.new(follow_params)
-    follow.follower_id = current_user.id
+    comment = Comment.new(comment_params)
+    comment.author_id = current_user.id
 
-    if follow.save
-      @users = User.all
-      @follows = current_user.following
-      render "api/users/index"
+    if comment.save
+      @workouts = current_user.workouts.order(:date)
+      render "api/workouts/index"
     else
-      render json: follow.errors.full_messages, status: 422
+      render json: comment.errors.full_messages, status: 422
     end
   end
 
@@ -17,17 +16,15 @@ class Api::CommentsController < ApplicationController
     @workout = Workout.find(params[:id])
 
     if @workout.destroy
-      render :show
+      render "api/workouts/index"
     else
       render json: @workout.errors.full_messages, status: 422
     end
   end
 
-  def index
-    @followings = current_user.following
-  end
 
-  def follow_params
-    params.require(:follow).permit(:follower_id, :followee_id)
+
+  def comment_params
+    params.require(:comment).permit(:workout_id, :body, :author_id)
   end
 end

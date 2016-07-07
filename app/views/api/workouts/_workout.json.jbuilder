@@ -11,3 +11,9 @@ if show_route && workout.run_route
   json.routeTitle workout.run_route.title
   json.map_info workout.run_route.map_info
 end
+
+
+json.comments workout.comments do |comment|
+  json.partial! "api/comments/comment", comment: comment
+
+end

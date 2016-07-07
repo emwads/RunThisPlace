@@ -14,7 +14,8 @@
  *= require_self
  */
 body{
-  font-family: 'Open Sans', sans-serif;  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
 }
 
 .cf:after {
@@ -24,26 +25,38 @@ body{
 }
 
 nav {
-  background-color: #002d72;
+  background-color: white;
   height: 70px;
-  color: white;
+  color: #404040;
   vertical-align: middle;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 18px;
+  position:relative;
 }
 
+
+
 nav li {
+  text-transform: uppercase;
   display: inline-block;
   float: left;
-  padding: 27px 5px;
+  padding: 26px 5px;
+}
+
+nav li:hover {
+  color: black;
 }
 
 h1{
   font-weight: 700;
-  font-size: 30px;
+  font-size: 26px;
 }
 
 nav h1 {
+  font-family: 'Open Sans', sans-serif;
   display: inline-block;
   float: left;
+  color: #0083d5;
   padding: 20px;
 }
 
@@ -54,12 +67,12 @@ h3 {
 .dropbtn {
   border: none;
   cursor: pointer;
-  color: lightgrey;
+  color: #404040;
   vertical-align: middle;
 }
 
 .nav-dropdown-content li {
-    color: #585858;
+    color: #404040;
     width:100%;
     padding: 12px 16px;
     text-decoration: none;
@@ -68,8 +81,26 @@ h3 {
 
 }
 
-.nav-dropdown-content li:hover {
+/*.nav-dropdown-content li:hover {
   color: black;
+}*/
+
+.buttonify {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #B5DC2D;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 10px;
+}
+
+.buttonify:hover {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #94bb0f;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 10px;
 }
 
 
@@ -77,20 +108,20 @@ h3 {
   float: right;
   padding: 14px 10px;
   display: inline-block;
-  position: relative;
   list-style: none;
+  position: relative;
 }
 
-.nav-user-container div {
-
+.nav-login-container {
+  float: right;
+  padding: 21px 10px;
+  display: inline-block;
+  text-transform: uppercase;;
 }
 
-.nav-user-container div {
-  color: lightgrey;
-}
 
 .nav-user-container:hover div {
-  color: white;
+  color: black;
 }
 
 .nav-dropdown-content {
@@ -148,7 +179,7 @@ nav.footer-nav {
 
 input, textarea, select, button {
  border: 1px solid #c3c2c2;
-   border-radius: 7px;
+   border-radius: 5px;
    font-size: 14px;
    line-height: 40px;
    margin: 15px 0;
@@ -157,11 +188,17 @@ input, textarea, select, button {
    box-sizing: border-box;
 }
 
+.guest {
+  background-color: #0083d5;
+  border: none;
+  color: white;
+}
+
 
 textarea {
   line-height: 1.15;
-  width: 500px;
-  height: 100px;
+  width: 100%;
+  /*height: 100px;*/
 }
 
 select, input {
@@ -194,10 +231,12 @@ input.logout-button {
   height: 400px;
   display: inline-block;
   float: left;
-  margin: 20px;
 
 }
 
+.pad-butt {
+  margin: 10px 10px 0 0;
+}
 
 
 .direction-panel {
@@ -242,6 +281,7 @@ input.logout-button {
   width: 40px;
   margin: 0 10px 0px 0;
   border-radius: 20px;
+  border: 1px solid darkgrey;
 }
 
 

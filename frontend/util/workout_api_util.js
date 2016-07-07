@@ -37,7 +37,29 @@ const WorkoutApiUtil = {
         cb(workout);
       }
     });
+  },
+
+
+  createComment (data, cb) {
+    $.ajax({
+      url: 'api/comments',
+      type: 'POST',
+      data: data,
+      success: cb
+    });
+  },
+
+  deleteComment (id, cb) {
+    $.ajax({
+      url: `api/comments/${id}`,
+      type: "DELETE",
+      success (comment) {
+        cb(comment);
+      }
+    });
   }
+
+
 
 };
 

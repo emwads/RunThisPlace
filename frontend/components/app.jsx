@@ -30,8 +30,10 @@ const App = React.createClass({
     	);
     } else if ( !["/login", "/signup"].includes(this.props.location.pathname) ) {
       return (
-        <div>
+        <div className="nav-login-container">
           <Link to="/login" activeClassName="current">Login</Link>
+          <Link to="/signup" className="buttonify">SignUp</Link>
+
         </div>
       );
     }

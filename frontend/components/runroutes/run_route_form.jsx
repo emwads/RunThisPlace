@@ -57,8 +57,8 @@ const RouteForm = React.createClass({
   render () {
     return(
       <div className='form-container'>
-        <div className="create-runroute-container">
-        <form onSubmit={this.handleSubmit}>
+          <div className="create-runroute-container">
+            <form onSubmit={this.handleSubmit}>
              <h3>Create a Route</h3>
 
 
@@ -82,23 +82,29 @@ const RouteForm = React.createClass({
 
 
         </form>
-        <button onClick={this.handleCancel}>Cancel</button>
 
-        <button onClick={this.handleClear}>Clear Map Points</button>
+        <button className="pad-butt" onClick={this.handleCancel}>Cancel</button>
+
+        <button className="pad-butt" onClick={this.handleClear}>Clear Map Points</button>
+
 
       </div>
 
 
 
-      <span>click on the map to move points</span>
       <div>
-        <RouteFormMap onUpdate={this.childInitUpdate}
-                      distance={this.state.distance}
-                      mapPoints={this.state.mapPoints}/>
-      </div>
+        <span>click on the map to move points</span>
+        <div className="formmap">
 
-      <h3>distance</h3>
-      {this.state.distance}
+          <RouteFormMap onUpdate={this.childInitUpdate}
+                        distance={this.state.distance}
+                        mapPoints={this.state.mapPoints}/>
+        </div>
+        <span>distance: {this.state.distance}</span>
+    </div>
+
+
+
 
     </div>
 

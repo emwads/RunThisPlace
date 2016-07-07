@@ -28,6 +28,17 @@ const WorkoutActions = {
   },
 
 
+  createComment(comment){
+    WorkoutApiUtil.createComment({comment: comment}, WorkoutActions.receiveAllWorkouts);
+  },
+
+  deleteComment (id) {
+    WorkoutApiUtil.deleteComment(id, WorkoutActions.receiveAllWorkouts);
+  },
+
+
+
+
   receiveAllWorkouts(workouts) {
     AppDispatcher.dispatch({
       actionType: WorkoutConstants.WORKOUTS_RECEIVED,

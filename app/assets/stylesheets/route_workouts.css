@@ -20,3 +20,118 @@
 .alt-login-link {
   font-size: 12px;
 }
+
+
+
+
+.dash-list {
+  padding: 5px 5px  ;
+  /*border-top: 1px solid grey;*/
+  line-height: 1.25;
+  font-size: 14px;
+}
+
+.dash-list h3 {
+  color: blue;
+  font-size: 20px;
+  margin: 5px;
+
+}
+
+.dash-list div {
+  line-height: 1.5;
+}
+
+.dash-list figure {
+  display: inline-block;
+  float: left;
+  padding: 10px 25px 0px 10px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.dash-el-header {
+  margin: 0 0 10px 0;
+}
+
+.dash-el-container {
+  padding: 10px;
+  display: inline-block;
+  /*border: 1px solid lightgrey;*/
+  /*min-width: 300px;
+  width: 50%%;*/
+  width: 500px;
+  margin:20px;
+  float: left;
+}
+
+
+.create-runroute-container {
+  padding: 10px;
+
+}
+
+.create-workout-container input {
+  display: inline-block;
+}
+
+select#workout_type {
+  width: 200px;
+}
+
+.form-container {
+  padding: 10px ;
+  display: inline-block;
+}
+
+.form-container>div {
+  margin: 20px;
+  display: inline-block;
+  float: left;
+
+}
+
+
+.map-thumb-display {
+  display: inline-block;
+  position: relative;
+}
+
+.map-overlay-tile {
+  position: absolute;
+  background: white;
+  box-shadow: 3px 3px 10px #888888;
+  bottom: 15px;
+  left: 16px;
+  width: 115px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.dash-route-list {
+  display: inline-block;
+  float: left;
+}
+
+.dash-route-container {
+  border: solid 1px lightgrey;
+  width:300px;
+  float:left;
+}
+
+.saved-comments {
+  border: 1px solid grey;
+}
+
+.comment-form {
+  border: 1px solid grey;
+}
+
+
+.workout-listing-detail {
+  border: 1px solid grey;
+
+}

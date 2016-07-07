@@ -38,6 +38,7 @@ const LoginForm = React.createClass({
     }
   },
 
+
 	handleSubmit(e) {
     ErrorActions.clearErrors();
 		e.preventDefault();
@@ -50,11 +51,13 @@ const LoginForm = React.createClass({
       name: this.state.name
 		};
 
+
+    window.setTimeout( () => {
     if (this.props.location.pathname === "/login") {
       SessionActions.login(formData);
     } else {
       SessionActions.signup(formData);
-    }
+    }}, 1000);
 	},
 
   fieldErrors(field) {
@@ -77,10 +80,9 @@ const LoginForm = React.createClass({
     return (e) => this.setState({[property]: e.target.value});
   },
 
-  fillInGuest(e){
+  fillInGuest(){
     this.setState({username: "guest"});
     this.setState({password: "password"});
-    // e.preventDefault();
 
   },
 

@@ -12,11 +12,14 @@ const WorkoutIndex = React.createClass({
 
           <h2>Recent Workouts</h2>
           <br />
-          <Link to="/workouts/new"> + Log Workout</Link>
+          <Link to="/workouts/new"> + Log Workout</Link> |
+          <Link to="/workouts"> All Workouts</Link>
         </div>
 
-        {this.props.workouts.slice(0,4).map(function (workout) {
-            return (<WorkoutIndexItem key={workout.id} workout={workout} />);
+        {this.props.workouts.slice(0,3).map(function (workout) {
+            return (<WorkoutIndexItem key={workout.id}
+                                      showComments={false}
+                                      workout={workout} />);
           })}
       </div>
     );

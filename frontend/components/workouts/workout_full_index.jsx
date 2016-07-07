@@ -33,12 +33,14 @@ const WorkoutFullIndex = React.createClass({
 
         <h2>My Workouts</h2>
           <br />
-            <Link to="/dashboard"> {'<<'}Dashboard</Link>| 
+            <Link to="/dashboard"> {'<<'}Dashboard</Link>|
             <Link to="/workouts/new"> + Log Workout</Link>
         </div>
 
         {this.state.workouts.map(function (workout) {
-            return (<WorkoutIndexItem key={workout.id} workout={workout} />);
+            return (<WorkoutIndexItem key={workout.id}
+                                      showComments={true}
+                                      workout={workout} />);
           })}
       </div>
     );

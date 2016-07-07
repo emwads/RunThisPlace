@@ -25,7 +25,7 @@ const UserIndexItem = React.createClass({
           <button className="unfollowed" onClick={ () => {
               self.createFollow();
             }} >
-            + Follow{this.props.user.id}
+            + Follow
           </button>
         </div>
       );
@@ -35,7 +35,7 @@ const UserIndexItem = React.createClass({
           <button className="followed" onClick={ () => {
               UserActions.deleteFollow(self.props.user.id);
             } }>
-            Following {this.props.user.id}
+            Following
           </button>
         </div>);
     }

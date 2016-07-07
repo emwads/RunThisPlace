@@ -6,4 +6,6 @@ class Workout < ActiveRecord::Base
 
   belongs_to :run_route
 
+  has_many :comments, dependent: :destroy
+
 end

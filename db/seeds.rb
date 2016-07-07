@@ -72,3 +72,7 @@ RunRoute.create(title: "Lake Merrit",
                 author_id: 3,
                 map_info: "[{\"location\":{\"lat\":37.81046205554298,\"lng\":-122.26216793060303},\"stopover\":false},{\"location\":{\"lat\":37.80815648152641,\"lng\":-122.26143836975098},\"stopover\":false},{\"location\":{\"lat\":37.80663069443297,\"lng\":-122.26049423217773},\"stopover\":false},{\"location\":{\"lat\":37.805274412773024,\"lng\":-122.256760597229},\"stopover\":false},{\"location\":{\"lat\":37.807410545108375,\"lng\":-122.25221157073975},\"stopover\":false},{\"location\":{\"lat\":37.801951417436676,\"lng\":-122.2547435760498},\"stopover\":false},{\"location\":{\"lat\":37.798662182986924,\"lng\":-122.25907802581787},\"stopover\":false},{\"location\":{\"lat\":37.80347730120659,\"lng\":-122.26075172424316},\"stopover\":false},{\"location\":{\"lat\":37.80791913893801,\"lng\":-122.26306915283203},\"stopover\":false},{\"location\":{\"lat\":37.81027557796748,\"lng\":-122.2622537612915},\"stopover\":false}]",
                 distance: 3.18)
+
+
+Comment.create(author_id: 2, workout_id: 1, body: "Good job on that run!")
+Comment.create(author_id: 3, workout_id: 1, body: "wow! what a fast run!")

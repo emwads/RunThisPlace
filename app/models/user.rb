@@ -41,6 +41,9 @@ class User < ActiveRecord::Base
     foreign_key: :followee_id,
     primary_key: :id
 
+  has_many :comments,
+  foreign_key: :author_id
+
   def following?(followee)
     self.following.include?(followee)
   end

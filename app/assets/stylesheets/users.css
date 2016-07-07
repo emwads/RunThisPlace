@@ -14,11 +14,11 @@
 
 .connect-user-listing {
   display: inline-block;
+  text-align: center;
   background-color: white;
   float: left;
-  border: 1px solid lightgrey;
-  margin: 5px;
-  padding: 5px;
+  margin: 10px;
+  padding: 10px;
 }
 
 .unfollowed {
@@ -27,6 +27,6 @@
 }
 
 .followed {
-  background-color: green;
+  background-color: #94bb0f  ;
   color: black;
 }
