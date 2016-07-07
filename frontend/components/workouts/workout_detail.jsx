@@ -4,6 +4,7 @@ const WorkoutActions = require('../../actions/workout_actions');
 const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
 const RunRouteMap = require('../runroutes/run_route_detail_map');
+const IconConstants = require('../../constants/icon_constants');
 
 
 
@@ -29,21 +30,6 @@ const WorkoutDetail = React.createClass({
     this.workoutListener.remove();
   },
 
-  icons (type) {
-    switch (type) {
-      case "walk":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702925/walk-icon_t8aqbt.png';
-      case "hike":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702926/hike-icon_jfremu.png';
-      case "run":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702925/run-icon_mbjr0r.png';
-      case "gym":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702925/gym-icon_xl5oy6.png';
-      case "other":
-        return 'https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_100/v1467702925/other-icon_ndjrlb.png';
-    }
-  },
-
   detailWorkout(){
     if (this.state.workout !== undefined) {
       return (
@@ -55,7 +41,7 @@ const WorkoutDetail = React.createClass({
           <span>exercise type: {this.state.workout.workout_type}</span><br />
           <span>calories: {this.state.workout.calories}</span><br />
           <figure>
-            <img src={this.icons(this.state.workout.workout_type)} alt={this.state.workout.workout_type} />
+            <img src={IconConstants.icons(this.state.workout.workout_type)} alt={this.state.workout.workout_type} />
           </figure>
         </div>
       );

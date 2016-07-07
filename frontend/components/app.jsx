@@ -14,18 +14,19 @@ const App = React.createClass({
     if (SessionStore.isUserLoggedIn()) {
 
     	return (
-    		<div className="nav-user">
-          <div>
-            <figure>
-              <Link to="/profile"><img  className="user-thumb" src={SessionStore.currentUser().picture_url} /></Link>
-            </figure>
+        <div className="nav-user-container">
+
+          <div class="dropbtn">
+            <Link to="/profile">
+              <img className="user-thumb" src={SessionStore.currentUser().picture_url} />
+              <span>{SessionStore.currentUser().name}</span>
+            </Link>
           </div>
-          <div>
-      			<span>{SessionStore.currentUser().name}</span>
-            <br />
-      			<input type="submit" className="logout-button" value="logout" onClick={ this._handleLogout } />
-          </div>
-    		</div>
+          <ul className="nav-dropdown-content" >
+            <Link to="/profile"><li>Profile</li></Link>
+            <li onClick={ this._handleLogout }>Logout</li>
+          </ul>
+        </div>
     	);
     } else if ( !["/login", "/signup"].includes(this.props.location.pathname) ) {
       return (
@@ -57,7 +58,8 @@ const App = React.createClass({
                 <li><Link to="/runroutes">Routes</Link></li>
                 <li><Link to="/connect">Connect</Link></li>
               </ul>
-              <div className="nav-user-container">{ this.greeting() }</div>
+                { this.greeting() }
+
             </div>
           </nav>
         </header>
