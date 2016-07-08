@@ -23,9 +23,11 @@ const removeWorkout = function (workout) {
 };
 
 WorkoutStore.all = function () {
-  return Object.keys(_workouts).map(function (workoutId) {
+  let result = Object.keys(_workouts).map(function (workoutId) {
     return _workouts[workoutId];
   });
+
+
 };
 
 WorkoutStore.find = function (id) {

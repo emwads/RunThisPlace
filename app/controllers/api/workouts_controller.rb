@@ -26,7 +26,8 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def index
-    @workouts = current_user.workouts.order(:date)
+
+    @workouts = current_user.workouts.order(date: :desc)
   end
 
   def destroy

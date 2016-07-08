@@ -28,16 +28,19 @@ const RunRouteFullIndex = React.createClass({
   render () {
 
     return(
-      <div className=" dash-el-container dash-route-container cf">
-        <div className="dash-el-header">
-          <h2>Routes</h2><br />
-            <Link to="/dashboard">{'<<'} Dashboard</Link>
-            <Link to="/runroutes/new">+ Create New Route</Link>
+      <div className="full-workouts">
+        <header className="dash-el-header">
+          <h2>My Routes</h2><br />
+            <Link to="/dashboard"><span className="buttonify grey-button">{'<< '}Dashboard</span></Link>
 
-        </div>
+        </header>
 
         {this.state.runroutes.map(function (runroute) {
-            return (<RunRouteIndexItem key={runroute.id} runroute={runroute} />);
+            return (
+              <div className="il" key={runroute.id + 0.5} >
+
+                <RunRouteIndexItem key={runroute.id} runroute={runroute} />
+              </div>);
           })}
       </div>
     );

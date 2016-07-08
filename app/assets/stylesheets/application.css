@@ -134,15 +134,20 @@ h3 {
   width: 100%;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
+  font-size: 20px;
 }
 
 .sub-nav-bar li {
   display: inline-block;
-  padding: 11px 40px 0 30px;
+  padding: 11px 40px 10px 30px;
   color: #686868;
   vertical-align: middle;
   font-family: 'Roboto Condensed', sans-serif;
-}
+  }
+
+  .sub-nav-bar .selected {
+    background-color: white;
+  }
 
 .sub-nav-bar li:hover {
   color: black;
@@ -304,7 +309,7 @@ input.logout-button {
 }
 
 .dash-header {
-  margin: 10px;
+  margin: 20px;
 }
 
 .map {
@@ -312,8 +317,8 @@ input.logout-button {
   height: 400px;
   display: inline-block;
   float: left;
-
 }
+
 
 .pad-butt {
   margin: 10px 10px 0 0;
@@ -333,8 +338,12 @@ input.logout-button {
   float: right;
   margin: 10px;
   border: 1px solid lightgrey;
-
 }
+
+.map-thumb:hover {
+  box-shadow: 1px 1px 10px #104DA1;
+}
+
 
 
 .route-description {
@@ -348,6 +357,20 @@ input.logout-button {
   display: block;
   margin: 20px;
   line-height: 1.5;
+}
+
+.run-detail-description {
+  display: block;
+  margin: 20px;
+  line-height: 1.5;
+}
+.run-detail-description h4 {
+  color: #686868;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 7px 0 0 0;
+  font-weight: 700;
 }
 
 
@@ -392,4 +415,23 @@ input.logout-button {
   cursor: pointer;
   color: #104DA1;
 
+}
+
+.il {
+  display: inline-block;
+}
+
+.fl {
+  float: left;
+  display: inline-block;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.dash-container {
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

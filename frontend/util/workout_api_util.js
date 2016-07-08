@@ -1,9 +1,10 @@
 const WorkoutStore = require('../stores/workout_store');
 
 const WorkoutApiUtil = {
-  fetchAllWorkouts(cb){
+  fetchAllWorkouts(cb, feed){
     $.ajax({
       url: 'api/workouts',
+      data: {feed: feed},
       success: cb
     });
   },

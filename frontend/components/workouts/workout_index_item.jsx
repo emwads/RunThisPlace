@@ -21,9 +21,9 @@ const WorkoutIndexItem = React.createClass({
     let disp = "";
 
     if (this.props.workout.calories !== null) {
-      disp = <span>{this.props.workout.calories}</span>;
+      disp = <span className="calories">{this.props.workout.calories}</span>;
     } else {
-      disp = <span>--</span>;
+      disp = <span className="calories">--</span>;
     }
     return disp;
   },

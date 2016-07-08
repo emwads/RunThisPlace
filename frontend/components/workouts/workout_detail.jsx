@@ -4,7 +4,7 @@ const WorkoutActions = require('../../actions/workout_actions');
 const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
 const RunRouteMap = require('../runroutes/run_route_detail_map');
-const IconConstants = require('../../constants/icon_constants');
+const WorkoutIndexItem = require('./workout_index_item');
 
 
 
@@ -30,30 +30,13 @@ const WorkoutDetail = React.createClass({
     this.workoutListener.remove();
   },
 
-  detailWorkout(){
-    if (this.state.workout !== undefined) {
-      return (
-        <div className="detail-description">
-          <h2>{this.state.workout.title}</h2>
-          <span>description: {this.state.workout.description}</span><br />
-          <span>date: {this.state.workout.date}</span><br />
-          <span>distance: {this.state.workout.distance}</span><br />
-          <span>exercise type: {this.state.workout.workout_type}</span><br />
-          <span>calories: {this.state.workout.calories}</span><br />
-          <figure>
-            <img src={IconConstants.icons(this.state.workout.workout_type)} alt={this.state.workout.workout_type} />
-          </figure>
-        </div>
-      );
-    }
-  },
 
   showRouteMap() {
     const self = this;
     if (this.state.workout !== undefined  && this.state.workout.map_info !== undefined) {
       return (<div className='cf'>
-        <h3>{this.state.workout.routeTitle}</h3>
-        <div>
+        <h3>Route: {this.state.workout.routeTitle}</h3>
+        <div className="fl">
           <RunRouteMap displayDirections={false}  mapPoints={JSON.parse(this.state.workout.map_info)}/>
 
         </div>
@@ -65,7 +48,7 @@ const WorkoutDetail = React.createClass({
     if (this.state.workout !== undefined) {
       return (
         <div className="detail-button">
-          <button  onClick={ () => {
+          <button className="grey-button" onClick={ () => {
               hashHistory.push(`workouts/${this.props.params.workoutId}/edit`);
             } }>edit workout</button>
 
@@ -77,7 +60,7 @@ const WorkoutDetail = React.createClass({
   toDashboardButton(){
     return (
       <div className="detail-button">
-        <button onClick={ () => {
+        <button className="grey-button" onClick={ () => {
             hashHistory.push(`dashboard`);
           } }>Back Home</button>
 
@@ -91,7 +74,7 @@ const WorkoutDetail = React.createClass({
     if (this.state.workout !== undefined) {
       return (
         <div className="detail-button" >
-          <button  onClick={this.deleteWorkout}>Delete workout</button>
+          <button className="grey-button" onClick={this.deleteWorkout}>Delete workout</button>
         </div>
       );
     }
@@ -104,17 +87,25 @@ const WorkoutDetail = React.createClass({
   },
 
   render () {
-
-
+    let detail = "";
+    if (this.state.workout) {
+      detail = <WorkoutIndexItem showComments={true} workout={this.state.workout} />;
+      }
 
     return(
       <div>
-
-        {this.detailWorkout()}
-        {this.showRouteMap()}
+      <br />
+      <br />
         {this.editWorkoutButton()}
         {this.deleteWorkoutButton()}
         {this.toDashboardButton()}
+
+        {detail}
+        {this.showRouteMap()}
+
+
+
+
 
 
       </div>

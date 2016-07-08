@@ -5,8 +5,8 @@ const WorkoutConstants = require('../constants/workout_constants');
 const WorkoutApiUtil = require('../util/workout_api_util');
 
 const WorkoutActions = {
-  fetchAllWorkouts() {
-    WorkoutApiUtil.fetchAllWorkouts(WorkoutActions.receiveAllWorkouts);
+  fetchAllWorkouts(feed) {
+    WorkoutApiUtil.fetchAllWorkouts(WorkoutActions.receiveAllWorkouts, feed);
 
   },
 

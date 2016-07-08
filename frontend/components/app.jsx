@@ -57,6 +57,12 @@ const App = React.createClass({
     }
   },
 
+  selectTab(pathname) {
+    if (this.props.location.pathname === pathname) {
+      return 'selected'
+    }
+  },
+
   displaySubNavbar() {
 
     if ( !["/login", "/signup"].includes(this.props.location.pathname) &&
@@ -64,10 +70,10 @@ const App = React.createClass({
           return(
             <div >
               <ul className="sub-nav-bar">
-                <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><Link to="/feed">Activity Feed</Link></li>
-                <li><Link to="/runroutes/new">Create Route</Link></li>
-                <li><Link to="/workouts/new">Log Workout</Link></li>
+                <Link to="/dashboard"><li className={this.selectTab('/dashboard')} >Dashboard</li></Link>
+                <Link to="/feed"><li className={this.selectTab('/feed')} >Activity Feed</li></Link>
+                <Link to="/runroutes/new"><li className={this.selectTab('/runroutes/new')} >Create Route</li></Link>
+                <Link to="/workouts/new"><li  className={this.selectTab('/workouts/new')} >Log Workout</li></Link>
               </ul>
             </div>
           );
@@ -85,9 +91,9 @@ const App = React.createClass({
             <div className="nav">
               {this.logoLink()}
               <ul className="nav-links">
-                <li><Link to="/workouts">Workouts</Link></li>
-                <li><Link to="/runroutes">Routes</Link></li>
-                <li><Link to="/connect">Connect</Link></li>
+                <Link to="/workouts"><li>Workouts</li></Link>
+                <Link to="/runroutes"><li>Routes</li></Link>
+                <Link to="/connect"><li>Connect</li></Link>
               </ul>
                 { this.greeting() }
 

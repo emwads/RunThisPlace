@@ -33,23 +33,24 @@ const CommentForm = React.createClass({
   render () {
 
     return(
-      <div className="comment-form">
+      <div >
 
-      <form onSubmit={this.handleSubmit}>
+      <form className="comment-form cf" onSubmit={this.handleSubmit} >
 
-        <br />
-        <img className="user-thumb" src={SessionStore.currentUser().picture_url} />
+
+        <img className="user-thumb fl" src={SessionStore.currentUser().picture_url} />
         <label for="body">
           <textarea id="body"
+            className="fl"
             value={this.state.body}
             onChange={this.update("body")}
             placeholder="Write a comment..."></textarea>
         </label>
+        <input type="submit" className="no-margin fl" value="Post" />
 
         <br />
 
 
-        <input type="submit" className="submit" value="Post" />
 
 
       </form>

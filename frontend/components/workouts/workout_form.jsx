@@ -9,7 +9,6 @@ const WorkoutForm = React.createClass({
   getInitialState() {
     return {
       description: "",
-      workout_type: "run",
       title: "",
       calories: "",
       distance: "",
@@ -20,8 +19,9 @@ const WorkoutForm = React.createClass({
 
   handleSubmit(event) {
     event.preventDefault();
+
     const workout = {
-      workout_type: this.state.workout_type,
+      workout_type: this.refs.workoutType.value,
       run_route_id: this.state.run_route_id,
       title: this.state.title,
       description: this.state.description,
@@ -59,8 +59,9 @@ const WorkoutForm = React.createClass({
   workoutFormType() {
     const workoutOptions = ["run", "walk", "hike", "gym", "other"];
     return(
+      <div className='inline'>
       <label for="workout_type">Workout Type <br />
-        <select id="workout_type" onChange={this.workoutTypeUpdate} value="run">
+        <select id="workout_type" ref="workoutType">
           <option value="run">
             run
           </option>
@@ -82,6 +83,7 @@ const WorkoutForm = React.createClass({
           </option>
         </select>
       </label>
+      </div>
 
     );
   },
@@ -94,9 +96,9 @@ const WorkoutForm = React.createClass({
       <div className="create-workout-container">
       <form onSubmit={this.handleSubmit}>
            <h3>Log a workout</h3>
+           <br /> <br />
 
-
-        <label for="title">
+        <label for="title"> What you did<br />
           <input id="title" type="text"
             value={this.state.title}
             onChange={this.update("title")}
@@ -104,45 +106,42 @@ const WorkoutForm = React.createClass({
             placeholder="title" />
         </label>
 
-        <br />
-        <label for="description">Describe your workout: <br />
-          <textarea id="description"
-            value={this.state.description}
-            onChange={this.update("description")}
-            placeholder="description"></textarea>
-        </label>
-
-        <br />
-        {this.workoutFormType()}
-
-
-                <br />
-        <label for="calories">
-          <input id="calories" type="text"
-            value={this.state.calories}
-            onChange={this.update("calories")}
-            placeholder="calories" />
-        </label>
-
-                <br />
-        <label for="distance">
-          <input id="distance" type="text"
-            value={this.state.distance}
-            onChange={this.update("distance")}
-            placeholder="distance" />
-        </label>
-
-                <br />
-        <label for="date">
+        <label for="date"> When you worked out<br />
           <input id="date" type="date"
             value={this.state.date}
             onChange={this.update("date")}
             required
             placeholder="date" />
         </label>
+        <br />
 
-                <br />
-                        <br />
+        <label for="calories"> Calories <br />
+          <input id="calories" type="number"
+            min="0" max="10000" step="1"
+            value={this.state.calories}
+            onChange={this.update("calories")}
+            placeholder="calories" />
+        </label>
+
+        <label for="distance">distance <br />
+          <input id="distance" type="number"
+            min="0" max="150" step="0.1"
+            value={this.state.distance}
+            onChange={this.update("distance")}
+            placeholder="distance" />
+        </label>
+
+        <br />
+        <label for="description">Describe your workout<br />
+        <textarea id="description"
+          value={this.state.description}
+          onChange={this.update("description")}
+          placeholder="Description"></textarea>
+      </label>
+
+      <br />
+        {this.workoutFormType()}
+
         <label for="run_route_id">
           <input id="run_route_id" type="text"
             value={this.state.run_route_id}

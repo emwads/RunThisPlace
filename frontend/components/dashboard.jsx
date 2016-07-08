@@ -25,7 +25,7 @@ const Dashboard = React.createClass({
 
   componentDidMount() {
     this.workoutListener = WorkoutStore.addListener(this._workoutsChanged);
-    WorkoutActions.fetchAllWorkouts();
+    WorkoutActions.fetchAllWorkouts(false);
 
     this.runRouteListener = RunRouteStore.addListener(this._runRoutesChanged);
     RunRouteActions.fetchAllRunRoutes();
@@ -40,11 +40,13 @@ const Dashboard = React.createClass({
 
   render () {
     return(
-      <div>
+      <div >
         <h1 className="dash-header">My Dashboard</h1>
-        <WorkoutIndex workouts={this.state.workouts} />
+        <div className="dash-container">
+          <WorkoutIndex workouts={this.state.workouts} />
 
-        <RunRouteIndex runroutes={this.state.runroutes} />
+          <RunRouteIndex runroutes={this.state.runroutes} />
+        </div>
 
       </div>
     );

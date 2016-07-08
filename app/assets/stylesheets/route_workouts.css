@@ -27,9 +27,17 @@
 .dash-list {
   /*padding: 10px 5px  ;*/
   /*border-top: 1px solid grey;*/
+  margin-top: 20px;
   line-height: 1.25;
   font-size: 14px;
+  transition: scale 0.2s;
 }
+
+.dash-list:hover {
+  transform: scale(1.02);
+}
+
+
 
 .dash-list h3 {
   color: #104DA1;
@@ -64,9 +72,15 @@
   margin: 0 0 10px 0;
   display:flex;
   justify-content: space-between;
-  border-bottom: 1px
-
 }
+
+.full-workouts {
+  margin: 20px auto;
+  width: 620px;
+  padding: 20px 0 0 0 ;
+}
+
+
 
 .dash-el-container {
   padding: 10px;
@@ -76,22 +90,46 @@
   width: 50%%;*/
   width: 600px;
 
-  margin:20px;
+  margin:20px 20px 20px 40px;
   float: left;
 }
 
+/*.route-deet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}*/
 
 .create-runroute-container {
   padding: 10px;
+  min-width: 400px
 
+}
+
+.create-workout-container label {
+  display: inline-block;
+  padding: 10px 30px 10px 0;
 }
 
 .create-workout-container input {
-  display: inline-block;
+  margin: 10px;
+  width: 300px;
+}
+
+
+
+.create-workout-container select {
+  margin: 10px;
+}
+
+.create-workout-container textarea {
+  margin: 10px;
+  height: 125px;
+  width: 400px;
 }
 
 select#workout_type {
-  width: 200px;
+  width: 100px;
 }
 
 .form-container {
@@ -103,7 +141,28 @@ select#workout_type {
   margin: 20px;
   display: inline-block;
   float: left;
+}
 
+.run-form-container {
+  padding: 10px ;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.run-form-container>div {
+  margin: 30px;
+}
+
+.f-left {
+  display: inline-block;
+  float: left;
+}
+
+.inline {
+  display: inline-block;
 }
 
 
@@ -132,21 +191,43 @@ select#workout_type {
 .dash-route-container {
   width:300px;
   float:left;
+  padding: 20px 20px 20px 40px;
 }
 
 .saved-comments {
-  border: 1px solid grey;
+  border-top: 1px solid grey;
 }
 
 .comment-form {
-  border: 1px solid grey;
+  /*border: 1px solid grey;*/
+  margin: 10px 0 0 0;
+  padding: 10px;
+
 }
 
+.comment-listing {
+  padding: 0px 40px 50px 40px;
+}
+
+.comment-form textarea {
+  width: 70%;
+  display: inline-block;
+  margin: 0 10px;
+
+}
+
+.comment-post-form {
+
+}
 
 .single-comment {
-    padding: 5px 10px;
+    padding: 5px 10px 0 10px;
 }
 
+.dash-route-container .dash-el-header {
+  border-bottom: 1px solid grey;
+  padding: 10px 0 19px 0;
+}
 
 
 .workout-listing-detail {
@@ -168,12 +249,16 @@ select#workout_type {
   width: 110px;
   text-align left;
   padding: 5px;
-
-
-
 }
 
 .workout-listing-div-3 {
   padding: 5px;
   width: 110px
+}
+
+
+.calories {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  font-size: 30px;
 }

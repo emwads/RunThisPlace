@@ -30,10 +30,17 @@ const RunRouteDetail = React.createClass({
   detailRunRoute(){
     if (this.state.runroute !== undefined) {
       return (
-        <div className="detail-description">
+        <div className="run-detail-description">
           <h2>{this.state.runroute.title}</h2>
-          <span>description: {this.state.runroute.description}</span><br />
-          <span>distance: {this.state.runroute.distance}</span><br />
+          <h4>
+            description
+          </h4>
+          <span>{this.state.runroute.description}</span>
+
+        <h4>
+          distance
+        </h4>
+          <span> {this.state.runroute.distance}</span><br />
             {this.deleteRunRouteButton()}
             {this.toDashboardButton()}
 
@@ -96,8 +103,11 @@ const RunRouteDetail = React.createClass({
 
     return(
       <div>
-        {this.detailRunRoute()}
-        {this.renderMap()}
+        <div className="route-deet" >
+
+          {this.detailRunRoute()}
+          {this.renderMap()}
+        </div>
 
         <br />
       </div>

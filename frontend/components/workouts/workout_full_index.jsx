@@ -18,7 +18,7 @@ const WorkoutFullIndex = React.createClass({
 
   componentDidMount() {
     this.workoutListener = WorkoutStore.addListener(this._workoutsChanged);
-    WorkoutActions.fetchAllWorkouts();
+    WorkoutActions.fetchAllWorkouts(false);
   },
 
   componentWillUnmount() {
@@ -28,13 +28,14 @@ const WorkoutFullIndex = React.createClass({
   render () {
 
     return(
-      <div className="dash-el-container">
+      <div className="full-workouts">
         <header className="dash-el-header">
 
         <h2>My Workouts</h2>
           <br />
+          <br />
             <Link to="/dashboard">
-              <span className="buttonify grey-button">{'<<'}
+              <span className="buttonify grey-button">{'<< '}
                 Dashboard
               </span>
             </Link>
@@ -42,7 +43,7 @@ const WorkoutFullIndex = React.createClass({
 
         {this.state.workouts.map(function (workout) {
             return (<WorkoutIndexItem key={workout.id}
-                                      showComments={true}
+                                      showComments={false}
                                       workout={workout} />);
           })}
       </div>
