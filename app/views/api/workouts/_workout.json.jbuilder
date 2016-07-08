@@ -4,6 +4,7 @@ json.extract!(workout,
 if show_user
   json.userId workout.user.id
   json.username workout.user.username
+  json.picture_url workout.user.picture_url
 end
 
 if show_route && workout.run_route

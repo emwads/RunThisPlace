@@ -6,7 +6,7 @@
 
 json.array!(@workouts) do |workout|
   json.partial!('api/workouts/workout', workout: workout,
-                show_user: false,
+                show_user: true,
                 show_route: false,
                 show_comments: true)
 end

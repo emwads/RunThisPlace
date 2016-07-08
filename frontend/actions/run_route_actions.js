@@ -16,7 +16,6 @@ const RunRouteActions = {
   },
 
   createRunRoute(runroute){
-    console.log({run_route: runroute});
     RunRouteApiUtil.createRunRoute({run_route: runroute}, RunRouteActions.receiveSingleRunRoute);
 
   },

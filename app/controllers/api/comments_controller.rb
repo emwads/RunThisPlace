@@ -5,7 +5,10 @@ class Api::CommentsController < ApplicationController
     comment.author_id = current_user.id
 
     if comment.save
-      @workouts = current_user.workouts.order(:date)
+      @workouts = []
+      current_user.following.each do |user|
+        @workouts += user.workouts
+      end
       render "api/workouts/index"
     else
       render json: comment.errors.full_messages, status: 422
@@ -13,12 +16,16 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @workout = Workout.find(params[:id])
+    comment = Comment.find(params[:id])
 
-    if @workout.destroy
+    if comment.destroy
+      @workouts = []
+      current_user.following.each do |user|
+        @workouts += user.workouts
+      end
       render "api/workouts/index"
     else
-      render json: @workout.errors.full_messages, status: 422
+      render json: comment.errors.full_messages, status: 422
     end
   end
 

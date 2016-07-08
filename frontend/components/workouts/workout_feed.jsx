@@ -2,10 +2,10 @@ const React = require('react');
 const WorkoutStore = require('../../stores/workout_store');
 const WorkoutActions = require('../../actions/workout_actions');
 const Link = require('react-router').Link;
-const WorkoutIndexItem = require('./workout_index_item');
+const WorkoutFeedItem = require('./workout_feed_item');
 
 
-const WorkoutFullIndex = React.createClass({
+const WorkoutFeed = React.createClass({
 
   getInitialState() {
     return {workouts: []};
@@ -21,7 +21,7 @@ const WorkoutFullIndex = React.createClass({
 
   componentDidMount() {
     this.workoutListener = WorkoutStore.addListener(this._workoutsChanged);
-    WorkoutActions.fetchAllWorkouts(false);
+    WorkoutActions.fetchAllWorkouts(true);
   },
 
   componentWillUnmount() {
@@ -34,7 +34,7 @@ const WorkoutFullIndex = React.createClass({
       <div className="full-workouts">
         <header className="dash-el-header">
 
-        <h2>My Workouts</h2>
+        <h2>Activity Feed</h2>
           <br />
           <br />
             <Link to="/dashboard">
@@ -45,8 +45,8 @@ const WorkoutFullIndex = React.createClass({
         </header>
 
         {this.state.workouts.map(function (workout) {
-            return (<WorkoutIndexItem key={workout.id}
-                                      showComments={false}
+            return (<WorkoutFeedItem key={workout.id}
+                                      showComments={true}
                                       workout={workout} />);
           })}
       </div>
@@ -56,4 +56,4 @@ const WorkoutFullIndex = React.createClass({
 
 });
 
-module.exports = WorkoutFullIndex;
+module.exports = WorkoutFeed;

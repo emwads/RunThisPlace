@@ -29,7 +29,6 @@ const RouteFormMap = React.createClass({
       waypoints: waypoints,
       travelMode: google.maps.TravelMode.WALKING,
     }, function(response, status) {
-      console.log(response);
       // self.props.onUpdate('routePath', response.routes[0].overview_polyline);
 
       if (status === google.maps.DirectionsStatus.OK) {

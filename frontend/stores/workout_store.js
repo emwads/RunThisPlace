@@ -23,10 +23,11 @@ const removeWorkout = function (workout) {
 };
 
 WorkoutStore.all = function () {
-  let result = Object.keys(_workouts).map(function (workoutId) {
+  const result = Object.keys(_workouts).map(function (workoutId) {
     return _workouts[workoutId];
   });
 
+  return result.sort(sortWorkouts);
 
 };
 
@@ -53,5 +54,17 @@ WorkoutStore.__onDispatch = function (payload) {
       break;
   }
 };
+
+
+
+function sortWorkouts(a, b) {
+    if (a.date > b.date) {
+      return -1;
+    } else if (a.date < b.date) {
+      return 1;
+    } else {
+    return 0;
+    }
+  }
 
 module.exports = WorkoutStore;

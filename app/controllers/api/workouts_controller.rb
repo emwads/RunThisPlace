@@ -26,8 +26,14 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def index
-
-    @workouts = current_user.workouts.order(date: :desc)
+    if params[:feed] == "true"
+      @workouts = []
+      current_user.following.each do |user|
+        @workouts += user.workouts
+      end
+    else
+      @workouts = current_user.workouts
+    end
   end
 
   def destroy

@@ -21,13 +21,21 @@
   font-size: 12px;
 }
 
+.feed-list {
+  /*padding: 10px 5px  ;*/
+  /*border-top: 1px solid grey;*/
+  margin-top: 30px;
+  line-height: 1.25;
+  font-size: 14px;
+  transition: scale 0.2s;
+}
 
 
 
 .dash-list {
   /*padding: 10px 5px  ;*/
   /*border-top: 1px solid grey;*/
-  margin-top: 20px;
+  margin-top: 30px;
   line-height: 1.25;
   font-size: 14px;
   transition: scale 0.2s;
@@ -222,6 +230,14 @@ select#workout_type {
 
 .single-comment {
     padding: 5px 10px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.single-comment div {
+  display: flex;
+  align-items: center;
 }
 
 .dash-route-container .dash-el-header {
@@ -261,4 +277,20 @@ select#workout_type {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 300;
   font-size: 30px;
+}
+
+.feed-listing-header {
+  display: block;
+  width: 100%;
+  margin: 10px;
+}
+
+.feed-header{
+  margin: 10px 0 0 0;
+  float: left;
+  font-size: 18px;
+}
+
+.feed-listing-header  figure {
+  margin: 5px 10px 0 5px;
 }
