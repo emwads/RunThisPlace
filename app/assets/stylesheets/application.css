@@ -278,9 +278,12 @@ input, textarea, select, button {
 .guest:hover {
   background-color: #006eb3;
   cursor: pointer;
-
 }
 
+.bottom-info {
+  line-height: 1.5;
+
+}
 
 textarea {
   line-height: 1.15;

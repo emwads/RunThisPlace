@@ -23,7 +23,7 @@ const Welcome = React.createClass({
           <h4>
             Log Your Workouts
           </h4>
-          <p>"Do you even lift?" "Yeah, bro, check out my porfile on run this place" <br /> -a real conversation somewhere</p>
+          <p>"Do you even lift?" "Yeah, bro, check out my profile on run this place" <br /> -a real conversation somewhere</p>
         </div>
         <div>
           <img src="https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,e_brightness:100,w_125/v1467917588/sharing-icon_lqvygr.png" alt="share icon" />
