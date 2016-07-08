@@ -3,6 +3,9 @@ const Link = require('react-router').Link;
 const WorkoutActions = require('../../actions/workout_actions');
 const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../../stores/session_store');
+const RouteStore = require('../../stores/run_route_store');
+const RouteActions = require('../../actions/run_route_actions');
+
 
 
 const WorkoutForm = React.createClass({
@@ -15,6 +18,21 @@ const WorkoutForm = React.createClass({
       date: "",
       run_route_id: ""
     };
+  },
+
+  _runRoutesChanged() {
+
+    this.setState({runRoutes: RouteStore.all()});
+  },
+
+
+  componentDidMount() {
+    this.routeListener = RouteStore.addListener(this._routesChanged);
+    RouteActions.fetchAllRunRoutes();
+  },
+
+  componentWillUnmount() {
+    this.workoutListener.remove();
   },
 
   handleSubmit(event) {
@@ -45,9 +63,19 @@ const WorkoutForm = React.createClass({
 
   workoutTypeUpdate(e) {
 
-      let el = e.target;
-      this.setState({workout_type: el.options[el.selectedIndex].value});
+    let el = e.target;
+    this.setState({workout_type: el.options[el.selectedIndex].value});
 
+  },
+
+  displayRouteSelector (){
+
+
+    return (
+      <div className='inline'></div>
+      // <label for="workout_type">Workout Type <br />
+      //   <select id="workout_type" ref="workoutType">
+    );
   },
 
   dropDownSelected (stateVar, option) {

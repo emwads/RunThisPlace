@@ -232,7 +232,8 @@ nav.footer-nav {
   display: inline-block;
   height: 600px;
   width: 100%;
-  background: url("https://res.cloudinary.com/dznf6puuv/image/upload/v1467220201/runners_fuz38f.jpg") no-repeat center center scroll;
+  background: url("https://res.cloudinary.com/dznf6puuv/image/upload/v1467992858/runners_fuz38f.jpg") no-repeat center center scroll;
+  /*background: url("https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,w_1900/v1467918583/background-image.jpg") no-repeat center center scroll;*/
   background-size: cover;
 }
 
@@ -251,7 +252,7 @@ nav.footer-nav {
 .welcome {
   float: right;
   text-align: left;
-  width: 50%;
+  width: 30%;
   padding: 50px 50px 0 0;
   line-height: 1.5;
 }

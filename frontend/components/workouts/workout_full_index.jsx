@@ -12,7 +12,6 @@ const WorkoutFullIndex = React.createClass({
   },
 
   _workoutsChanged() {
-    let workouts=WorkoutStore.all();
 
     this.setState({workouts: WorkoutStore.all()});
   },

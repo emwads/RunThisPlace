@@ -93,7 +93,7 @@ const RouteForm = React.createClass({
 
 
       <div>
-        <span>click on the map to move points</span>
+        <span>click on the map to add points</span>
         <div className="formmap">
 
           <RouteFormMap onUpdate={this.childInitUpdate}
