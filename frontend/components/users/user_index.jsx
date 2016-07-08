@@ -47,7 +47,7 @@ const UserIndex = React.createClass({
 
   render () {
     return(
-      <div className='solid-back'>
+      <div className=''>
         <div className="user-detail-container">
           <h3>Connect to Friends</h3>
           {this.toDashboardButton()}

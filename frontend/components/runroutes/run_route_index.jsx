@@ -8,12 +8,11 @@ const RunRouteIndex = React.createClass({
 
     return(
       <div className=" dash-el-container dash-route-container cf">
-        <div className="dash-el-header">
+        <header className="dash-el-header">
           <h2>Recent Routes</h2><br />
-          <Link to="/runroutes/new">+ Create New Route</Link> |
-            <Link to="/runroutes"> All Routes</Link>
+            <Link to="/runroutes"><span className="buttonify grey-button"> All Routes</span></Link>
 
-        </div>
+        </header>
 
         {this.props.runroutes.slice(0,4).map(function (runroute) {
             return (<RunRouteIndexItem key={runroute.id} runroute={runroute} />);

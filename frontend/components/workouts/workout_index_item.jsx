@@ -10,7 +10,9 @@ const WorkoutIndexItem = React.createClass({
     let disp = "";
 
     if (this.props.workout.distance !== null) {
-      disp = <li>distance: {this.props.workout.distance}</li>;
+      disp = <span className="big">{this.props.workout.distance}</span>;
+    } else {
+      disp =<span className="big">0.0</span>;
     }
     return disp;
   },
@@ -19,7 +21,9 @@ const WorkoutIndexItem = React.createClass({
     let disp = "";
 
     if (this.props.workout.calories !== null) {
-      disp = <li>calories: {this.props.workout.calories}</li>;
+      disp = <span>{this.props.workout.calories}</span>;
+    } else {
+      disp = <span>--</span>;
     }
     return disp;
   },
@@ -39,15 +43,26 @@ const WorkoutIndexItem = React.createClass({
           <figure>
             <img src={IconConstants.icons(this.props.workout.workout_type)} alt={this.props.workout.workout_type} />
           </figure>
-          <h3><Link to={`/workouts/${this.props.workout.id}`} >{this.props.workout.title}</Link></h3>
-          <div>
-            <ul>
-              <li>date: {this.props.workout.date}</li>
-              {this.displayDistance()}
-              <li>exercise type: {this.props.workout.workout_type}</li>
-                {this.displayCalories()}
-            </ul>
+
+          <div className="workout-listing-div-1">
+            <h3><Link to={`/workouts/${this.props.workout.id}`} >{this.props.workout.title}</Link></h3>
+            <p>distance</p>
+            {this.displayDistance()} mi
           </div>
+
+          <div className="workout-listing-div-2">
+            <h4>Calories</h4>
+            {this.displayCalories()}
+
+          </div>
+
+          <div className="workout-listing-div-3">
+            <h4>Date</h4>
+            {this.props.workout.date}
+            <h4>Workout Type</h4>
+            {this.props.workout.workout_type}
+          </div>
+
         </div>
         {this.displayComments() }
       </div>

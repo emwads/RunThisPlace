@@ -38,7 +38,11 @@ nav {
   position:relative;
 }
 
+.big {
+  font-size: 50px;
+  font-weight: 300;
 
+}
 
 nav li {
   text-transform: uppercase;
@@ -56,8 +60,10 @@ nav li:hover {
 }
 
 h1{
-  font-weight: 700;
+  font-weight: 400;
   font-size: 26px;
+  text-transform: uppercase;
+
 }
 
 nav h1 {
@@ -66,6 +72,13 @@ nav h1 {
   float: left;
   color: #0083d5;
   padding: 20px;
+}
+
+
+h2 {
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -111,6 +124,29 @@ h3 {
     display: block;
     cursor: pointer;
 
+}
+
+.sub-nav-bar {
+  background-color: gainsboro;
+  height: 40px;
+  display: flex;
+  justify-content: center ;
+  width: 100%;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.sub-nav-bar li {
+  display: inline-block;
+  padding: 11px 40px 0 30px;
+  color: #686868;
+  vertical-align: middle;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.sub-nav-bar li:hover {
+  color: black;
+  background-color: white;
 }
 
 /*.nav-dropdown-content li:hover {
@@ -290,7 +326,6 @@ input.logout-button {
     width: 40%;
     margin: 20px;
 }
-
 .map-thumb {
   width: 125px;
   height: 125px;
@@ -327,10 +362,34 @@ input.logout-button {
   margin: 0 10px 0px 0;
   border-radius: 20px;
   border: 1px solid darkgrey;
+  transition: all 0.1s;
 }
 
 
 
+.user-thumb:hover {
+  /*box-shadow: 0px 0px 5px #104DA1;*/
+  transform: scale(1.1);
+}
+
+
 .solid-back {
   background-color: gainsboro;
+}
+
+
+.grey-button {
+  /*font-family: 'Roboto Condensed', sans-serif;*/
+  background-color: #dcdcdc;
+  font-size: 14px;
+  border: none;
+  color: #104DA1;
+
+}
+
+.grey-button:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+  color: #104DA1;
+
 }

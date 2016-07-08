@@ -25,36 +25,47 @@
 
 
 .dash-list {
-  padding: 5px 5px  ;
+  /*padding: 10px 5px  ;*/
   /*border-top: 1px solid grey;*/
   line-height: 1.25;
   font-size: 14px;
 }
 
 .dash-list h3 {
-  color: blue;
-  font-size: 20px;
-  margin: 5px;
-
+  color: #104DA1;
+  font-size: 18px;
+  padding: 5px 0;
 }
 
-.dash-list div {
+.dash-list h4 {
+  color: #686868;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 7px 0 0 0;
+}
+
+/*.dash-list div {
   line-height: 1.5;
-}
+}*/
 
 .dash-list figure {
   display: inline-block;
   float: left;
-  padding: 10px 25px 0px 10px;
+  margin: 5px 20px 0px 5px;
 }
 
-h2 {
-  font-weight: 700;
-  font-size: 24px;
+.dash-list img {
+  border: 1px solid lightgrey;
+
 }
 
 .dash-el-header {
   margin: 0 0 10px 0;
+  display:flex;
+  justify-content: space-between;
+  border-bottom: 1px
+
 }
 
 .dash-el-container {
@@ -63,7 +74,8 @@ h2 {
   /*border: 1px solid lightgrey;*/
   /*min-width: 300px;
   width: 50%%;*/
-  width: 500px;
+  width: 600px;
+
   margin:20px;
   float: left;
 }
@@ -114,10 +126,10 @@ select#workout_type {
 .dash-route-list {
   display: inline-block;
   float: left;
+  margin: 0 0 0 30px;
 }
 
 .dash-route-container {
-  border: solid 1px lightgrey;
   width:300px;
   float:left;
 }
@@ -131,7 +143,37 @@ select#workout_type {
 }
 
 
-.workout-listing-detail {
-  border: 1px solid grey;
+.single-comment {
+    padding: 5px 10px;
+}
 
+
+
+.workout-listing-detail {
+  border-top: 1px solid grey;
+  display: flex;
+  padding: 10px;
+}
+
+.workout-listing-div-1 {
+  border-right: 1px solid grey;
+  width: 230px;
+  text-align: left;
+  line-height: 1.1;
+
+}
+
+.workout-listing-div-2 {
+  border-right: 1px solid grey;
+  width: 110px;
+  text-align left;
+  padding: 5px;
+
+
+
+}
+
+.workout-listing-div-3 {
+  padding: 5px;
+  width: 110px
 }

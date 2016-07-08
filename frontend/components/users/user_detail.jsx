@@ -48,7 +48,7 @@ const UserDetail = React.createClass({
     if (this.state.user !== undefined && this.state.form === false) {
       return (
         <div className="detail-button">
-          <button  onClick={ (e) => {
+          <button className="grey-button" onClick={ (e) => {
               e.preventDefault();
               self.setState({form: true});
             } }>Edit Profile</button>
@@ -56,7 +56,7 @@ const UserDetail = React.createClass({
       );
     } else if (this.state.user !== undefined && this.state.form === true) {
       return (<div className="detail-button">
-        <button  onClick={ (e) => {
+        <button className="grey-button" onClick={ (e) => {
             e.preventDefault();
             self.setState({form: false});
           } }>Cancel Edit</button>
@@ -67,7 +67,7 @@ const UserDetail = React.createClass({
   toDashboardButton(){
     return (
       <div className="detail-button">
-        <button onClick={ () => {
+        <button className="grey-button" onClick={ () => {
             hashHistory.push(`dashboard`);
           } }>Back Home</button>
 
@@ -102,8 +102,8 @@ const UserDetail = React.createClass({
           </figure>
 
           {this.detailUser()}
-          {this.editUserButton()}
           {this.toDashboardButton()}
+          {this.editUserButton()}
         </div>
 
         <div>

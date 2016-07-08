@@ -29,13 +29,16 @@ const WorkoutFullIndex = React.createClass({
 
     return(
       <div className="dash-el-container">
-        <div className="dash-el-header">
+        <header className="dash-el-header">
 
         <h2>My Workouts</h2>
           <br />
-            <Link to="/dashboard"> {'<<'}Dashboard</Link>|
-            <Link to="/workouts/new"> + Log Workout</Link>
-        </div>
+            <Link to="/dashboard">
+              <span className="buttonify grey-button">{'<<'}
+                Dashboard
+              </span>
+            </Link>
+        </header>
 
         {this.state.workouts.map(function (workout) {
             return (<WorkoutIndexItem key={workout.id}

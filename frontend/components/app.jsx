@@ -39,6 +39,8 @@ const App = React.createClass({
     }
   },
 
+
+
   logoLink() {
     if (SessionStore.isUserLoggedIn()) {
       return (<Link to="/dashboard">
@@ -53,6 +55,25 @@ const App = React.createClass({
           </figure>
         </Link>);
     }
+  },
+
+  displaySubNavbar() {
+
+    if ( !["/login", "/signup"].includes(this.props.location.pathname) &&
+        !("/" === this.props.location.pathname) ){
+          return(
+            <div >
+              <ul className="sub-nav-bar">
+                <li><Link to="/dashboard">Dashboard</Link></li>
+                <li><Link to="/feed">Activity Feed</Link></li>
+                <li><Link to="/runroutes/new">Create Route</Link></li>
+                <li><Link to="/workouts/new">Log Workout</Link></li>
+              </ul>
+            </div>
+          );
+
+
+        }
   },
 
   render() {
@@ -72,6 +93,7 @@ const App = React.createClass({
 
             </div>
           </nav>
+          {this.displaySubNavbar()}
         </header>
         <div className='main cf'>
 
