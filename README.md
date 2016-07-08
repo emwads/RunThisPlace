@@ -10,32 +10,27 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README ([sample production README](docs/production_readme.md) )
-- [ ] Creation of running routes via map
-  - [ ] Rendering of map with a routes path
-  - [ ] Allow users to click on map to create a run route
-  - [ ] Saves run routes into the database
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Following
-  - [ ] Users can follow other users
-  - [ ] Followed users appear on user's profile
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Comments on workouts
-  - [ ] Users can comment on any workout
-  - [ ] comments appear on workout's detail page
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Dashboard for tracking workouts
+- [x] Creation of running routes via map
+  - [x] Rendering of map with a routes path
+  - [x] Allow users to click on map to create a run route
+  - [x] Saves run routes into the database
+  - [x] Adequate CSS styling
+- [x] Following
+  - [x] Users can follow other users
+  - [x] Followed users appear on user's activity feed
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
+- [x] Comments on workouts
+  - [x Users can comment on any workout
+  - [x] comments appear on workout's detail page
+- [x] Dashboard for tracking workouts
   - [x] Dashboard shows user's most recent workouts in a workout listing
-  - [ ] Dashboard possibly shows lifetime mileage data
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
   - [ ] Static maps for displaying maps(?)
+- [ ] workouts
+
 
 ## Design Docs
 * [View Wireframes][views]
@@ -93,28 +88,28 @@ API. route viewing and creation occurs on an embedded google map.
 
 **Objective:** Users can follow each other
 
-- [ ] update `user` model
-- [ ] update user view
-- [ ] build out API, Flux loop, and components friending create, destroy
-- [ ] Use CSS to style new views
+- [x] update `user` model
+- [x] update user view
+- [x] build out API, Flux loop, and components friending create, destroy
+- [x] Use CSS to style new views
 
 ### Phase 5: Allow for workout comments (1 days, W2 Wed 6pm)
 
 **Objective:** Users can comment on workouts. Comments are nested in workouts
 
-- [ ] create `Comment` model
-- [ ] seed the database with a small amount of `Comment` data
-- [ ] CRUD API for comment (`CommentController`)
-- [ ] jBuilder views for accessing comments
-- [ ] react components for creating/destroying comments
+- [x] create `Comment` model
+- [x] seed the database with a small amount of `Comment` data
+- [x] CRUD API for comment (`CommentController`)
+- [x] jBuilder views for accessing comments
+- [x] react components for creating/destroying comments
 
 
 
 ### Phase 6: styling + dashboard
 
 **Objective:** style and create dashboard
-- [ ] good styling
-- [ ] sliced/trimmed down list of routes/workouts/friends
+- [x] good styling
+- [x] sliced/trimmed down list of routes/workouts/friends
 - [ ] production read me
 
 ### Phase 7: Finish Runroutes (1 day, W2 Thu 6pm)
@@ -122,8 +117,7 @@ API. route viewing and creation occurs on an embedded google map.
 **Objective:** Add editing to run routes
 
 - [ ] fix query limit issues
-- [ ] fix routes to save dragged points
-- [ ] add elevation to route maps?
+- [ ] fix routes to save dragged points?
 - [ ] add more seed data
 - [ ] get selector for routes in workout form
 - [ ] add editing

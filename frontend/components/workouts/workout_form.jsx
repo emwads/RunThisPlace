@@ -16,25 +16,26 @@ const WorkoutForm = React.createClass({
       calories: "",
       distance: "",
       date: "",
-      run_route_id: ""
+      run_route_id: "",
+      runRoutes: []
     };
   },
 
-  _runRoutesChanged() {
-
-    this.setState({runRoutes: RouteStore.all()});
-  },
-
-
-  componentDidMount() {
-    this.routeListener = RouteStore.addListener(this._routesChanged);
-    RouteActions.fetchAllRunRoutes();
-  },
-
-  componentWillUnmount() {
-    this.workoutListener.remove();
-  },
-
+  // _runRoutesChanged() {
+  //
+  //   this.setState({runRoutes: RouteStore.all()});
+  // },
+  //
+  //
+  // componentDidMount() {
+  //   this.routeListener = RouteStore.addListener(this._routesChanged);
+  //   RouteActions.fetchAllRunRoutes();
+  // },
+  //
+  // componentWillUnmount() {
+  //   this.routeListener.remove();
+  // },
+  //
   handleSubmit(event) {
     event.preventDefault();
 
@@ -67,16 +68,16 @@ const WorkoutForm = React.createClass({
     this.setState({workout_type: el.options[el.selectedIndex].value});
 
   },
-
-  displayRouteSelector (){
-
-
-    return (
-      <div className='inline'></div>
-      // <label for="workout_type">Workout Type <br />
-      //   <select id="workout_type" ref="workoutType">
-    );
-  },
+  //
+  // displayRouteSelector (){
+  //
+  //
+  //   return (
+  //     <div className='inline'></div>
+  //     // <label for="workout_type">Workout Type <br />
+  //     //   <select id="workout_type" ref="workoutType">
+  //   );
+  // },
 
   dropDownSelected (stateVar, option) {
     if (stateVar === option) {
