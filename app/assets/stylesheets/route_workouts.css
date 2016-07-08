@@ -263,7 +263,7 @@ select#workout_type {
 .workout-listing-div-2 {
   border-right: 1px solid grey;
   width: 110px;
-  text-align left;
+  text-align: left;
   padding: 5px;
 }
 
