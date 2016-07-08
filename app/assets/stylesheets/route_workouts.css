@@ -82,6 +82,20 @@
   justify-content: space-between;
 }
 
+.feed-header {
+  margin: 0 0 10px 0;
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+
+.feed-header h5 {
+  margin: 0 5px 0 0px;
+
+}
+
 .full-workouts {
   margin: 20px auto;
   width: 620px;
@@ -142,7 +156,9 @@ select#workout_type {
 
 .form-container {
   padding: 10px ;
-  display: inline-block;
+  width: 800px;
+  margin: 0 auto;
+  display: block;
 }
 
 .form-container>div {
@@ -282,15 +298,29 @@ select#workout_type {
 .feed-listing-header {
   display: block;
   width: 100%;
-  margin: 10px;
-}
+  margin: 30px 10px 10px 10px;
+  padding: 20px 0 0 0;}
 
-.feed-header{
-  margin: 10px 0 0 0;
-  float: left;
-  font-size: 18px;
-}
+  .single-feed-header{
+    margin: 10px 0 0 0;
+    float: left;
+    font-size: 18px;
+  }
 
 .feed-listing-header  figure {
   margin: 5px 10px 0 5px;
+}
+
+.followed-container{
+  padding: 20px;
+  background-color: #e6e6e6;
+  line-height: 1.25;
+}
+
+.feed-page {
+  display: flex;
+}
+
+.icon-panel{
+  margin: 10px;
 }

@@ -4,7 +4,7 @@ const UserActions = require('../../actions/user_actions');
 const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../../stores/session_store');
-
+const UploadButton = require('./upload_button');
 
 
 const UserEditForm = React.createClass({
@@ -13,7 +13,7 @@ const UserEditForm = React.createClass({
     event.preventDefault();
     const userData = {user: {name: this.refs.name.value,
                       email: this.refs.email.value,
-                      picture_url: this.refs.picture_url.value,
+                      picture_url: this.state.picture_url,
                       birthdate: this.refs.birthdate.value,
                       weight: this.refs.weight.value,
                       height: this.refs.height.value}};
@@ -21,6 +21,23 @@ const UserEditForm = React.createClass({
     UserActions.updateUser(userData);
     this.props.hideForm();
 
+  },
+  getInitialState() {
+    return({picture_url: this.props.user.picture_url})
+  },
+  componentDidMount () {
+      this.uploadedImg = false;
+  },
+
+  displayImage() {
+    if (this.uploadedImg) {
+      return (<figure><img src={this.state.picture_url} alt="uploaded picture" /></figure> )
+    }
+  },
+
+  updateImage (image) {
+    this.uploadedImg=true;
+    this.setState({picture_url: image.url});
   },
 
   render () {
@@ -48,13 +65,9 @@ const UserEditForm = React.createClass({
         </label>
 
 
-        <br />
-        <label for="picture_url">
-          <input id="picture_url" type="text"
-            defaultValue={this.props.user.picture_url}
-            ref="picture_url"
-            placeholder="picture_url" />
-        </label>
+        <UploadButton postImage={this.updateImage} />
+        {this.displayImage()}
+
 
         <br />
         <label for="height">

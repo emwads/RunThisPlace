@@ -17,9 +17,9 @@ RunThisPlace is a web application inspired by Map My run that will be build usin
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
-- [ ] Friending
-  - [ ] Users can add friends
-  - [ ] Friended users appear on user's profile
+- [ ] Following
+  - [ ] Users can follow other users
+  - [ ] Followed users appear on user's profile
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling

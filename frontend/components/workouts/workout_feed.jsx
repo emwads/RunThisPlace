@@ -3,6 +3,7 @@ const WorkoutStore = require('../../stores/workout_store');
 const WorkoutActions = require('../../actions/workout_actions');
 const Link = require('react-router').Link;
 const WorkoutFeedItem = require('./workout_feed_item');
+const UserFollowees = require('../users/user_followees');
 
 
 const WorkoutFeed = React.createClass({
@@ -31,24 +32,30 @@ const WorkoutFeed = React.createClass({
   render () {
 
     return(
-      <div className="full-workouts">
-        <header className="dash-el-header">
+      <div className="feed-page" >
 
-        <h2>Activity Feed</h2>
-          <br />
-          <br />
-            <Link to="/dashboard">
-              <span className="buttonify grey-button">{'<< '}
-                Dashboard
-              </span>
-            </Link>
-        </header>
+        <div className="full-workouts">
 
-        {this.state.workouts.map(function (workout) {
-            return (<WorkoutFeedItem key={workout.id}
-                                      showComments={true}
-                                      workout={workout} />);
-          })}
+          <header className="feed-header">
+
+          <h2>Activity Feed</h2>
+
+              <div><Link to="/dashboard">
+                <span className="buttonify grey-button">{'<< '}
+                  Dashboard
+                </span>
+                </Link>
+              </div>
+
+            </header>
+
+            {this.state.workouts.map(function (workout) {
+                return (<WorkoutFeedItem key={workout.id}
+                                          showComments={true}
+                                          workout={workout} />);
+              })}
+          </div>
+        <UserFollowees />
       </div>
     );
 

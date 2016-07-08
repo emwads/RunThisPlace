@@ -7,7 +7,7 @@
 .user-detail-container {
   text-align: center;
   margin: auto;
-  padding: 20px 0 0 0; 
+  padding: 20px 0 0 0;
   min-width: 300px;
   width: 50%
 }
@@ -23,11 +23,25 @@
 }
 
 .unfollowed {
-  background-color: darkgrey;
+  background-color: #686868;
   color: white;
+}
+.unfollowed:hover {
+  background-color: #4a5e08  ;
+  color: black;
 }
 
 .followed {
-  background-color: #94bb0f  ;
+  background-color: #b9ec13  ;
   color: black;
+}
+
+.followed:hover {
+  background-color: #4a5e08;
+  color: white;
+}
+
+.connect-container {
+  width: 700px;
+  margin: auto;
 }

@@ -79,9 +79,13 @@ const RouteFormMap = React.createClass({
     const marker = new google.maps.Marker({
       position: coords,
       map: this.map,
-      draggable: true,
-      title: "point"
     });
+    // const marker = new google.maps.Marker({
+    //   position: coords,
+    //   map: this.map,
+    //   draggable: true,
+    //   title: "point"
+    // });
 
     this.markers.push(marker);
   },
@@ -128,8 +132,10 @@ const RouteFormMap = React.createClass({
     this.directionsService = new google.maps.DirectionsService;
 
     this.directionsDisplay = new google.maps.DirectionsRenderer({
-      draggable: true,
     });
+    // this.directionsDisplay = new google.maps.DirectionsRenderer({
+    //   draggable: true,
+    // });
 
     this.createAllMarkers();
     this.addListeners();

@@ -410,7 +410,7 @@ input.logout-button {
 
 .grey-button {
   /*font-family: 'Roboto Condensed', sans-serif;*/
-  background-color: #dcdcdc;
+  background-color: #cccccc;
   font-size: 14px;
   border: none;
   color: #104DA1;
@@ -418,7 +418,7 @@ input.logout-button {
 }
 
 .grey-button:hover {
-  background-color: #cccccc;
+  background-color: #b3b3b3;
   cursor: pointer;
   color: #104DA1;
 

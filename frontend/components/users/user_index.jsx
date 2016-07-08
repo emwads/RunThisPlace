@@ -47,7 +47,8 @@ const UserIndex = React.createClass({
 
   render () {
     return(
-      <div className=''>
+      <div className='connect-container'>
+
         <div className="user-detail-container">
           <h3>Connect to Friends</h3>
           {this.toDashboardButton()}

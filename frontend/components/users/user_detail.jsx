@@ -76,9 +76,14 @@ const UserDetail = React.createClass({
 
   },
 
+  updatePicture(pictureUrl) {
+    console.log('hi');
+  },
+
   displayForm(){
     if (this.state.form === true) {
-      return <UserEditForm user={this.state.user} hideForm={this.hideForm} />;
+      return <UserEditForm user={this.state.user} hideForm={this.hideForm}
+                          pictureUpdate={this.state.updatePicture} />;
     }
 
   },
@@ -87,18 +92,22 @@ const UserDetail = React.createClass({
     this.setState({form: false});
   },
 
-
+  displayPic () {
+    if (this.state.user !== undefined) {
+      return(<img  className="user-profile-pic" src={this.state.user.picture_url}/>);
+    }
+  },
 
   render () {
 
 
 
     return(
-      <div className='solid-back'>
+      <div className=''>
         <div className="user-detail-container">
           <h3>{SessionStore.currentUser().name}{`\'`}s Profile</h3>
           <figure>
-            <img  className="user-profile-pic" src={SessionStore.currentUser().picture_url} />
+            {this.displayPic()}
           </figure>
 
           {this.detailUser()}

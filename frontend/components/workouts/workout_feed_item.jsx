@@ -60,7 +60,7 @@ const WorkoutIndexItem = React.createClass({
           <figure>
             <img className="user-thumb fl" src={this.props.workout.picture_url} />
           </figure>
-        <div className="feed-header"><h5>{this.props.workout.username}</h5> {this.displayActivity()}</div>
+        <div className="single-feed-header"><h5>{this.props.workout.username} </h5> {this.displayActivity()}</div>
         </div>
 
         <div>
