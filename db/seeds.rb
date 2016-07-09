@@ -116,7 +116,7 @@ def generate_rand_workout!()
               "Challenging #{work_type}",
               "New #{work_type}",
               "Easy #{work_type}",
-              "Difficult #{work_type}}",
+              "Difficult #{work_type}",
               "Refreshing #{work_type}",
               "Long and hard #{work_type}",
               "Tiring #{work_type}"].sample ,
@@ -198,3 +198,38 @@ end
 
 Comment.create(author_id: 2, workout_id: 1, body: "Good job on that run!")
 Comment.create(author_id: 3, workout_id: 1, body: "wow! what a fast run!")
+
+
+def generate_comments!
+  w=Workout.all.length
+
+    Comment.create!(
+      workout_id: (1..w).to_a.sample,
+      author_id: (1..7).to_a.sample,
+      body: [
+        "Nice workout!",
+        "Good Job!",
+        "Great seeing you out there",
+        "You can do it even better next time!",
+        "I have some helpful tips I can give you some time",
+        "I'm pretty proud of you",
+        "Awesome job!",
+        "I'm extremely proud of you!",
+        "You rocked it",
+        "You rocked it out there!",
+        "It's encouraging to see how hard you work towards your goals",
+        "You're an inspiration to me and my boys",
+        "You're an inspiration to me and my girls",
+        "You're an inspiration to me and my children",
+        "Good choice in workouts today",
+        "Your tenacity is encouraing",
+        "Hardcore!",
+        "Fantastic!",
+        "Astonishing!"
+      ].sample
+    )
+end
+
+100.times do
+  generate_comments!
+end
