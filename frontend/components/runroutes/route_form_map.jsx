@@ -43,6 +43,7 @@ const RouteFormMap = React.createClass({
 
 
   computeTotalDistance(result) {
+
     let total = 0;
     let myroute = result.routes[0];
     for (let i = 0; i < myroute.legs.length; i++) {
@@ -50,7 +51,8 @@ const RouteFormMap = React.createClass({
     }
     total *= 0.000621371;
     total = Math.round(total * 100) / 100;
-    this.props.distance(total);
+    console.log('sengin dist update to parent');
+    this.props.updateDist(total);
     return total;
   },
 
@@ -64,10 +66,11 @@ const RouteFormMap = React.createClass({
     });
 
 
-    this.directionsListener = this.directionsDisplay.addListener('directions_changed', function() {
-      self.computeTotalDistance(self.directionsDisplay.getDirections());
-      // console.log(self.directionsDisplay.getDirections());
-    });
+    // this.directionsListener = this.directionsDisplay.addListener('directions_changed', function() {
+    //   console.log('sending directions calculationg request');
+    //   self.computeTotalDistance(self.directionsDisplay.getDirections());
+    //   // console.log(self.directionsDisplay.getDirections());
+    // });
   },
 
   _handleClick(wayPoint) {
@@ -142,34 +145,54 @@ const RouteFormMap = React.createClass({
 
 
   },
+  componentWillReceiveProps(nextProps){
+    console.log('nextProps:');
+    console.log(nextProps);
+  },
 
-  // shouldComponentUpdate (nextProps, nextState) {
-  //   // return (nextProps.distance === this.props.distance);
-  //   console.log(this.props.mapPoints);
-  //   console.log(nextProps.mapPoints);
-  //
-  //   console.log(Object.is(nextProps.mapPoints, this.props.mapPoints));
-  //
-  //   return (nextProps.mapPoints !== this.props.mapPoints);
-  //
-  //
-  //   // return (nextProps.distance === this.props.distance) &&
-  //   // (nextProps.routePath !== this.props.routePath) ;
-  //
-  // },
+  shouldComponentUpdate (nextProps, nextState) {
 
-    componentDidUpdate(){
+    console.log('old props');
+    console.log(this.props);
+    console.log(`next props:`);
+    console.log(nextProps);
+
+    // return (nextProps.distance !== this.props.distance);
+
+    // console.log(Object.is(nextProps.mapPoints, this.props.mapPoints));
+//     console.log(!Object.is(nextProps.mapPoints, this.props.mapPoints));
+// return (!Object.is(nextProps.mapPoints, this.props.mapPoints));
+
+
+  // if (Object.is(nextProps.mapPoints, this.props.mapPoints)) {
+  //     return (false);
+  //   }
+  //
+    return true;
+
+    // return (nextProps.distance === this.props.distance) &&
+    // (nextProps.routePath !== this.props.routePath) ;
+
+  },
+
+    componentWillUpdate(){
+      console.log(this.props.mapPoints);
       this.removeAllMarkers();
 
-      if (this.props.mapPoints.length <= 1) {
+      const mapPoints = this.props.mapPoints;
+
+      if (mapPoints.length <= 1) {
         this.directionsDisplay.setMap(null);
         this.createAllMarkers();
-      } else if (this.props.mapPoints.length >= 2) {
-        this.displayRoute(this.props.mapPoints);
+      } else if (mapPoints.length >= 2) {
+        this.displayRoute(mapPoints);
 
       }
-
-
+      console.log('this.directionsDisplay:');
+      console.log(this.directionsDisplay);
+      if (this.directionsDisplay.map !== null){
+       console.log(this.computeTotalDistance(this.directionsDisplay.getDirections()));
+     }
     },
 
 
@@ -177,13 +200,14 @@ const RouteFormMap = React.createClass({
       this.removeAllMarkers();
       this.mapsListener.remove();
       this.directionsListener.remove();
+
     },
 
 
 
 
   render () {
-
+    console.log('rendering');
     return(
 
       <div className="map" ref="map">Map</div>

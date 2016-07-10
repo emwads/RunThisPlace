@@ -50,18 +50,30 @@ const RouteForm = React.createClass({
     let points=this.state.mapPoints;
     points.push(newPoint);
 
-    console.log(this.state.mapPoints);
+    // console.log(this.state.mapPoints);
     this.setState({mapPoints: points});
   },
 
-  // updateState(distance) {
-  //   let points=this.state.mapPoints;
-  //   points.push(newPoint);
-  //
-  //   console.log(this.state.mapPoints);
-  //   this.setState({mapPoints: points});
-  // },
+  updateState(key, val) {
+    this.setState({
+        [key]: val
+    });
 
+  },
+  updateDist(distance) {
+    console.log('receiving directions update');
+    this.distance=distance;
+    console.log('udated'    );
+  },
+// shouldComponentUpdate (nextProps, nextState) {
+//   console.log('old state');
+//   console.log(this.state);
+//   console.log(`next state:`);
+//   console.log(nextState);
+//
+//   return true;
+//   return this.state.distance !== nextState.distance;
+// },
 
   render () {
     return(
@@ -107,10 +119,11 @@ const RouteForm = React.createClass({
 
           <RouteFormMap updateMapPoints={this.updateMapPoints}
                         updateParentState={this.updateState}
+                        updateDist={this.updateDist}
                         distance={this.state.distance}
                         mapPoints={this.state.mapPoints}/>
         </div>
-        <span>distance: {this.state.distance}</span>
+        <span>distance: {this.distance}</span>
     </div>
 
 
