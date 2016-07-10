@@ -50,7 +50,7 @@ const RouteFormMap = React.createClass({
     }
     total *= 0.000621371;
     total = Math.round(total * 100) / 100;
-    this.props.onUpdate('distance', total);
+    this.props.distance(total);
     return total;
   },
 
@@ -71,8 +71,7 @@ const RouteFormMap = React.createClass({
   },
 
   _handleClick(wayPoint) {
-    this.props.mapPoints.push(wayPoint);
-    this.props.onUpdate('mapPoints', this.props.mapPoints);
+    this.props.updateMapPoints(wayPoint);
   },
 
   createMarker(coords) {
@@ -144,12 +143,20 @@ const RouteFormMap = React.createClass({
 
   },
 
-  shouldComponentUpdate (nextProps, nextState) {
-    return (nextProps.distance === this.props.distance);
-    // return (nextProps.distance === this.props.distance) &&
-    // (nextProps.routePath !== this.props.routePath) ;
-
-  },
+  // shouldComponentUpdate (nextProps, nextState) {
+  //   // return (nextProps.distance === this.props.distance);
+  //   console.log(this.props.mapPoints);
+  //   console.log(nextProps.mapPoints);
+  //
+  //   console.log(Object.is(nextProps.mapPoints, this.props.mapPoints));
+  //
+  //   return (nextProps.mapPoints !== this.props.mapPoints);
+  //
+  //
+  //   // return (nextProps.distance === this.props.distance) &&
+  //   // (nextProps.routePath !== this.props.routePath) ;
+  //
+  // },
 
     componentDidUpdate(){
       this.removeAllMarkers();

@@ -22,7 +22,7 @@ const RouteForm = React.createClass({
     runRoute['title'] = this.refs.title.value;
     runRoute['description'] =  this.refs.description.value;
     runRoute['map_info'] = JSON.stringify(this.state.mapPoints);
-    runRoute['distance'] = this.state.distance;
+    runRoute['distance'] = this.distance;
     // runRoute['route_path'] = this.state.routePath;
     RouteActions.createRunRoute(runRoute);
     hashHistory.push("/dashboard");
@@ -46,12 +46,21 @@ const RouteForm = React.createClass({
 
   },
 
-  childInitUpdate(key, val) {
-    this.setState({
-        [key]: val
-    });
+  updateMapPoints(newPoint) {
+    let points=this.state.mapPoints;
+    points.push(newPoint);
 
+    console.log(this.state.mapPoints);
+    this.setState({mapPoints: points});
   },
+
+  // updateState(distance) {
+  //   let points=this.state.mapPoints;
+  //   points.push(newPoint);
+  //
+  //   console.log(this.state.mapPoints);
+  //   this.setState({mapPoints: points});
+  // },
 
 
   render () {
@@ -96,7 +105,8 @@ const RouteForm = React.createClass({
         <span>click on the map to add points</span>
         <div className="formmap">
 
-          <RouteFormMap onUpdate={this.childInitUpdate}
+          <RouteFormMap updateMapPoints={this.updateMapPoints}
+                        updateParentState={this.updateState}
                         distance={this.state.distance}
                         mapPoints={this.state.mapPoints}/>
         </div>

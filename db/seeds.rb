@@ -159,7 +159,7 @@ def generate_rand_run!()
               "Challenging #{work_type}",
               "New #{work_type}",
               "Easy #{work_type}",
-              "Difficult #{work_type}}",
+              "Difficult #{work_type}",
               "Refreshing #{work_type}",
               "Long and hard #{work_type}",
               "Tiring #{work_type}"].sample ,
