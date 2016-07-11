@@ -19,7 +19,9 @@ Core functionality of any fitness related app involves logging the workouts or a
 
 ### User input Running Routes
 
-Users can also track what routes they enjoy running/have taken. Routes are input into a form by the user via clicking on a map for points along the route. The points of the map are provided using the functionality included with the google maps api. Directions between points are also provided by the ggogle maps api via the directions service. The points and other information are stored in the backend in a `routes` table.
+Users can also track what routes they enjoy running/have taken. Routes are input into a form by the user via clicking on a map for points along the route. The points of the map are provided using the functionality included with the google maps api. Directions between points are also provided by the google maps api via the directions service. The points and other information are stored in the backend in a `routes` table.
+Users can see a detailed display of map routes, which is loaded with a google maps javascript api. Listings of maps are shown using google's static maps api to decrease load time/requests to the maps  service.
+
 
 ![routeMaking]
 
@@ -43,11 +45,6 @@ Users can leave comments on any workouts (that they have access to). Visiting a 
 ## Planned Features
 
 Some features are in the pipeline and are discussed briefly below
-
-
-### Static google maps
-
-Full embedded google maps objects tend to load slower. Future plans include the integration of static google maps api to render maps (in all Running route index pages) to load route maps more efficiently and reliably.
 
 
 ### Liking Workouts
