@@ -1,15 +1,12 @@
 const React = require('react');
 const Link = require('react-router').Link;
-const RouteDetailMap = require('./run_route_detail_map');
+const ShowStaticMap = require('./run_route_static_map');
 
 
-const RunRouteIndexItem = React.createClass({
+const RunRouteIndexItem2 = React.createClass({
 
   renderMap() {
-    if (this.props.runroute) {
-      return (<RouteDetailMap mapPoints={JSON.parse(this.props.runroute.map_info)}
-              displayDirections={false} />);
-    }
+      return (<ShowStaticMap routePath={this.props.runroute.route_path} />);
   },
 
   render () {
@@ -28,4 +25,4 @@ const RunRouteIndexItem = React.createClass({
 
 });
 
-module.exports = RunRouteIndexItem;
+module.exports = RunRouteIndexItem2;

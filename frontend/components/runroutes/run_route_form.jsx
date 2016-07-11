@@ -11,8 +11,7 @@ const RouteForm = React.createClass({
       description: "",
       title: "",
       mapPoints: [],
-      runRoute: {},
-      distance: 0
+      distance: 0,
     };
   },
 
@@ -22,8 +21,8 @@ const RouteForm = React.createClass({
     runRoute['title'] = this.refs.title.value;
     runRoute['description'] =  this.refs.description.value;
     runRoute['map_info'] = JSON.stringify(this.state.mapPoints);
-    runRoute['distance'] = this.distance;
-    // runRoute['route_path'] = this.state.routePath;
+    runRoute['distance'] = this.state.distance;
+    runRoute['route_path'] = this.routePath;
     RouteActions.createRunRoute(runRoute);
     hashHistory.push("/dashboard");
   },
@@ -41,39 +40,22 @@ const RouteForm = React.createClass({
 
   handleClear() {
     event.preventDefault();
-    this.setState({mapPoints: []});
-    this.forceUpdate();
+    this.setState({mapPoints: [], distance: 0});
+    // this.forceUpdate();
 
   },
 
-  updateMapPoints(newPoint) {
-    let points=this.state.mapPoints;
-    points.push(newPoint);
-
-    // console.log(this.state.mapPoints);
-    this.setState({mapPoints: points});
-  },
-
-  updateState(key, val) {
+  childInitUpdate(key, val) {
     this.setState({
         [key]: val
     });
 
   },
-  updateDist(distance) {
-    console.log('receiving directions update');
-    this.distance=distance;
-    console.log('udated'    );
+
+  updateRoutePath(newRoutePath){
+    this.routePath = newRoutePath;
   },
-// shouldComponentUpdate (nextProps, nextState) {
-//   console.log('old state');
-//   console.log(this.state);
-//   console.log(`next state:`);
-//   console.log(nextState);
-//
-//   return true;
-//   return this.state.distance !== nextState.distance;
-// },
+
 
   render () {
     return(
@@ -117,13 +99,12 @@ const RouteForm = React.createClass({
         <span>click on the map to add points</span>
         <div className="formmap">
 
-          <RouteFormMap updateMapPoints={this.updateMapPoints}
-                        updateParentState={this.updateState}
-                        updateDist={this.updateDist}
+          <RouteFormMap updateParentState={this.childInitUpdate}
                         distance={this.state.distance}
+                        updateRoutePath={this.updateRoutePath}
                         mapPoints={this.state.mapPoints}/>
         </div>
-        <span>distance: {this.distance}</span>
+        <span>distance: {this.state.distance}</span>
     </div>
 
 

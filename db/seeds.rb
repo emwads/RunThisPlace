@@ -66,6 +66,7 @@ Follow.create(follower_id: 8, followee_id: 1)
 RunRoute.create(title: "Ferry Building to Pier 39",
 description: "Nice 5k pedestrian path",
 author_id: 1,
+route_path: "a{teFh_`jVsDbDgC`CsGxF{P~NcLtJcFtEuAjBwHfL[l@_E~JM^k@pCs@~B{@lCETKLIFUbBIbBSdCGl@W~DG~@Yn@KEC?AA{@sBv@o@\\Q@QPeC`@DBMReCHcBTcBHGFGBEBEH?P@@G@IxAoEPk@Zc@vCmHhBoEbAeBpHeLX_@pCeC~NeMzDeD|AoAlIkHnEmDbDkCdB{@t@i@v@w@`@i@",
 map_info: "[{\"location\":{\"lat\":37.79528237319238,\"lng\":-122.3935317993164},\"stopover\":false},{\"location\":{\"lat\":37.80898152447637,\"lng\":-122.41254329812364},\"stopover\":false},{\"location\":{\"lat\":37.79473977809016,\"lng\":-122.39378929121813},\"stopover\":false}]",
 distance: 2.97)
 
@@ -73,21 +74,21 @@ distance: 2.97)
 RunRoute.create(title: "Golden Gate Park",
 description: "A scenic route through the park",
 author_id: 2,
+route_path: "uhpeFn{kjV@PXn@LPPHp@THVL|@Fl@DhA?p@Cn@e@|GAN_@lCWrCEdCq@pHOpAETRH\\LGJMd@c@fCeArGU`DCdA@~@?vAFhB@zCBjAL|AXbAd@bArClEb@p@h@hAj@jBL`AG|AMx@y@hD[pAs@dCc@rBElAH~Bh@zE\\dBd@tAn@xBNf@FT^vAhAfF\\bCDx@?x@EfAO`BKjACt@F`AXfBDnA?h@K`@g@xA[x@cAbCMh@Ep@?bALvC@hBG`C_@jF@jALrB\\vCt@fDhAxDVl@dAjBVt@XnAd@nFRnB\\nBRjAf@zBtA~GNr@pBtJPp@TtBt@nFLzAZ~ARzBLl@FXAFkAzAi@\\mCtAsChBiB`BAQEOxBkB|AgAvAw@dBy@`@[\\_@l@y@lAsB^{@rAmDX{@F}@VeBPeARwAp@mGTmCDcABkAGw@Ks@g@_Ce@iDY}CQuCOeDC_E`@_NCqGQaDSeCAO^@WcGMcDGWC]BeGGeBGk@Mg@Sg@a@o@Yo@Oo@Y_BQ}@Y}@CWGaAHaBRuBHo@CGP}@La@^{@jAyCZyAAe@Mc@QU@OX}@@KAQZOF?J?ASAi@OkIQwLQcKa@cW[gRAUQBK]Uq@KgAEk@[eBQcBA_@k@B?aAAKW}@_AaCQi@g@]KKOSmAiB_@_@Es@Q}@E]IY@e@E[ZMIy@S]}@sBU_@QOGIc@eBUwAMY]SWGUCgAe@OIIKA[C_@Q@UC",
 map_info: "[{\"location\":{\"lat\":37.77189073454407,\"lng\":-122.45447158813477},\"stopover\":false},{\"location\":{\"lat\":37.772354343171685,\"lng\":-122.46777534476678},\"stopover\":false},{\"location\":{\"lat\":37.77086173978431,\"lng\":-122.49000549316406},\"stopover\":false},{\"location\":{\"lat\":37.766655149434776,\"lng\":-122.50635623931885},\"stopover\":false},{\"location\":{\"lat\":37.766349823375414,\"lng\":-122.48369693756104},\"stopover\":false},{\"location\":{\"lat\":37.770556430834176,\"lng\":-122.45524406433105},\"stopover\":false}]",
 distance: 6.51)
 
-RunRoute.create(title: "Ferry Building to Pier 39",
-description: "Nice 5k pedestrian path",
+
+RunRoute.create(title: "Lake Merritt",
+description: "",
 author_id: 1,
 map_info:
-"[{\"location\":{\"lat\":37.79528237319238,\"lng\":-122.3935317993164},\"stopover\":false},{\"location\":{\"lat\":37.80898152447637,\"lng\":-122.41254329812364},\"stopover\":false},{\"location\":{\"lat\":37.79473977809016,\"lng\":-122.39378929121813},\"stopover\":false}]",
-distance: 2.97)
+ "[{\"location\":{\"lat\":37.80544394934274,\"lng\":-122.25811243057251},\"stopover\":false},{\"location\":{\"lat\":37.80413850771679,\"lng\":-122.25221157073975},\"stopover\":false},{\"location\":{\"lat\":37.80113759986951,\"lng\":-122.26165294647217},\"stopover\":false},{\"location\":{\"lat\":37.809987384424446,\"lng\":-122.26233959197998},\"stopover\":false},{\"location\":{\"lat\":37.805477856609954,\"lng\":-122.25864887237549},\"stopover\":false},{\"location\":{\"lat\":37.80539308841269,\"lng\":-122.25824117660522},\"stopover\":false}]",
+distance: 3.08,
+route_path:
+ "a{veFdpeiVMs@Uq@OYc@k@o@g@[M]ODSs@]}@g@c@a@`@m@@QSq@SqAAaAF}AAo@ImA@s@LeA?_@C[IUgAkBs@gAg@a@[w@Kq@EeAIg@O]e@q@Sg@Aa@L]FKTWRIVBXTHFV?TONCP?hA^vItCx@XDS@GVJbA\\b@X^f@Td@N|@f@tFJb@LXPVRNrBt@d@Rf@X^X\\Z^T\\P\\Ld@J^Dr@AjAIf@BNBER^Ld@\\^d@LZNh@BVFvAAh@Gl@Cr@@VNpAZxAl@`B|@vA`A`Ad@ZDNXXDFDTElBCJSVINmA`EYn@]b@QLe@Ra@H_@@e@Ea@@oAJ}@_@UGUA_@Bo@JYRSF]DSC_@KKBa@K]O}CeBQCIFYa@SM]I[?YJUR]b@y@~Ae@Ri@fAKFaBf@w@`@]h@QNi@Tw@Zk@Lm@D_BCcAOcCaAyAQiASkDcAYi@EQIMX}CJy@No@To@Xc@jAwAXg@DA~CoAjBg@r@Ef@F\\Nn@XjBhAp@Tb@Dr@Cr@Uf@]`@c@Pg@Hc@@i@Ao@")
 
-RunRoute.create(title: "Lake Merrit",
-description: "Oakland, CA",
-author_id: 3,
-map_info: "[{\"location\":{\"lat\":37.81046205554298,\"lng\":-122.26216793060303},\"stopover\":false},{\"location\":{\"lat\":37.80815648152641,\"lng\":-122.26143836975098},\"stopover\":false},{\"location\":{\"lat\":37.80663069443297,\"lng\":-122.26049423217773},\"stopover\":false},{\"location\":{\"lat\":37.805274412773024,\"lng\":-122.256760597229},\"stopover\":false},{\"location\":{\"lat\":37.807410545108375,\"lng\":-122.25221157073975},\"stopover\":false},{\"location\":{\"lat\":37.801951417436676,\"lng\":-122.2547435760498},\"stopover\":false},{\"location\":{\"lat\":37.798662182986924,\"lng\":-122.25907802581787},\"stopover\":false},{\"location\":{\"lat\":37.80347730120659,\"lng\":-122.26075172424316},\"stopover\":false},{\"location\":{\"lat\":37.80791913893801,\"lng\":-122.26306915283203},\"stopover\":false},{\"location\":{\"lat\":37.81027557796748,\"lng\":-122.2622537612915},\"stopover\":false}]",
-distance: 3.18)
+
 
 
 

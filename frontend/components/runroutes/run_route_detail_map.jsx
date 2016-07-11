@@ -31,7 +31,6 @@ const RouteDetailMap = React.createClass({
       travelMode: google.maps.TravelMode.WALKING,
     }, function(response, status) {
 
-
       if (status === google.maps.DirectionsStatus.OK) {
         self.directionsDisplay.setDirections(response);
         self.directionsDisplay.setMap(self.map);
