@@ -81,14 +81,22 @@ distance: 6.51)
 
 RunRoute.create(title: "Lake Merritt",
 description: "",
-author_id: 1,
+author_id: 3,
 map_info:
  "[{\"location\":{\"lat\":37.80544394934274,\"lng\":-122.25811243057251},\"stopover\":false},{\"location\":{\"lat\":37.80413850771679,\"lng\":-122.25221157073975},\"stopover\":false},{\"location\":{\"lat\":37.80113759986951,\"lng\":-122.26165294647217},\"stopover\":false},{\"location\":{\"lat\":37.809987384424446,\"lng\":-122.26233959197998},\"stopover\":false},{\"location\":{\"lat\":37.805477856609954,\"lng\":-122.25864887237549},\"stopover\":false},{\"location\":{\"lat\":37.80539308841269,\"lng\":-122.25824117660522},\"stopover\":false}]",
 distance: 3.08,
 route_path:
  "a{veFdpeiVMs@Uq@OYc@k@o@g@[M]ODSs@]}@g@c@a@`@m@@QSq@SqAAaAF}AAo@ImA@s@LeA?_@C[IUgAkBs@gAg@a@[w@Kq@EeAIg@O]e@q@Sg@Aa@L]FKTWRIVBXTHFV?TONCP?hA^vItCx@XDS@GVJbA\\b@X^f@Td@N|@f@tFJb@LXPVRNrBt@d@Rf@X^X\\Z^T\\P\\Ld@J^Dr@AjAIf@BNBER^Ld@\\^d@LZNh@BVFvAAh@Gl@Cr@@VNpAZxAl@`B|@vA`A`Ad@ZDNXXDFDTElBCJSVINmA`EYn@]b@QLe@Ra@H_@@e@Ea@@oAJ}@_@UGUA_@Bo@JYRSF]DSC_@KKBa@K]O}CeBQCIFYa@SM]I[?YJUR]b@y@~Ae@Ri@fAKFaBf@w@`@]h@QNi@Tw@Zk@Lm@D_BCcAOcCaAyAQiASkDcAYi@EQIMX}CJy@No@To@Xc@jAwAXg@DA~CoAjBg@r@Ef@F\\Nn@XjBhAp@Tb@Dr@Cr@Uf@]`@c@Pg@Hc@@i@Ao@")
 
-
+RunRoute.create( title: "Golden Gate Bridge",
+ description: "No toll required",
+ author_id: 1,
+ map_info:
+  "[{\"location\":{\"lat\":37.805104875814145,\"lng\":-122.44713306427002},\"stopover\":false},{\"location\":{\"lat\":37.836157550568196,\"lng\":-122.48369693756104},\"stopover\":false},{\"location\":{\"lat\":37.803680749994065,\"lng\":-122.44953632354736},\"stopover\":false}]",
+ distance: 8.51,
+ route_path:
+  "myveFtmjjVB`@EBCBIBXtEb@hC\\nE|E~t@@^DVTpCPt@Xh@h@p@R`@Np@Bb@{@pOs@jLS`BSvCCRELCDFHp@|@On@GBa@lBOZk@h@q@n@Yr@Ub@YX]JWDMCcA@q@F_@JKDk@j@cBpEU\\MHi@POHWVgB|CWj@IXAXBVNj@?VKb@Wp@Or@e@zBAJCbAEPLNNFJCFCFLARAFABGFa@VIJAJBJAB?BJB?R@HRn@GLY\\cAt@q@^w@Zq@Lc@JqEReuAdIgMp@{FZoDVcFVeCPoALkAXy@^y@j@kAjASFG?YTIFM?q@p@G@SSQKOECBE~@@d@N`@BLAZIb@}@xBs@nAe@l@s@t@g@^o@V}@Pe@@cAIUE]Qi@f@a@{@OQYWoAq@i@Oa@Cy@CeA@?J?TERkAzAm@fAi@~AUl@ABEHKf@EFGBO@HBZHPsAd@_B`@aAbAaB`@e@HO@S?WjB?d@Bh@Jv@Zv@h@^d@Zp@`@_@FG\\Ph@J`ABv@Ir@Sl@]l@k@f@o@d@q@`AmBZy@H]D]ASQ_@C]DmA@EJ@RJTTF@n@s@TA^[LALEVYjAcA`Ak@z@YpAUrCS`EUpDUbG_@`CKdyAsIhMo@z@Q~@Yd@UtA_A`@a@HO@COc@EQAI@MKC@G?ACM?CDKb@YHGBGBYGMEBE@E@MEIGGIBK@K?K@i@^kBP_APm@Tq@BYAWOk@A[FWL]lA}Bt@gAPOf@OPKPQfAmCb@oAX]XULEl@Kt@Ep@@TA^KXUVa@Vq@Za@bA}@PYb@oBBGDALm@Y_@W]FK@CDQr@iIt@yMl@aLAe@Kk@Qc@y@iAYo@Mu@q@sKqAmRmBoZq@yHBMC]Jg@DUHHLPLHD?T?T?p@|BJVZb@PRh@`@FD",
+)
 
 
 
