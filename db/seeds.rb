@@ -155,7 +155,7 @@ end
 
 def generate_rand_run!()
   work_type= "run"
-  r_id = (1..3).to_a.sample
+  r_id = (1..4).to_a.sample
   Workout.create!(
     user_id: (1..8).to_a.sample,
     workout_type: work_type,
