@@ -5,6 +5,7 @@ const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../../stores/session_store');
 const RouteStore = require('../../stores/run_route_store');
 const RouteActions = require('../../actions/run_route_actions');
+const ShowStaticMap = require('../runroutes/run_route_static_map');
 
 
 
@@ -17,25 +18,24 @@ const WorkoutForm = React.createClass({
       distance: "",
       date: "",
       run_route_id: "",
-      runRoutes: []
+      runRoutes: RouteStore.all()
     };
   },
 
-  // _runRoutesChanged() {
-  //
-  //   this.setState({runRoutes: RouteStore.all()});
-  // },
-  //
-  //
-  // componentDidMount() {
-  //   this.routeListener = RouteStore.addListener(this._routesChanged);
-  //   RouteActions.fetchAllRunRoutes();
-  // },
-  //
-  // componentWillUnmount() {
-  //   this.routeListener.remove();
-  // },
-  //
+  _runRoutesChanged() {
+    this.setState({runRoutes: RouteStore.all()});
+  },
+
+
+  componentDidMount() {
+    this.routeListener = RouteStore.addListener(this._runRoutesChanged);
+    RouteActions.fetchAllRunRoutes();
+  },
+
+  componentWillUnmount() {
+    this.routeListener.remove();
+  },
+
   handleSubmit(event) {
     event.preventDefault();
 
@@ -48,8 +48,10 @@ const WorkoutForm = React.createClass({
       distance: this.state.distance,
       date: this.state.date
     };
-    WorkoutActions.createWorkout(workout);
-    hashHistory.push("/dashboard");
+    debugger;
+    //
+    // WorkoutActions.createWorkout(workout);
+    // hashHistory.push("/dashboard");
 
   },
 
@@ -62,22 +64,49 @@ const WorkoutForm = React.createClass({
     return (e) => this.setState({[property]: e.target.value});
   },
 
-  workoutTypeUpdate(e) {
+  routeUpdate(e) {
 
     let el = e.target;
-    this.setState({workout_type: el.options[el.selectedIndex].value});
-
+    this.setState({run_route_id: el.options[el.selectedIndex].value});
+    // console.log(this.state.run_route_id);
   },
-  //
-  // displayRouteSelector (){
-  //
-  //
-  //   return (
-  //     <div className='inline'></div>
-  //     // <label for="workout_type">Workout Type <br />
-  //     //   <select id="workout_type" ref="workoutType">
-  //   );
-  // },
+
+  displayRouteSelector (){
+
+    if (this.state.runRoutes !== undefined) {
+    return (
+      <div className='il'>
+      <label for="runRoute">Choose a save route: <br />
+        <select  defaultValue="" ref="runRoute"  onChange={this.routeUpdate} >
+          <option disabled value="">select a route</option>
+        {this.state.runRoutes.map( (runRoute) => {
+          return(<option value={runRoute.id} key={runRoute.id}>{runRoute.title}</option>);
+        })}
+        </select>
+      </label>
+    </div>
+
+    );}
+  },
+
+  renderMap() {
+    const self = this;
+    if (this.state.runRoutes !== undefined && this.state.run_route_id !== undefined) {
+
+      const routeInd = self.state.runRoutes.findIndex( (route) => {
+        return route.id===parseInt(self.state.run_route_id);});
+
+      if (routeInd >= 0){
+        const route = this.state.runRoutes[routeInd];
+
+        return (<div className="map-thumb-display">
+          <Link to={`/runroutes/${this.state.runroute_id}`} >
+          <ShowStaticMap routePath={route.route_path} />
+          </Link>
+        </div>);
+      }
+    }
+  },
 
   dropDownSelected (stateVar, option) {
     if (stateVar === option) {
@@ -171,16 +200,16 @@ const WorkoutForm = React.createClass({
       <br />
         {this.workoutFormType()}
 
-        <label for="run_route_id">
-          <input id="run_route_id" type="text"
-            value={this.state.run_route_id}
-            onChange={this.update("run_route_id")}
-            placeholder="Pick your route" />
-        </label>
-                <br />
-        <input type="submit" className="submit" value="Save Workout" />
+        {this.displayRouteSelector()}
+        {this.renderMap()}
 
-        <button onClick={this.handleCancel}>Cancel</button>
+
+        <div>
+          <input type="submit" className="submit" value="Save Workout" />
+
+          <button onClick={this.handleCancel}>Cancel</button>
+
+        </div>
 
       </form>
     </div>

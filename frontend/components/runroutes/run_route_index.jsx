@@ -4,6 +4,16 @@ const Link = require('react-router').Link;
 
 
 const RunRouteIndex = React.createClass({
+  displayRouteItem() {
+
+    if ( this.props.runroutes !== undefined ) {
+      return(this.props.runroutes.slice(0,4).map(function (runroute) {
+          return (<RunRouteIndexItem key={runroute.id} runroute={runroute} />);
+        })
+      );
+    }
+  },
+
   render () {
 
     return(
@@ -14,9 +24,7 @@ const RunRouteIndex = React.createClass({
 
         </header>
 
-        {this.props.runroutes.slice(0,4).map(function (runroute) {
-            return (<RunRouteIndexItem key={runroute.id} runroute={runroute} />);
-          })}
+        {this.displayRouteItem()}
       </div>
     );
 

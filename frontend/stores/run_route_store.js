@@ -23,9 +23,15 @@ const removeRunRoute = function (runroute) {
 };
 
 RunRouteStore.all = function () {
-  return Object.keys(_runroutes).map(function (runrouteId) {
+  // console.log(_runroutes);
+  let result = Object.keys(_runroutes).map(function (runrouteId) {
     return _runroutes[runrouteId];
   });
+  // return result;
+  // console.log(result);
+  if (result.length >= 2) {
+    return result.sort(sortRunRoutes);
+  }
 };
 
 RunRouteStore.find = function (id) {
@@ -51,5 +57,15 @@ RunRouteStore.__onDispatch = function (payload) {
       break;
   }
 };
+
+function sortRunRoutes(a, b) {
+    if (a.updated_at > b.updated_at) {
+      return -1;
+    } else if (a.updated_at < b.updated_at) {
+      return 1;
+    } else {
+    return 0;
+    }
+  }
 
 module.exports = RunRouteStore;

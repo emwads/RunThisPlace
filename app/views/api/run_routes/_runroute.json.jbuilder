@@ -1,1 +1,1 @@
-json.extract!(runroute, :id, :title, :description, :distance, :map_info, :route_path)
+json.extract!(runroute, :id, :title, :description, :distance, :map_info, :route_path, :updated_at)

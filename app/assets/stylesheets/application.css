@@ -18,6 +18,15 @@ body{
   font-size: 100%;
 }
 
+button{
+  cursor: pointer;
+  background-color: #cccccc;
+}
+
+button:hover{
+  background-color: #b3b3b3;
+}
+
 h4 {
   font-weight: 700;
 }
@@ -417,6 +426,7 @@ input.logout-button {
   font-size: 14px;
   border: none;
   color: #104DA1;
+  transition: all 0.1s;
 
 }
 
@@ -424,6 +434,8 @@ input.logout-button {
   background-color: #b3b3b3;
   cursor: pointer;
   color: #104DA1;
+  transform: scale(1.1);
+
 
 }
 

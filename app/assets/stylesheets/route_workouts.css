@@ -53,6 +53,12 @@
   padding: 5px 0;
 }
 
+.dash-list h3:hover {
+  color: #0b3774;
+}
+
+
+
 .dash-list h4 {
   color: #686868;
   font-size: 14px;
