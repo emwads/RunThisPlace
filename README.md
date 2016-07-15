@@ -2,7 +2,7 @@
 
 [RunThisPlace live][heroku]
 
-[heroku]: https://runthisplace.xyz
+[heroku]: https://runthisplace.herokuapp.com/
 
 RunThisPlace is a full-stack web application inspired by Map My Run. It can be used to track exercise and activity information including workouts and running routes. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural frameworks on the frontend.  
 
