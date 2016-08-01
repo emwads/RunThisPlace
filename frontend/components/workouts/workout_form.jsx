@@ -48,10 +48,9 @@ const WorkoutForm = React.createClass({
       distance: this.state.distance,
       date: this.state.date
     };
-    debugger;
-    //
-    // WorkoutActions.createWorkout(workout);
-    // hashHistory.push("/dashboard");
+    
+    WorkoutActions.createWorkout(workout);
+    hashHistory.push("/dashboard");
 
   },
 
@@ -67,8 +66,13 @@ const WorkoutForm = React.createClass({
   routeUpdate(e) {
 
     let el = e.target;
-    this.setState({run_route_id: el.options[el.selectedIndex].value});
-    // console.log(this.state.run_route_id);
+    let dist = this.state.runRoutes.find( (rr) => {
+      return rr.id === parseInt(el.options[el.selectedIndex].value);
+    }).distance;
+
+
+    this.setState({ run_route_id: el.options[el.selectedIndex].value,
+                    distance: dist});
   },
 
   displayRouteSelector (){
@@ -98,9 +102,8 @@ const WorkoutForm = React.createClass({
 
       if (routeInd >= 0){
         const route = this.state.runRoutes[routeInd];
-
         return (<div className="map-thumb-display">
-          <Link to={`/runroutes/${this.state.runroute_id}`} >
+          <Link to={`/runroutes/${this.state.run_route_id}`} >
           <ShowStaticMap routePath={route.route_path} />
           </Link>
         </div>);
@@ -183,7 +186,7 @@ const WorkoutForm = React.createClass({
 
         <label for="distance">distance <br />
           <input id="distance" type="number"
-            min="0" max="150" step="0.1"
+            min="0" max="150" step="0.01"
             value={this.state.distance}
             onChange={this.update("distance")}
             placeholder="distance" />
@@ -197,11 +200,12 @@ const WorkoutForm = React.createClass({
           placeholder="Description"></textarea>
       </label>
 
-      <br />
+      <div className='workout-form-row-last'>
         {this.workoutFormType()}
-
         {this.displayRouteSelector()}
         {this.renderMap()}
+
+      </div>
 
 
         <div>

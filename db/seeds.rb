@@ -154,7 +154,7 @@ end
 
 
 def generate_rand_run!()
-  work_type= "run"
+  work_type= %w(run hike walk).sample
   r_id = (1..4).to_a.sample
   Workout.create!(
     user_id: (1..8).to_a.sample,
@@ -190,7 +190,10 @@ def generate_rand_run!()
                   "It was too nice to stay in today",
                   "I'm already feeling sore",
                   "I have a feeling I will be too sore to go to work tomorrow",
-                  "This was the best #{work_type} in a while."].sample
+                  "This was the best #{work_type} in a while.",
+                  "#{work_type}? Check.",
+                  "Powered through another one",
+                  "Sweat, smile, repeat!"
   )
 
 end
@@ -229,12 +232,38 @@ def generate_comments!
         "It's encouraging to see how hard you work towards your goals",
         "You're an inspiration to me and my boys",
         "You're an inspiration to me and my girls",
-        "You're an inspiration to me and my children",
         "Good choice in workouts today",
         "Your tenacity is encouraing",
         "Hardcore!",
         "Fantastic!",
-        "Astonishing!"
+        "Astonishing!",
+        "Someone's STEPping it up!",
+        "Was that blur you?",
+        "Getting ready for that race in a few months? Nice",
+        "Let's race next time ;)",
+        "Great job. Let's plan on doing this together again.",
+        "Back in the game, I see!".
+        "Thumbs up",
+        "Was that a bit slower than last time? :p",
+        "I have to show you this new course I went on last time. I think you'd like it",
+        "Beach bod in no time",
+        "you're back",
+        "Missed you!",
+        "Trying out your new #{%w(shoes socks headphones sweatband shirts shorts sunglasses).sample}, I see :D",
+        ":D",
+        ":)",
+        "All progress happens outside of the comfort zone...",
+        "One finds limits by pushing them :)",
+        "Whoa! amazing!",
+        "WohoooooooooooooOOOOOOoOOOOo!!!!",
+        "Don't quit! :D",
+        "ʕ•ᴥ•ʔ",
+        "FIGHTING!!! (ง ͠° ͟ل͜ ͡°)ง",
+        "Good Progress! ᕙ(⇀‸↼‶)ᕗ",
+        "ᕙ(⇀‸↼‶)ᕗ",
+        "Another workout down!",
+        "Tearing apart the place!",
+        "Love it!"
       ].sample
     )
 end

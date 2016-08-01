@@ -41,9 +41,9 @@
   transition: scale 0.2s;
 }
 
-.dash-list:hover {
+/*.dash-list:hover {
   transform: scale(1.02);
-}
+}*/
 
 
 
@@ -156,6 +156,11 @@
   width: 400px;
 }
 
+.workout-form-row-last {
+  display: flex;
+  align-items: flex-start;
+}
+
 select#workout_type {
   width: 100px;
 }
@@ -178,6 +183,7 @@ select#workout_type {
   display: inline-block;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 

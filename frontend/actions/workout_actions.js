@@ -29,11 +29,11 @@ const WorkoutActions = {
 
 
   createComment(comment){
-    WorkoutApiUtil.createComment({comment: comment}, WorkoutActions.receiveAllWorkouts);
+    WorkoutApiUtil.createComment({comment: comment}, WorkoutActions.receiveSingleWorkout);
   },
 
   deleteComment (id) {
-    WorkoutApiUtil.deleteComment(id, WorkoutActions.receiveAllWorkouts);
+    WorkoutApiUtil.deleteComment(id, WorkoutActions.this.removeWorkout);
   },
 
 

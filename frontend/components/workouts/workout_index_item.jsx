@@ -12,7 +12,7 @@ const WorkoutIndexItem = React.createClass({
     if (this.props.workout.distance !== null) {
       disp = <span className="big">{this.props.workout.distance}</span>;
     } else {
-      disp =<span className="big">0.0</span>;
+      disp =<span className="big">-.-</span>;
     }
     return disp;
   },
@@ -31,6 +31,7 @@ const WorkoutIndexItem = React.createClass({
   displayComments () {
     if (this.props.showComments === true) {
       return <CommentIndex comments={this.props.workout.comments}
+                            workoutOwner={this.props.workout.user_id}
                             workoutId={this.props.workout.id}/>;
     }
   },

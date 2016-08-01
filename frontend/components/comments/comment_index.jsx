@@ -23,7 +23,8 @@ const CommentIndex = React.createClass({
           {this.displayComments()}
         </div>
 
-        <CommentForm workoutId={this.props.workoutId} />
+        <CommentForm workoutOwner={this.props.workoutOwner}
+                      workoutId={this.props.workoutId} />
 
 
       </div>

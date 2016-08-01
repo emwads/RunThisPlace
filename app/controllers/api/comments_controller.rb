@@ -9,7 +9,7 @@ class Api::CommentsController < ApplicationController
       current_user.following.each do |user|
         @workouts += user.workouts
       end
-      render "api/workouts/index"
+      render "api/workouts/show"
     else
       render json: comment.errors.full_messages, status: 422
     end
@@ -23,7 +23,7 @@ class Api::CommentsController < ApplicationController
       current_user.following.each do |user|
         @workouts += user.workouts
       end
-      render "api/workouts/index"
+      render "api/workouts/show"
     else
       render json: comment.errors.full_messages, status: 422
     end
