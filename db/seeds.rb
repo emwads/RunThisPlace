@@ -18,7 +18,7 @@ User.create({username: "andy1995", password: "password", name: "Andy Success",
 User.create({username: "bobilicious", password: "password", name: "Bobby Tableau",
             birthdate: Date.new(1972, 1, 18), weight: 163, height: 73,
             email: 'happiness@bing.com',
-            picture_url: 'http://res.cloudinary.com/dznf6puuv/image/upload/v1467706152/58_f75y3r.jpg'})
+            picture_url: 'https://res.cloudinary.com/dznf6puuv/image/upload/v1467706152/58_f75y3r.jpg'})
 User.create({username: "carlyP", password: "password", name: "Carly Marks",
             birthdate: Date.new(1965,6, 20), weight: 112, height: 61,
             email: 'irunfast@hotmail.com',
