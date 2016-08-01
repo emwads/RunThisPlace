@@ -9,7 +9,6 @@ module.exports = {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js"
   },
-
   plugins:[
     new webpack.DefinePlugin({
       'process.env':{
@@ -17,21 +16,24 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-       compress: {
-         warnings: false
-       }
+      compress:{
+        warnings: true
+      }
     })
   ],
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
-          presets: ['react']
+          presets: ['react', 'es2015']
         }
+      },
+      {
+        test: /\.node$/,
+        loader: "node-loader"
       }
     ]
   },
