@@ -60,7 +60,7 @@ const appRouter = (
   </Router>
 );
 
-document.addEventListener("DOMContentLoaded",  () => {
+document.addEventListener("DOMContentLoaded",  function () {
   if (window.currentUser){
     SessionActions.receiveCurrentUser(window.currentUser);
   }
