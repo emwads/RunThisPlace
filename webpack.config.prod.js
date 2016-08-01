@@ -1,21 +1,25 @@
 var webpack = require("webpack");
+var path = require("path");
+
 
 module.exports = {
   context: __dirname,
   entry: "./frontend/run_this_place.jsx",
   output: {
-    path: "./app/assets/javascripts",
+    path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js"
   },
-  plugins:[
-    new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
+  plugins: [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress:{
-        warnings: true
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
       }
     })
   ],
