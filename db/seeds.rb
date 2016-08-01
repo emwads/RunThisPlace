@@ -79,7 +79,7 @@ map_info: "[{\"location\":{\"lat\":37.77189073454407,\"lng\":-122.45447158813477
 distance: 6.51)
 
 
-RunRoute.create(title: "Lake Merritt",
+RunRoute.create(title: "Lake Merrit",
 description: "",
 author_id: 3,
 map_info:
