@@ -2,7 +2,7 @@
   "name": "runthisplace",
   "version": "1.0.0",
   "description": "web app for tracking runs",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "directories": {
     "doc": "docs",
     "test": "test"
