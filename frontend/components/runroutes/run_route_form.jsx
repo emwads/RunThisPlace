@@ -65,14 +65,14 @@ const RouteForm = React.createClass({
               <h1>Create a Route</h1>
 
 
-          <label for="title">
+          <label htmlFor="title">
             <input id="title" name="title" type="text"
               ref='title' required
               placeholder="title" />
           </label>
 
           <br />
-          <label for="description">Description: <br />
+          <label htmlFor="description">Description: <br />
             <textarea id="description" name="description"
               ref='description'
               placeholder="description"></textarea>

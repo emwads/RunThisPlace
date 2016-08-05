@@ -76,7 +76,7 @@ const WorkoutEditForm = React.createClass({
   workoutFormType() {
     const workoutOptions = ["run", "walk", "hike", "gym", "other"];
     return(
-      <label for="workout_type">Workout Type<br />
+      <label htmlFor="workout_type">Workout Type<br />
         <select id="workout_type" onChange={this.workoutTypeUpdate} value={this.state.workout_type}>
           <option value="run">
             run
@@ -111,7 +111,7 @@ const WorkoutEditForm = React.createClass({
            <h3>Edit workout</h3>
 
 
-        <label for="title">
+        <label htmlFor="title">
           <input id="title" type="text"
             value={this.state.title}
             onChange={this.update("title")}
@@ -119,7 +119,7 @@ const WorkoutEditForm = React.createClass({
         </label>
 
         <br />
-        <label for="description">Describe your workout: <br />
+        <label htmlFor="description">Describe your workout: <br />
           <textarea id="description"
             value={this.state.description}
             onChange={this.update("description")}
@@ -131,7 +131,7 @@ const WorkoutEditForm = React.createClass({
 
 
                 <br />
-        <label for="calories">
+        <label htmlFor="calories">
           <input id="calories" type="text"
             value={this.state.calories}
             onChange={this.update("calories")}
@@ -139,7 +139,7 @@ const WorkoutEditForm = React.createClass({
         </label>
 
                 <br />
-        <label for="distance">
+        <label htmlFor="distance">
           <input id="distance" type="text"
             value={this.state.distance}
             onChange={this.update("distance")}
@@ -147,7 +147,7 @@ const WorkoutEditForm = React.createClass({
         </label>
 
                 <br />
-        <label for="date">
+        <label htmlFor="date">
           <input id="date" type="date"
             value={this.state.date}
             onChange={this.update("date")}
@@ -156,7 +156,7 @@ const WorkoutEditForm = React.createClass({
 
                 <br />
                         <br />
-        <label for="run_route_id">
+        <label htmlFor="run_route_id">
           <input id="run_route_id" type="text"
             value={this.state.run_route_id}
             onChange={this.update("run_route_id")}

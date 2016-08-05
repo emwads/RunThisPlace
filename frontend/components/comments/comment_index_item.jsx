@@ -6,11 +6,10 @@ const SessionStore = require('../../stores/session_store');
 
 const CommentIndexItem = React.createClass({
   displayDelete () {
-    debugger;
     if (SessionStore.currentUser().id === this.props.comment.author_id ||
         this.props.workoutOwner === this.props.comment.author_id)
     return (
-        <h5 className="" onClick={this.handleDelete}>Delete</h5>
+        <h5 className="text-link" onClick={this.handleDelete}>Delete</h5>
 
     );
   },

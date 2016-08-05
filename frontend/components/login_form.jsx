@@ -100,14 +100,14 @@ const LoginForm = React.createClass({
     } else {
       navLink = <div className="alt-login-link">Want to create an account? <Link to="/login">login</Link></div>;
       submitButton = <input type="submit" className="submit" value="Sign Up" />;
-      emailField = (<label for="email">
+      emailField = (<label htmlhtmlFor="email">
           <input id="email" type="email"
             value={this.state.email}
             onChange={this.update("email")}
             placeholder="email"  required/>
           { this.fieldErrors("email") }
         </label>);
-      nameField = (<label for="name">
+      nameField = (<label htmlhtmlFor="name">
           <input id="name" type="name"
             value={this.state.name}
             onChange={this.update("name")}
@@ -118,43 +118,66 @@ const LoginForm = React.createClass({
     }
 
 		return (
-      <div className="main-container">
-        <div className="login-box">
-  			<form onSubmit={this.handleSubmit}>
-             <h3>{ this.formType().replace(/\b[a-z]/g,function(f){return f.toUpperCase();}) }</h3>
+      <div>
+        <div className="main-container">
+          <div className="login-box">
+    			<form onSubmit={this.handleSubmit}>
+               <h3>{ this.formType().replace(/\b[a-z]/g,function(f){return f.toUpperCase();}) }</h3>
 
 
-  				<label for="username">
-  					<input id="username" type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-              required
-              placeholder="username" />
-            { this.fieldErrors("username") }
-          </label>
+    				<label htmlhtmlFor="username">
+    					<input id="username" type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                required
+                placeholder="username" />
+              { this.fieldErrors("username") }
+            </label>
 
-  				<label for="password">
-            <input id="password" type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              required
-              placeholder="password" />
-            { this.fieldErrors("password") }
-  				</label>
+    				<label htmlhtmlFor="password">
+              <input id="password" type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                required
+                placeholder="password" />
+              { this.fieldErrors("password") }
+    				</label>
 
-          {nameField}
-          {emailField}
+            {nameField}
+            {emailField}
 
-          { this.fieldErrors("base") }
+            { this.fieldErrors("base") }
 
 
-  				{submitButton}
+    				{submitButton}
 
-          {guestButton}
+            {guestButton}
 
-          { navLink }
-  			</form>
+            { navLink }
+    			</form>
+        </div>
       </div>
+      <aside className="bottom-info">
+        <div>
+          <img src="https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,e_brightness:100,w_125/v1467917588/map-icon_w6z8mg.png" alt="map icon" />
+          <h4>Track Your Runs   </h4>
+          <p>Hey, not everyone has a perfect memory. No one's going to blame you for not remembering that route you took 2 years ago.</p>
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,e_brightness:100,w_125/v1467917588/log-icon_xf5nmr.png" alt="log icon"/>
+          <h4>
+            Log Your Workouts
+          </h4>
+          <p>"Do you even lift?" "Yeah, bro, check out my profile on run this place" <br /> -a real conversation somewhere</p>
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/dznf6puuv/image/upload/c_scale,e_brightness:100,w_125/v1467917588/sharing-icon_lqvygr.png" alt="share icon" />
+          <h4>
+            Share Your Success
+          </h4>
+          <p>Whether they're your acquaintences or close friends, let them know you slayed it.</p>
+        </div>
+      </aside>
     </div>
 		);
 	}

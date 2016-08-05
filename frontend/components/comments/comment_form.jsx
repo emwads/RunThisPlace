@@ -39,7 +39,7 @@ const CommentForm = React.createClass({
 
 
         <img className="user-thumb fl" src={SessionStore.currentUser().picture_url} />
-        <label for="body">
+        <label htmlFor="body">
           <textarea id="body"
             className="fl"
             value={this.state.body}

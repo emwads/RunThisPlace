@@ -80,7 +80,7 @@ const WorkoutForm = React.createClass({
     if (this.state.runRoutes !== undefined) {
     return (
       <div className='il'>
-      <label for="runRoute">Choose a save route: <br />
+      <label htmlFor="runRoute">Choose a save route: <br />
         <select  defaultValue="" ref="runRoute"  onChange={this.routeUpdate} >
           <option disabled value="">select a route</option>
         {this.state.runRoutes.map( (runRoute) => {
@@ -121,7 +121,7 @@ const WorkoutForm = React.createClass({
     const workoutOptions = ["run", "walk", "hike", "gym", "other"];
     return(
       <div className='inline'>
-      <label for="workout_type">Workout Type <br />
+      <label htmlFor="workout_type">Workout Type <br />
         <select id="workout_type" ref="workoutType">
           <option value="run">
             run
@@ -159,7 +159,7 @@ const WorkoutForm = React.createClass({
            <h3>Log a workout</h3>
            <br /> <br />
 
-        <label for="title"> What you did<br />
+        <label htmlFor="title"> What you did<br />
           <input id="title" type="text"
             value={this.state.title}
             onChange={this.update("title")}
@@ -167,7 +167,7 @@ const WorkoutForm = React.createClass({
             placeholder="title" />
         </label>
 
-        <label for="date"> When you worked out<br />
+        <label htmlFor="date"> When you worked out<br />
           <input id="date" type="date"
             value={this.state.date}
             onChange={this.update("date")}
@@ -176,7 +176,7 @@ const WorkoutForm = React.createClass({
         </label>
         <br />
 
-        <label for="calories"> Calories <br />
+        <label htmlFor="calories"> Calories <br />
           <input id="calories" type="number"
             min="0" max="10000" step="1"
             value={this.state.calories}
@@ -184,7 +184,7 @@ const WorkoutForm = React.createClass({
             placeholder="calories" />
         </label>
 
-        <label for="distance">distance <br />
+        <label htmlFor="distance">distance <br />
           <input id="distance" type="number"
             min="0" max="150" step="0.01"
             value={this.state.distance}
@@ -193,7 +193,7 @@ const WorkoutForm = React.createClass({
         </label>
 
         <br />
-        <label for="description">Describe your workout<br />
+        <label htmlFor="description">Describe your workout<br />
         <textarea id="description"
           value={this.state.description}
           onChange={this.update("description")}

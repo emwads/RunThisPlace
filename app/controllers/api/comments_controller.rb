@@ -5,10 +5,7 @@ class Api::CommentsController < ApplicationController
     comment.author_id = current_user.id
 
     if comment.save
-      @workouts = []
-      current_user.following.each do |user|
-        @workouts += user.workouts
-      end
+      @workout = comment.workout
       render "api/workouts/show"
     else
       render json: comment.errors.full_messages, status: 422
@@ -17,12 +14,9 @@ class Api::CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find(params[:id])
+    @workout = comment.workout
 
     if comment.destroy
-      @workouts = []
-      current_user.following.each do |user|
-        @workouts += user.workouts
-      end
       render "api/workouts/show"
     else
       render json: comment.errors.full_messages, status: 422

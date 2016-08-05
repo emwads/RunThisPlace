@@ -16,7 +16,7 @@ const App = React.createClass({
     	return (
         <div className="nav-user-container">
 
-          <div class="dropbtn">
+          <div className="dropbtn">
             <Link to="/profile">
               <img className="user-thumb" src={SessionStore.currentUser().picture_url} />
               <span>{SessionStore.currentUser().name}</span>

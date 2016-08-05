@@ -33,7 +33,7 @@ const WorkoutActions = {
   },
 
   deleteComment (id) {
-    WorkoutApiUtil.deleteComment(id, WorkoutActions.this.removeWorkout);
+    WorkoutApiUtil.deleteComment(id, WorkoutActions.receiveSingleWorkout);
   },
 
 

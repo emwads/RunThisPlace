@@ -9,7 +9,11 @@
   text-align: center;
 }
 
-
+.two-col-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 .login-box input {
     width: 100%;

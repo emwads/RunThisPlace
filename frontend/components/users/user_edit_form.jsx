@@ -48,7 +48,7 @@ const UserEditForm = React.createClass({
            <h3>Edit Profile</h3>
 
         <br />
-        <label for="name">
+        <label htmlFor="name">
           <input id="name" type="text"
             defaultValue={this.props.user.name}
             ref="name"
@@ -57,7 +57,7 @@ const UserEditForm = React.createClass({
 
 
         <br />
-        <label for="email">
+        <label htmlFor="email">
           <input id="email" type="email"
             defaultValue={this.props.user.email}
             ref="email"
@@ -70,7 +70,7 @@ const UserEditForm = React.createClass({
 
 
         <br />
-        <label for="height">
+        <label htmlFor="height">
           <input id="height" type="number"
             defaultValue={this.props.user.height}
             ref="height"
@@ -78,7 +78,7 @@ const UserEditForm = React.createClass({
         </label>
 
         <br />
-        <label for="weight">
+        <label htmlFor="weight">
           <input id="weight" type="number"
             defaultValue={this.props.user.weight}
             ref="weight"
@@ -86,7 +86,7 @@ const UserEditForm = React.createClass({
         </label>
 
         <br />
-        <label for="birthdate">
+        <label htmlFor="birthdate">
           <input id="birthdate" type="date"
             defaultValue={this.props.user.birthdate}
             ref="birthdate" />

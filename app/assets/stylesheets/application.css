@@ -457,3 +457,7 @@ input.logout-button {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.text-link {
+  cursor: pointer;
+}
