@@ -267,12 +267,13 @@ nav.footer-nav {
 
 
 input, textarea, select, button {
- border: 1px solid #c3c2c2;
-   border-radius: 5px;
-   font-size: 14px;
-   line-height: 40px;
-   margin: 15px 0;
-   padding: 0 5px;
+  border: 1px solid #c3c2c2;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 40px;
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: inherit;
 
    box-sizing: border-box;
 }

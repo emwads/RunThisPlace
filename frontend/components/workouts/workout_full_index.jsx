@@ -1,8 +1,8 @@
-const React = require('react');
-const WorkoutStore = require('../../stores/workout_store');
-const WorkoutActions = require('../../actions/workout_actions');
-const Link = require('react-router').Link;
-const WorkoutIndexItem = require('./workout_index_item');
+import React from 'react';
+import { Link } from 'react-router';
+import WorkoutStore from '../../stores/workout_store';
+import WorkoutActions from '../../actions/workout_actions';
+import WorkoutIndexItem from './workout_index_item';
 
 
 const WorkoutFullIndex = React.createClass({

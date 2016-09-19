@@ -1,9 +1,9 @@
-const React = require('react');
-const WorkoutStore = require('../../stores/workout_store');
-const WorkoutActions = require('../../actions/workout_actions');
-const Link = require('react-router').Link;
-const WorkoutFeedItem = require('./workout_feed_item');
-const UserFollowees = require('../users/user_followees');
+import React from 'react';
+import { Link } from 'react-router';
+import WorkoutStore from '../../stores/workout_store';
+import WorkoutActions from '../../actions/workout_actions';
+import WorkoutFeedItem from './workout_feed_item';
+import UserFollowees from '../users/user_followees';
 
 
 const WorkoutFeed = React.createClass({

@@ -1,6 +1,6 @@
-const React = require('react');
-const WorkoutIndexItem = require('./workout_index_item');
-const Link = require('react-router').Link;
+import React from 'react';
+import WorkoutIndexItem from './workout_index_item';
+import { Link } from 'react-router';
 
 
 const WorkoutIndex = React.createClass({

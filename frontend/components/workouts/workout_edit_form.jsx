@@ -1,9 +1,9 @@
-const React = require('react');
-const Link = require('react-router').Link;
-const WorkoutStore = require('../../stores/workout_store');
-const WorkoutActions = require('../../actions/workout_actions');
-const hashHistory = require('react-router').hashHistory;
-const SessionStore = require('../../stores/session_store');
+import React from 'react';
+import { Link } from 'react-router';
+import WorkoutStore from '../../stores/workout_store';
+import WorkoutActions from '../../actions/workout_actions';
+import { hashHistory } from 'react-router';
+import SessionStore from '../../stores/session_store';
 
 
 const WorkoutEditForm = React.createClass({

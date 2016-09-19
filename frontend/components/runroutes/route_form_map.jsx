@@ -1,8 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-
-
 const mapOptions = {
   center: {lat: 37.7758, lng: -122.435},
   zoom: 13

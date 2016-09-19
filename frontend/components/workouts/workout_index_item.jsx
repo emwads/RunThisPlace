@@ -1,11 +1,10 @@
-const React = require('react');
-const Link = require('react-router').Link;
-const IconConstants = require('../../constants/icon_constants');
-const CommentIndex = require('../comments/comment_index');
+import React from 'react';
+import { Link } from 'react-router';
+import IconConstants from '../../constants/icon_constants';
+import CommentIndex from '../comments/comment_index';
+
 
 const WorkoutIndexItem = React.createClass({
-
-
   displayDistance () {
     let disp = "";
 

@@ -1,12 +1,10 @@
-const React = require('react');
-const WorkoutStore = require('../../stores/workout_store');
-const WorkoutActions = require('../../actions/workout_actions');
-const Link = require('react-router').Link;
-const hashHistory = require('react-router').hashHistory;
-const RunRouteMap = require('../runroutes/run_route_detail_map');
-const WorkoutIndexItem = require('./workout_index_item');
-
-
+import React from 'react';
+import { Link } from 'react-router';
+import WorkoutStore from '../../stores/workout_store';
+import WorkoutActions from '../../actions/workout_actions';
+import { hashHistory } from 'react-router';
+import RunRouteMap from '../runroutes/run_route_detail_map';
+import WorkoutIndexItem from './workout_index_item';
 
 const WorkoutDetail = React.createClass({
   getStateFromStore () {
@@ -98,6 +96,7 @@ const WorkoutDetail = React.createClass({
       <br />
 
         <div className="two-col-flex">
+          {this.showRouteMap()}
           <div>
             {this.editWorkoutButton()}
             {this.deleteWorkoutButton()}
@@ -105,7 +104,6 @@ const WorkoutDetail = React.createClass({
             {detail}
 
           </div>
-          {this.showRouteMap()}
         </div>
 
 

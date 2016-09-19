@@ -48,7 +48,7 @@ const WorkoutForm = React.createClass({
       distance: this.state.distance,
       date: this.state.date
     };
-    
+
     WorkoutActions.createWorkout(workout);
     hashHistory.push("/dashboard");
 
@@ -164,7 +164,7 @@ const WorkoutForm = React.createClass({
             value={this.state.title}
             onChange={this.update("title")}
             required
-            placeholder="title" />
+            placeholder="Title" />
         </label>
 
         <label htmlFor="date"> When you worked out<br />
@@ -172,7 +172,7 @@ const WorkoutForm = React.createClass({
             value={this.state.date}
             onChange={this.update("date")}
             required
-            placeholder="date" />
+            placeholder="Date" />
         </label>
         <br />
 
@@ -181,7 +181,7 @@ const WorkoutForm = React.createClass({
             min="0" max="10000" step="1"
             value={this.state.calories}
             onChange={this.update("calories")}
-            placeholder="calories" />
+            placeholder="Calories" />
         </label>
 
         <label htmlFor="distance">distance <br />
@@ -189,7 +189,7 @@ const WorkoutForm = React.createClass({
             min="0" max="150" step="0.01"
             value={this.state.distance}
             onChange={this.update("distance")}
-            placeholder="distance" />
+            placeholder="Distance" />
         </label>
 
         <br />
