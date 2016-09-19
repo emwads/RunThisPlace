@@ -95,14 +95,15 @@ const WorkoutDetail = React.createClass({
       <br />
       <br />
 
+
         <div className="two-col-flex">
           {this.showRouteMap()}
           <div>
             {this.editWorkoutButton()}
             {this.deleteWorkoutButton()}
             {this.toDashboardButton()}
-            {detail}
 
+            {detail}
           </div>
         </div>
 

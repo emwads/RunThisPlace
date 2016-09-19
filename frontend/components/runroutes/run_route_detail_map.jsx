@@ -57,12 +57,13 @@ const RouteDetailMap = React.createClass({
   },
 
   displayMap() {
-    if (this.props.displayDirections === true) {
-    return(<div className="map" ref="map">Map</div>);
-    } else {
-      return (<div className="map-thumb" ref="map">Map</div>);
-    }
+    // if (this.props.displayDirections === true) {
+    // return(<div className="map" ref="map">Map</div>);
+    // } else {
+    //   return (<div className="map-thumb" ref="map">Map</div>);
+    // }
 
+    return(<div className="map" ref="map">Map</div>);
 
   },
 

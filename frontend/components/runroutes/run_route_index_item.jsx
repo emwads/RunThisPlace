@@ -1,12 +1,12 @@
 const React = require('react');
 const Link = require('react-router').Link;
-const ShowStaticMap = require('./run_route_static_map');
+const RouteStaticMap = require('./run_route_static_map');
 
 
 const RunRouteIndexItem2 = React.createClass({
 
   renderMap() {
-      return (<ShowStaticMap routePath={this.props.runroute.route_path} />);
+      return (<RouteStaticMap routePath={this.props.runroute.route_path} />);
   },
 
   render () {
